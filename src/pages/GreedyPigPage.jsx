@@ -6,6 +6,8 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import greedyPigQuestions from '../quizzes/greedyPig'
+import { usePersonalBest } from '../hooks/usePersonalBest'
+import PersonalBestBadge from '../components/PersonalBestBadge'
 
 // ── Die face pip patterns ─────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -91,6 +93,7 @@ const SIM_COLORS = ['#818cf8', '#60a5fa', '#34d399', '#f59e0b', '#f472b6']
 export default function GreedyPigPage() {
   const { t } = useTranslation()
 
+  const { best: pigPb, setBestIfHigher: setPigPb, isNew: isPigPbNew } = usePersonalBest('greedy-pig')
   const [target, setTarget] = useState(50)
   const [phase, setPhase] = useState('player_turn')
   // 'player_turn' | 'player_bust' | 'bot_turn_start' | 'bot_rolling' | 'bot_bust' | 'bot_banking' | 'game_over'
@@ -155,6 +158,7 @@ export default function GreedyPigPage() {
       setWinner('player')
       setPhase('game_over')
       setGamesPlayed(g => g + 1)
+      setPigPb(newScore - botScore)
     } else {
       setPhase('bot_turn_start')
       startBotTurn()
@@ -317,6 +321,7 @@ export default function GreedyPigPage() {
             <p className={`text-3xl font-black mb-2 ${winner === 'player' ? 'text-emerald-600' : 'text-rose-600'}`}>
               {winner === 'player' ? t('greedyPig.win') : t('greedyPig.lose')}
             </p>
+            {winner === 'player' && <div className="mb-2"><PersonalBestBadge best={pigPb} isNew={isPigPbNew} /></div>}
             <motion.button
               whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
               onClick={() => resetGame()}

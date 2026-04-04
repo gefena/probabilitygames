@@ -5,6 +5,8 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import higherOrLowerQuestions from '../quizzes/higherOrLower'
+import { usePersonalBest } from '../hooks/usePersonalBest'
+import PersonalBestBadge from '../components/PersonalBestBadge'
 
 // ── Pip layouts ───────────────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -60,7 +62,7 @@ export default function HigherOrLowerPage() {
   const [phase, setPhase] = useState('idle')            // idle | guessing | result
   const [currentFace, setCurrentFace] = useState(() => Math.floor(Math.random() * 6) + 1)
   const [streak, setStreak] = useState(0)
-  const [best, setBest] = useState(0)
+  const { best, setBestIfHigher, isNew: isBestNew } = usePersonalBest('higher-or-lower')
   const [outcome, setOutcome] = useState(null)          // 'correct' | 'wrong' | 'push'
 
   function handleGuess(direction) {
@@ -79,7 +81,7 @@ export default function HigherOrLowerPage() {
       if (isCorrect) {
         const next = streak + 1
         setStreak(next)
-        setBest(b => Math.max(b, next))
+        setBestIfHigher(next)
       } else if (!isPush) {
         setStreak(0)
       }
@@ -108,10 +110,13 @@ export default function HigherOrLowerPage() {
       </p>
 
       {/* ── Streak banner ────────────────────────────────────────────────────── */}
-      <div className="flex justify-center gap-6 mb-6 bg-gray-50 rounded-2xl py-3 px-6 max-w-xs mx-auto">
-        <span className="font-extrabold text-indigo-600">{t('higherOrLower.streak', { n: streak })}</span>
-        <span className="text-gray-300">│</span>
-        <span className="font-extrabold text-gray-500">{t('higherOrLower.best', { n: best })}</span>
+      <div className="flex flex-col items-center gap-2 mb-6">
+        <div className="flex justify-center gap-6 bg-gray-50 rounded-2xl py-3 px-6 max-w-xs w-full">
+          <span className="font-extrabold text-indigo-600">{t('higherOrLower.streak', { n: streak })}</span>
+          <span className="text-gray-300">│</span>
+          <span className="font-extrabold text-gray-500">{t('higherOrLower.best', { n: best })}</span>
+        </div>
+        <PersonalBestBadge best={best} isNew={isBestNew} />
       </div>
 
       {/* ── Die ──────────────────────────────────────────────────────────────── */}

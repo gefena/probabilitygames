@@ -6,6 +6,8 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import probabilityBingoQuestions from '../quizzes/probabilityBingo'
+import { usePersonalBest } from '../hooks/usePersonalBest'
+import PersonalBestBadge from '../components/PersonalBestBadge'
 
 // ── Pip layouts ────────────────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -178,6 +180,7 @@ const EMPTY_CROSSED = Array(9).fill(false)
 export default function ProbabilityBingoPage() {
   const { t } = useTranslation()
 
+  const { best: bingoPb, setBestIfHigher: setBingoPb, isNew: isBingoPbNew } = usePersonalBest('probability-bingo', 'accumulate')
   const [phase, setPhase] = useState('placing')
   const [playerGrid, setPlayerGrid] = useState(() => balancedRandomCard())
   const [larryGrid, setLarryGrid] = useState(() => makeLarryGrid())
@@ -256,6 +259,7 @@ export default function ProbabilityBingoPage() {
         setWinner(w)
         setPhase('finished')
         setGamesPlayed(g => g + 1)
+        if (w === 'player') setBingoPb(1)
       }
       setIsRolling(false)
     }, 400)
@@ -437,6 +441,7 @@ export default function ProbabilityBingoPage() {
           <div className={`text-lg font-bold ${winner === 'player' ? 'text-emerald-600' : 'text-rose-600'}`}>
             {winnerMessage()}
           </div>
+          <PersonalBestBadge best={bingoPb} isNew={isBingoPbNew} />
           <button
             onClick={playAgain}
             className="px-8 py-3 bg-violet-600 text-white font-bold rounded-2xl text-lg hover:bg-violet-700 active:scale-95 transition-all"

@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import GamePageLayout from '../components/GamePageLayout'
 import QuizPanel from '../components/QuizPanel'
 import diceDetectiveQuestions from '../quizzes/diceDetective'
+import { usePersonalBest } from '../hooks/usePersonalBest'
+import PersonalBestBadge from '../components/PersonalBestBadge'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const SHAPES = ['triangle', 'square', 'circle']
@@ -272,6 +274,7 @@ export default function DiceDetectivePage() {
   const { t } = useTranslation()
 
   const [rounds, setRounds]                   = useState(freshRounds)
+  const { best: pbBest, setBestIfHigher: setPbBest, isNew: isPbNew } = usePersonalBest('dice-detective')
   const [roundIndex, setRoundIndex]           = useState(0)
   const [phase, setPhase]                     = useState('active')   // 'active' | 'revealed'
   const [selected, setSelected]               = useState(new Set())
@@ -342,6 +345,8 @@ export default function DiceDetectivePage() {
   // ── Navigation ──────────────────────────────────────────────────────────────
   function handleNext() {
     if (isLastRound) {
+      const finalScore = firstAttemptCorrect.filter(Boolean).length
+      setPbBest(finalScore)
       setShowEndScreen(true)
     } else {
       setRoundIndex(ri => ri + 1)
@@ -389,6 +394,7 @@ export default function DiceDetectivePage() {
             {score} <span className="text-3xl text-gray-400">/ {TOTAL_ROUNDS}</span>
           </p>
           <p className="text-gray-500 text-sm">{t('diceDetective.results.score', { n: score, total: TOTAL_ROUNDS })}</p>
+          <PersonalBestBadge best={pbBest} isNew={isPbNew} />
           <p className="text-xl font-bold text-gray-700">{msg}</p>
           <button
             onClick={handlePlayAgain}

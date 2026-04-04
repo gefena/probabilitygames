@@ -1689,5 +1689,9 @@
   },
   "site": {
     "title": "Probability Playground"
+  },
+  "personalBest": {
+    "label": "Best: {{n}}",
+    "newRecord": "New record!"
   }
 }

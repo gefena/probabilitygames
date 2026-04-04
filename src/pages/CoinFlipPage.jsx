@@ -6,6 +6,8 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import coinFlipQuestions from '../quizzes/coinFlip'
+import { usePersonalBest } from '../hooks/usePersonalBest'
+import PersonalBestBadge from '../components/PersonalBestBadge'
 
 const MULTIPLIERS = [1, 10, 100]
 
@@ -43,6 +45,7 @@ export default function CoinFlipPage() {
   const [animKey, setAnimKey] = useState(0)
 
   // streak state
+  const { best: streakPb, setBestIfHigher: setStreakPb, isNew: isStreakPbNew } = usePersonalBest('coin-flip-streak')
   const [flipHistory, setFlipHistory] = useState([])
   const [prediction, setPrediction] = useState(null) // null | 'continues' | 'breaks'
   const [score, setScore] = useState(0)
@@ -137,7 +140,7 @@ export default function CoinFlipPage() {
           (prevPrediction === 'breaks' && !streakContinues)
 
         setFeedback(correct ? 'correct' : 'wrong')
-        if (correct) setScore(s => s + 1)
+        if (correct) { setScore(s => { const next = s + 1; setStreakPb(next); return next }) }
       }
 
       setFlipping(false)
@@ -422,9 +425,12 @@ export default function CoinFlipPage() {
             </AnimatePresence>
 
             {/* Score */}
-            <div className="text-center">
-              <span className="text-gray-500 font-semibold">{t('coin.streak.score')}: </span>
-              <span className="text-2xl font-extrabold text-violet-700">{score}</span>
+            <div className="text-center flex flex-col items-center gap-1">
+              <div>
+                <span className="text-gray-500 font-semibold">{t('coin.streak.score')}: </span>
+                <span className="text-2xl font-extrabold text-violet-700">{score}</span>
+              </div>
+              <PersonalBestBadge best={streakPb} isNew={isStreakPbNew} />
             </div>
           </div>
 

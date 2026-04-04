@@ -4,6 +4,8 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import bridgeQuestQuestions from '../quizzes/bridgeQuest'
+import { usePersonalBest } from '../hooks/usePersonalBest'
+import PersonalBestBadge from '../components/PersonalBestBadge'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -154,6 +156,7 @@ export default function BridgeQuestPage() {
   const { t } = useTranslation()
   const isMountedRef = useRef(true)
 
+  const { best: bridgePb, setBestIfHigher: setBridgePb, isNew: isBridgePbNew } = usePersonalBest('bridge-quest')
   const [race,          setRace]          = useState(() => randomRace())
   const [phase,         setPhase]         = useState('picking')  // picking | crossing | botCross | result | tournament
   const [preview,       setPreview]       = useState(null)
@@ -249,7 +252,12 @@ export default function BridgeQuestPage() {
 
     await delay(400)
     if (!isMountedRef.current) return
-    setPhase(raceIndex >= TOTAL_RACES - 1 ? 'tournament' : 'result')
+    if (raceIndex >= TOTAL_RACES - 1) {
+      setBridgePb(newScores.player)
+      setPhase('tournament')
+    } else {
+      setPhase('result')
+    }
   }
 
   // ── Next race ─────────────────────────────────────────────────────────────
@@ -389,6 +397,7 @@ export default function BridgeQuestPage() {
           <p className="text-slate-500 font-bold text-lg">
             {t('bridgeQuest.score', { p: scores.player, b: scores.bot })}
           </p>
+          <PersonalBestBadge best={bridgePb} isNew={isBridgePbNew} />
           <button
             onClick={playAgain}
             className="bg-violet-600 text-white font-extrabold px-8 py-3 rounded-2xl hover:bg-violet-700 transition-colors text-lg"
