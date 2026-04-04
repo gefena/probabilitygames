@@ -101,7 +101,7 @@ export default function HigherOrLowerPage() {
   }
 
   return (
-    <GamePageLayout title={t('higherOrLower.title')} emoji={t('higherOrLower.emoji')}>
+    <GamePageLayout title={t('common.games.higher-or-lower')} emoji={t('higherOrLower.emoji')}>
       <p className="text-gray-500 mb-2 text-sm">{t('higherOrLower.subtitle')}</p>
       <p className="text-center text-sm text-indigo-600 font-medium mb-6 max-w-xl mx-auto">
         {t('higherOrLower.howToPlay')}

@@ -305,7 +305,7 @@ export default function MagicSpinnerPage() {
     : null
 
   return (
-    <GamePageLayout title={t('home.games.spinner.title')} emoji="🎡">
+    <GamePageLayout title={t('common.games.spinner')} emoji="🎡">
       <p className="text-gray-500 mb-6 text-sm">{t('spinner.instructions')}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

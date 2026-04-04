@@ -221,7 +221,7 @@ export default function RemoveOnePage() {
   const isWin = winner === 'player' || winner === 'tie-larry' || winner === 'tie-max'
 
   return (
-    <GamePageLayout title={t('removeOne.title')} emoji={t('removeOne.emoji')}>
+    <GamePageLayout title={t('common.games.remove-one')} emoji="🎯">
       <p className="text-gray-500 mb-2 text-sm">{t('removeOne.subtitle')}</p>
       <p className="text-center text-sm text-emerald-700 font-medium mb-6 max-w-xl mx-auto">
         {t('removeOne.howToPlay')}

@@ -106,7 +106,7 @@ export default function PrizeMachinePage() {
   const evColor = netEV > 0 ? '#10B981' : netEV < 0 ? '#EF4444' : '#9CA3AF'
 
   return (
-    <GamePageLayout title={t('prizeMachine.title')} emoji="🎰">
+    <GamePageLayout title={t('common.games.prize-machine')} emoji="🎰">
       <p className="text-gray-500 mb-2 text-sm">{t('prizeMachine.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('prizeMachine.howToPlay')}</p>
 

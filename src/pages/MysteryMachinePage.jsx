@@ -127,7 +127,7 @@ export default function MysteryMachinePage() {
   const maxTallyCount = Math.max(1, ...Object.values(tally))
 
   return (
-    <GamePageLayout title={t('mysteryMachine.title')} emoji="🔍">
+    <GamePageLayout title={t('common.games.mystery-machine')} emoji="🔍">
       <p className="text-gray-500 mb-2 text-sm">{t('mysteryMachine.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('mysteryMachine.howToPlay')}</p>
 

@@ -94,7 +94,7 @@ export default function GuessThePhonePage() {
   const remainingCombinations = Math.pow(10, unsolvedCount)
 
   return (
-    <GamePageLayout title={t('guessPhone.title')} emoji={t('guessPhone.emoji')}>
+    <GamePageLayout title={t('common.games.guess-the-phone')} emoji={t('guessPhone.emoji')}>
       <p className="text-gray-500 mb-2 text-sm text-center">{t('guessPhone.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('guessPhone.howToPlay')}</p>
 

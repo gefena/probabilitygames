@@ -87,7 +87,7 @@ export default function RandomWalkPage() {
   }
 
   return (
-    <GamePageLayout title={t('randomWalk.title')} emoji="🚶">
+    <GamePageLayout title={t('common.games.random-walk')} emoji="🚶">
       <p className="text-center text-sm text-gray-500 mb-2 max-w-xl mx-auto">
         {t('randomWalk.subtitle')}
       </p>

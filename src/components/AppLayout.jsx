@@ -14,8 +14,8 @@ export default function AppLayout() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <span className="text-lg sm:text-2xl font-extrabold text-violet-700 tracking-tight">
-            🎲 <span className="hidden sm:inline">{t('nav.title')}</span>
-            <span className="sm:hidden">Probability Playground</span>
+            🎲 <span className="hidden sm:inline">{t('site.title')}</span>
+            <span className="sm:hidden">{t('site.title')}</span>
           </span>
           <div className="flex rounded-xl overflow-hidden border border-violet-200">
             <button

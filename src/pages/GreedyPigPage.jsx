@@ -265,7 +265,7 @@ export default function GreedyPigPage() {
   const isBotActive = ['bot_turn_start', 'bot_rolling', 'bot_banking'].includes(phase)
 
   return (
-    <GamePageLayout title={t('greedyPig.title')} emoji={t('greedyPig.emoji')}>
+    <GamePageLayout title={t('common.games.greedy-pig')} emoji={t('greedyPig.emoji')}>
       <p className="text-gray-500 mb-2 text-sm text-center">{t('greedyPig.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('greedyPig.howToPlay')}</p>
 

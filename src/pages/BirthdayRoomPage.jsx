@@ -99,7 +99,7 @@ export default function BirthdayRoomPage() {
   const showMilestone = people.length === 23
 
   return (
-    <GamePageLayout title={t('birthdayRoom.title')} emoji="🎂">
+    <GamePageLayout title={t('common.games.birthday-room')} emoji="🎂">
       <p className="text-gray-500 mb-2 text-sm">{t('birthdayRoom.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('birthdayRoom.howToPlay')}</p>
 

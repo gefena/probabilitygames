@@ -160,7 +160,7 @@ export default function CandyJarPage() {
   }))
 
   return (
-    <GamePageLayout title={t('home.games.candy.title')} emoji="🍬">
+    <GamePageLayout title={t('common.games.candy-jar')} emoji="🍬">
       <p className="text-gray-500 mb-6 text-sm">{t('candy.instructions')}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

@@ -162,7 +162,7 @@ export default function CoinFlipPage() {
   const flipDisabledInStreak = flipping || (flipHistory.length > 0 && prediction === null)
 
   return (
-    <GamePageLayout title={t('home.games.coinFlip.title')} emoji="🪙">
+    <GamePageLayout title={t('common.games.coin-flip')} emoji="🪙">
 
       {/* Mode toggle */}
       <div className="flex justify-center mb-6">

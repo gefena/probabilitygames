@@ -210,7 +210,7 @@ export default function LuckyDicePage() {
     : numDice === 1 ? t('dice.predict1') : numDice === 2 ? t('dice.predict2') : t('dice.predict3')
 
   return (
-    <GamePageLayout title={t('home.games.dice.title')} emoji="🎲">
+    <GamePageLayout title={t('common.games.dice')} emoji="🎲">
       <p className="text-gray-500 mb-6 text-sm">{t('dice.instructions')}</p>
 
       {/* Dice count selector */}

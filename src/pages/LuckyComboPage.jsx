@@ -260,7 +260,7 @@ export default function LuckyComboPage() {
     : { pA: fmtPct(pA), pB: fmtPct(pB), pAB: fmtPct(pA * pB), result: fmtPct(pCombined) }
 
   return (
-    <GamePageLayout title={t('luckyCombo.title')} emoji="🔗">
+    <GamePageLayout title={t('common.games.lucky-combo')} emoji="🔗">
       <p className="text-gray-500 mb-2 text-sm">{t('luckyCombo.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('luckyCombo.howToPlay')}</p>
 

@@ -147,7 +147,7 @@ export default function PizzaBuilderPage() {
   const even = isEvenSpread(orders, crusts, toppings)
 
   return (
-    <GamePageLayout title={t('pizzaBuilder.title')} emoji={t('pizzaBuilder.emoji')}>
+    <GamePageLayout title={t('common.games.pizza-builder')} emoji={t('pizzaBuilder.emoji')}>
       <p className="text-gray-600 mb-2">{t('pizzaBuilder.subtitle')}</p>
       <p className="text-sm text-gray-500 mb-6">{t('pizzaBuilder.howToPlay')}</p>
 

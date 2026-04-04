@@ -298,7 +298,7 @@ export default function BridgeQuestPage() {
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
-    <GamePageLayout title={t('bridgeQuest.title')} emoji={t('bridgeQuest.emoji')}>
+    <GamePageLayout title={t('common.games.bridge-quest')} emoji={t('bridgeQuest.emoji')}>
       <p className="text-center text-gray-500 text-sm mb-1">{t('bridgeQuest.subtitle')}</p>
       <p className="text-center text-gray-400 text-xs mb-4">{t('bridgeQuest.howToPlay')}</p>
 

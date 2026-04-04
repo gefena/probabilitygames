@@ -382,7 +382,7 @@ export default function DiceDetectivePage() {
         : t('diceDetective.results.keep')
 
     return (
-      <GamePageLayout title={t('diceDetective.title')} emoji="🔍">
+      <GamePageLayout title={t('common.games.dice-detective')} emoji="🔍">
         <div className="flex flex-col items-center gap-6 py-10 text-center">
           <h2 className="text-2xl font-extrabold text-gray-800">{t('diceDetective.results.title')}</h2>
           <p className="text-5xl font-extrabold text-violet-600">
@@ -407,7 +407,7 @@ export default function DiceDetectivePage() {
   const canSubmitCount = !isTapMode && phase === 'active' && typed.length > 0
 
   return (
-    <GamePageLayout title={t('diceDetective.title')} emoji="🔍">
+    <GamePageLayout title={t('common.games.dice-detective')} emoji="🔍">
       <p className="text-gray-500 mb-1 text-sm">{t('diceDetective.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-5">{t('diceDetective.howToPlay')}</p>
 

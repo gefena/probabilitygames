@@ -189,7 +189,7 @@ export default function RollAndRacePage() {
   const maxWins = simResults ? Math.max(...Object.values(simResults.wins)) : 0
 
   return (
-    <GamePageLayout title={t('rollAndRace.title')} emoji={t('rollAndRace.emoji')}>
+    <GamePageLayout title={t('common.games.roll-and-race')} emoji="🏎️">
       <p className="text-gray-500 mb-2 text-sm">{t('rollAndRace.subtitle')}</p>
       <p className="text-center text-sm text-red-600 font-medium mb-6 max-w-xl mx-auto">
         {t('rollAndRace.howToPlay')}

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import AppLayout from './components/AppLayout'
@@ -29,13 +29,53 @@ import DiceDetectivePage from './pages/DiceDetectivePage'
 import GuessThePhonePage from './pages/GuessThePhonePage'
 import HackThePasswordPage from './pages/HackThePasswordPage'
 
+const PAGE_TITLES = {
+  '/': null,
+  '/coin-flip': 'common.games.coin-flip',
+  '/dice': 'common.games.dice',
+  '/candy-jar': 'common.games.candy-jar',
+  '/spinner': 'common.games.spinner',
+  '/card-draw': 'common.games.card-draw',
+  '/house-always-wins': 'common.games.house-always-wins',
+  '/birthday-room': 'common.games.birthday-room',
+  '/mystery-machine': 'common.games.mystery-machine',
+  '/prize-machine': 'common.games.prize-machine',
+  '/lucky-combo': 'common.games.lucky-combo',
+  '/galton-board': 'common.games.galton-board',
+  '/random-walk': 'common.games.random-walk',
+  '/monte-carlo-pi': 'common.games.monte-carlo-pi',
+  '/monty-hall': 'common.games.monty-hall',
+  '/greedy-pig': 'common.games.greedy-pig',
+  '/higher-or-lower': 'common.games.higher-or-lower',
+  '/roll-and-race': 'common.games.roll-and-race',
+  '/remove-one': 'common.games.remove-one',
+  '/probability-bingo': 'common.games.probability-bingo',
+  '/pizza-builder': 'common.games.pizza-builder',
+  '/climber-race': 'common.games.climber-race',
+  '/bridge-quest': 'common.games.bridge-quest',
+  '/dice-detective': 'common.games.dice-detective',
+  '/guess-the-phone': 'common.games.guess-the-phone',
+  '/hack-the-password': 'common.games.hack-the-password',
+}
+
 export default function App() {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const location = useLocation()
 
   useEffect(() => {
     document.documentElement.dir = i18n.language === 'he' ? 'rtl' : 'ltr'
     document.documentElement.lang = i18n.language
   }, [i18n.language])
+
+  useEffect(() => {
+    const siteTitle = t('site.title')
+    const pageKey = PAGE_TITLES[location.pathname]
+    if (pageKey) {
+      document.title = `${t(pageKey)} - ${siteTitle}`
+    } else {
+      document.title = siteTitle
+    }
+  }, [location.pathname, i18n.language, t])
 
   return (
     <Routes>

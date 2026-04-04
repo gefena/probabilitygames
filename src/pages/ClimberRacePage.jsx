@@ -269,10 +269,10 @@ export default function ClimberRacePage() {
       ? t(`climberRace.${bet[0]}`)
       : t('climberRace.betOr', { a: t(`climberRace.${bet[0]}`), b: t(`climberRace.${bet[1]}`) })
 
-  // ── Render ─────────────────────────────────────────────────────────────────
+  // ── Render ─────────────────────────────────────────────────────────────
 
   return (
-    <GamePageLayout title={t('climberRace.title')} emoji={t('climberRace.emoji')}>
+    <GamePageLayout title={t('common.games.climber-race')} emoji={t('climberRace.emoji')}>
       <p className="text-center text-gray-500 text-sm mb-1">{t('climberRace.subtitle')}</p>
       <p className="text-center text-gray-400 text-xs mb-6">{t('climberRace.howToPlay')}</p>
 

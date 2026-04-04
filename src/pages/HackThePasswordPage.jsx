@@ -106,7 +106,7 @@ export default function HackThePasswordPage() {
   const DIFF_COLORS = { easy: '#10B981', medium: '#F97316', hard: '#EF4444' }
 
   return (
-    <GamePageLayout title={t('hackPassword.title')} emoji={t('hackPassword.emoji')}>
+    <GamePageLayout title={t('common.games.hack-the-password')} emoji={t('hackPassword.emoji')}>
       <p className="text-gray-500 mb-2 text-sm text-center">{t('hackPassword.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('hackPassword.howToPlay')}</p>
 

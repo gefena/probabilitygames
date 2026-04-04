@@ -295,7 +295,7 @@ export default function ProbabilityBingoPage() {
 
   // ── Render ────────────────────────────────────────────────────────────────────
   return (
-    <GamePageLayout title={t('probabilityBingo.title')} emoji={t('probabilityBingo.emoji')}>
+    <GamePageLayout title={t('common.games.probability-bingo')} emoji="🎱">
       <p className="text-gray-600 mb-2">{t('probabilityBingo.subtitle')}</p>
       <p className="text-sm text-gray-500 mb-6">{t('probabilityBingo.howToPlay')}</p>
 

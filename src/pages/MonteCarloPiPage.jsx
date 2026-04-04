@@ -144,7 +144,7 @@ export default function MonteCarloPiPage() {
   const ratio = totalDarts > 0 ? (inside / totalDarts).toFixed(4) : '—'
 
   return (
-    <GamePageLayout title={t('monteCarloPi.title')} emoji="🎯">
+    <GamePageLayout title={t('common.games.monte-carlo-pi')} emoji="🎯">
       <p className="text-center text-sm text-gray-500 mb-2 max-w-xl mx-auto">
         {t('monteCarloPi.subtitle')}
       </p>

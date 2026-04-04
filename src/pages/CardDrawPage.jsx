@@ -122,7 +122,7 @@ export default function CardDrawPage() {
     : null
 
   return (
-    <GamePageLayout title={t('home.games.cards.title')} emoji="🃏">
+    <GamePageLayout title={t('common.games.card-draw')} emoji="🃏">
       <p className="text-gray-500 mb-6 text-sm">{t('cards.instructions')}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

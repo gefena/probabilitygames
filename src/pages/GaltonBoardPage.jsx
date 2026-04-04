@@ -82,7 +82,7 @@ export default function GaltonBoardPage() {
 
   return (
     <GamePageLayout
-      title={t('galtonBoard.title')}
+      title={t('common.games.galton-board')}
       emoji="🟣"
     >
       {/* Subtitle */}

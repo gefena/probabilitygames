@@ -294,7 +294,7 @@ export default function HouseAlwaysWinsPage() {
   ]
 
   return (
-    <GamePageLayout title={t('houseAlwaysWins.title')} emoji="🏦">
+    <GamePageLayout title={t('common.games.house-always-wins')} emoji="🏦">
       <p className="text-gray-500 mb-2 text-sm">{t('houseAlwaysWins.subtitle')}</p>
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('houseAlwaysWins.howToPlay')}</p>
 
