@@ -1,6 +1,8 @@
 # Probability Games
 
-An interactive educational platform featuring 20+ probability games designed to build intuition through play, simulation, and data visualization.
+**Live: [probabilitygames.vercel.app](https://probabilitygames.vercel.app/)**
+
+An interactive educational platform featuring 26 probability games designed to build intuition through play, simulation, and data visualization.
 
 ## 🎮 Overview
 
@@ -28,7 +30,7 @@ This project provides a collection of interactive games and simulations categori
 -   **Charts**: Recharts
 -   **i18n**: i18next, react-i18next
 -   **Icons**: Lucide React
--   **Deployment**: Ready for Vercel
+-   **Deployment**: Vercel (auto-deploys from `main`)
 
 ## 💻 Getting Started
 
