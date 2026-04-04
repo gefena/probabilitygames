@@ -1,23 +1,5 @@
-### Requirement: Crack the Code home page section
-The home page SHALL include a new "Crack the Code" section containing cards for GuessThePhonePage and HackThePasswordPage. The section SHALL use a distinct dark background (matching the Patterns in Chaos section style) to signal a different game category.
-
-#### Scenario: Home page shows Crack the Code section
-- **WHEN** a user visits the home page
-- **THEN** a "Crack the Code" section is visible containing cards for both new games
-
-### Requirement: Routes for new game pages
-`App.jsx` SHALL include routes `/guess-the-phone` and `/hack-the-password` pointing to the respective page components.
-
-#### Scenario: Direct navigation to guess-phone-game
-- **WHEN** the user navigates to `#/guess-the-phone`
-- **THEN** GuessThePhonePage renders
-
-#### Scenario: Direct navigation to hack-password-game
-- **WHEN** the user navigates to `#/hack-the-password`
-- **THEN** HackThePasswordPage renders
-
 ### Requirement: Home page with game cards
-The site SHALL display a home page organising all games into four complexity tiers (Start Here, Go Deeper, Crack the Code, Patterns in Chaos). Each tier displays a heading, tagline, and a responsive grid of `GameCard` entries. All 15 games SHALL be reachable from the home page.
+The site SHALL display a home page organising all games into four complexity tiers (Start Here, Go Deeper, Crack the Code, Patterns in Chaos). Each tier displays a heading, tagline, and a responsive grid of `GameCard` entries. Every game in the project SHALL have a visible card in one of the four tiers.
 
 #### Scenario: Home page loads
 - **WHEN** the user navigates to `/`
@@ -29,7 +11,14 @@ The site SHALL display a home page organising all games into four complexity tie
 
 #### Scenario: All games are accessible
 - **WHEN** the user views the complete home page
-- **THEN** all 15 games have a visible card in one of the four tiers
+- **THEN** every game has a visible card in one of the four tiers
+
+### Requirement: Routes for all game pages
+`App.jsx` SHALL include a route for every game card shown on the home page. Each route SHALL point to the corresponding page component.
+
+#### Scenario: Direct navigation to any game
+- **WHEN** the user navigates directly to a game's route (e.g. `#/dice-detective`)
+- **THEN** the corresponding game page renders without error
 
 ### Requirement: Language switcher
 The site SHALL provide a visible toggle to switch between English and Hebrew. Switching language SHALL update all UI text and flip the layout direction (LTR ↔ RTL) without a page reload. The switcher buttons SHALL display emoji country flags (🇬🇧 for English, 🇮🇱 for Hebrew) instead of text labels, making the control immediately recognisable to young users.
@@ -81,71 +70,6 @@ The site SHALL use a soft, lower-contrast color palette, rounded corners, large 
 #### Scenario: Comfortable viewing
 - **WHEN** the user views large container panels
 - **THEN** the panels are clearly defined but do not cause eye strain from high-brightness contrast against the global background
-
-
-### Requirement: Greedy Pig card on home page
-The home page "Explore More" section SHALL include a card for GreedyPigPage.
-
-#### Scenario: Home page shows Greedy Pig card
-- **WHEN** a user visits the home page
-- **THEN** a Greedy Pig card is visible in the Explore More section with title, emoji, and description
-
-### Requirement: Route for Greedy Pig page
-`App.jsx` SHALL include the route `/greedy-pig` pointing to `GreedyPigPage`.
-
-#### Scenario: Direct navigation to greedy pig
-- **WHEN** the user navigates to `#/greedy-pig`
-- **THEN** GreedyPigPage renders
-
-
-### Requirement: Route for Roll & Race page
-`App.jsx` SHALL include the route `/roll-and-race` pointing to `RollAndRacePage`.
-
-#### Scenario: Direct navigation to roll-and-race
-- **WHEN** the user navigates to `#/roll-and-race`
-- **THEN** RollAndRacePage renders
-
-### Requirement: Route for Remove One page
-`App.jsx` SHALL include the route `/remove-one` pointing to `RemoveOnePage`.
-
-#### Scenario: Direct navigation to remove-one
-- **WHEN** the user navigates to `#/remove-one`
-- **THEN** RemoveOnePage renders
-
-### Requirement: Route for Higher or Lower page
-`App.jsx` SHALL include the route `/higher-or-lower` pointing to `HigherOrLowerPage`.
-
-#### Scenario: Direct navigation to higher-or-lower
-- **WHEN** the user navigates to `#/higher-or-lower`
-- **THEN** HigherOrLowerPage renders
-
-### Requirement: Route for Probability Bingo page
-`App.jsx` SHALL include the route `/probability-bingo` pointing to `ProbabilityBingoPage`.
-
-#### Scenario: Direct navigation to probability-bingo
-- **WHEN** the user navigates to `#/probability-bingo`
-- **THEN** ProbabilityBingoPage renders
-
-### Requirement: Route for Pizza Builder page
-`App.jsx` SHALL include the route `/pizza-builder` pointing to `PizzaBuilderPage`.
-
-#### Scenario: Direct navigation to pizza-builder
-- **WHEN** the user navigates to `#/pizza-builder`
-- **THEN** PizzaBuilderPage renders
-
-### Requirement: Route for Climber Race page
-`App.jsx` SHALL include the route `/climber-race` pointing to `ClimberRacePage`.
-
-#### Scenario: Direct navigation to climber-race
-- **WHEN** the user navigates to `#/climber-race`
-- **THEN** ClimberRacePage renders
-
-### Requirement: Route for Bridge Quest page
-`App.jsx` SHALL include the route `/bridge-quest` pointing to `BridgeQuestPage`.
-
-#### Scenario: Direct navigation to bridge-quest
-- **WHEN** the user navigates to `#/bridge-quest`
-- **THEN** BridgeQuestPage renders
 
 ### Requirement: Localized mobile header title
 The mobile header title (visible on screens < 640px) SHALL be retrieved via the i18n key `site.title` and SHALL NOT be hardcoded in English.
