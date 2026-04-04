@@ -1,0 +1,1567 @@
+{
+  "nav": {
+    "home": "Home",
+    "title": "Probability Playground"
+  },
+  "lang": {
+    "switch": "עב"
+  },
+  "home": {
+    "subtitle": "Learn probability by playing games!",
+    "tiers": {
+      "startHere": {
+        "title": "Start Here",
+        "tagline": "Tap once and see what chance looks like"
+      },
+      "goDeeper": {
+        "title": "Go Deeper",
+        "tagline": "Make decisions — and find out if they pay off"
+      }
+    },
+    "games": {
+      "coinFlip": {
+        "title": "Coin Flip Lab",
+        "desc": "Flip a coin and discover why heads and tails each happen half the time."
+      },
+      "dice": {
+        "title": "Lucky Dice",
+        "desc": "Roll dice and see which numbers come up most often."
+      },
+      "candy": {
+        "title": "Candy Jar",
+        "desc": "Reach into a jar of candies and learn how colour counts affect your chances."
+      },
+      "spinner": {
+        "title": "Magic Spinner",
+        "desc": "Build your own spinner and compare what you expect with what actually happens."
+      },
+      "cards": {
+        "title": "Card Draw",
+        "desc": "Draw cards from a deck and watch probabilities change with every draw."
+      }
+    },
+    "learnMore": "Explore More",
+    "houseAlwaysWins": {
+      "desc": "Discover why lotteries, slot machines, and roulette are all designed to take your coins — and see it happen live."
+    },
+    "birthdayRoom": {
+      "desc": "How many people until two share a birthday? The answer will surprise you!"
+    },
+    "mysteryMachine": {
+      "desc": "Observe a hidden machine's outputs and guess its secret probabilities. Can you crack it?"
+    },
+    "prizeMachine": {
+      "desc": "Build your own prize machine, calculate expected value, and see if reality matches the math!"
+    },
+    "luckyCombo": {
+      "desc": "Combine two events with AND or OR and explore how compound probability works."
+    },
+    "greedyPig": {
+      "desc": "Roll the die and keep going — but a 1 wipes your turn! Beat the Greedy Bot and discover when to stop."
+    },
+    "higherOrLower": {
+      "title": "Higher or Lower",
+      "desc": "A die is rolled — will the next one be higher or lower? Read the odds, make your call, and build the longest streak you can!"
+    },
+    "rollAndRace": {
+      "title": "Roll & Race",
+      "desc": "Pick a car numbered 2–12, roll two dice, and watch the race unfold. Which car crosses the finish line first?"
+    },
+    "removeOne": {
+      "title": "Remove One",
+      "desc": "Place your tokens across the numbers, then roll two dice. Remove one token when your number comes up — first to clear the board wins!"
+    },
+    "probabilityBingo": {
+      "title": "Probability Bingo",
+      "desc": "Fill a 3×3 card with two-dice sums and race to complete a row, column, or diagonal. Position matters as much as probability!"
+    },
+    "pizzaBuilder": {
+      "title": "Pizza Builder",
+      "desc": "Build a pizza menu and watch combinations multiply. Pick your favourites, order randomly, and see the math of compound events in action!"
+    },
+    "climberRace": {
+      "title": "Climber Race",
+      "desc": "Four climbers, one spinner, changing odds every turn. Bet on one or two — add their chances and see who reaches the summit first!"
+    },
+    "bridgeQuest": {
+      "title": "Bridge Quest",
+      "desc": "Three paths, rickety bridges, one Greedy Bot. Multiply the survival odds, pick the safest route, and race across in a 3-round tournament!"
+    },
+    "diceDetective": {
+      "title": "Dice Detective",
+      "desc": "Count how many outcomes match the clue. Two dice, 16 possibilities — tap the cells or type the count."
+    },
+    "crackTheCode": {
+      "title": "Crack the Code",
+      "tagline": "Feel how fast possibilities explode",
+      "guessPhone": {
+        "title": "Guess the Phone Number",
+        "desc": "Crack a secret number digit by digit. Start simple — then watch how one extra digit makes it 10× harder."
+      },
+      "hackPassword": {
+        "title": "Hack the Password",
+        "desc": "Crack a secret password character by character. Bigger alphabet, longer password = astronomical combinations."
+      }
+    },
+    "patternsInChaos": {
+      "title": "Patterns in Chaos",
+      "tagline": "Watch randomness reveal hidden order",
+      "galtonBoard": {
+        "title": "Galton Board",
+        "desc": "Drop balls through a peg maze and watch a perfect bell curve build itself from pure randomness."
+      },
+      "randomWalk": {
+        "title": "Random Walk",
+        "desc": "A dot wanders randomly — but its spread follows a precise mathematical law."
+      },
+      "monteCarloPi": {
+        "title": "Monte Carlo π",
+        "desc": "Throw random darts at a square and discover π hiding inside the chaos."
+      },
+      "montyHall": {
+        "title": "Monty Hall",
+        "desc": "Pick a door, the host reveals a goat — should you switch? The answer will shock you."
+      }
+    }
+  },
+  "coin": {
+    "flip": "Flip!",
+    "heads": "Heads",
+    "tails": "Tails",
+    "reset": "Reset",
+    "totalFlips": "Total Flips",
+    "headsCount": "Heads",
+    "tailsCount": "Tails",
+    "headsPercent": "Heads %",
+    "multiplier": "Flip count",
+    "result_heads": "Heads!",
+    "result_tails": "Tails!",
+    "instructions": "Press Flip and watch what happens! Flip many times and see how the result gets closer and closer to half-and-half.",
+    "streak": {
+      "modeLab": "Flip Lab",
+      "modeStreak": "Streak Hunter",
+      "currentStreak": "Current Streak",
+      "noStreak": "No streak yet — flip to start!",
+      "history": "Flip History",
+      "historyEmpty": "Nothing yet…",
+      "predictionPrompt": "What happens next?",
+      "continues": "Streak continues",
+      "breaks": "Streak breaks",
+      "correct": "✓ Correct! +1",
+      "wrong": "✗ Wrong!",
+      "score": "Score",
+      "flipToStart": "Flip to Start",
+      "histogramTitle": "Streak Length History",
+      "histogramX": "Length",
+      "histogramY": "Count",
+      "histogramEmpty": "No completed streaks yet"
+    }
+  },
+  "dice": {
+    "roll": "Roll!",
+    "reset": "Reset",
+    "diceCount": "Number of dice",
+    "predict": "What do you predict?",
+    "predict1": "Pick a face (1–6)",
+    "predict2": "Pick a sum (2–12)",
+    "predict3": "Pick a sum (3–18)",
+    "correct": "You got it!",
+    "incorrect": "Not this time!",
+    "chance": "Chance of",
+    "is": "is",
+    "totalRolls": "Total Rolls",
+    "faceChart": "Face Distribution",
+    "sumChart": "Sum Distribution",
+    "expected": "Expected",
+    "actual": "Actual",
+    "instructions": "Pick how many dice to roll, make a prediction, then roll! Watch how the chart of results builds up over many rolls.",
+    "custom": {
+      "label": "Custom",
+      "facesTitle": "Custom Die Faces",
+      "face": "Face {{n}}",
+      "reset": "Reset to standard",
+      "predict": "Pick a value"
+    }
+  },
+  "candy": {
+    "draw": "Draw!",
+    "reset": "Reset Draws",
+    "totalDraws": "Total Draws",
+    "probability": "Probability",
+    "actual": "Actual",
+    "expected": "Expected",
+    "multiplier": "Draw count",
+    "colors": {
+      "red": "Red",
+      "blue": "Blue",
+      "green": "Green"
+    },
+    "instructions": "Use the + and − buttons to change how many of each candy colour are in the jar. Then draw candies and watch the chart!",
+    "noRefill": {
+      "toggle": "No Refill",
+      "empty": "Jar is empty — reset to refill"
+    }
+  },
+  "spinner": {
+    "spin": "Spin!",
+    "reset": "Reset Spins",
+    "addSection": "Add Section",
+    "remove": "Remove",
+    "totalSpins": "Total Spins",
+    "section": "Section",
+    "probability": "Probability",
+    "actual": "Actual",
+    "expected": "Expected",
+    "instructions": "Adjust the slice sizes with the + and − buttons, then hit Spin! Can you predict which slice wins most often? Try making one slice very large and see what happens.",
+    "twoRounds": {
+      "toggle": "Two Rounds",
+      "round1": "Round 1",
+      "round2": "Round 2",
+      "spinRound2": "Spin Round 2!",
+      "nextTournament": "Next Tournament",
+      "combined": "Combined Probability",
+      "summary": "Round 1: {{r1}} → Round 2: {{r2}} — combined: {{prob}}%"
+    },
+    "treeStart": "Start"
+  },
+  "cards": {
+    "draw": "Draw a Card",
+    "reset": "Shuffle & Reset",
+    "remaining": "cards remaining",
+    "drawnHistory": "Drawn Cards",
+    "suits": "Suit Probabilities",
+    "rankPanel": "Rank Probability",
+    "selectRank": "Select rank",
+    "deckEmpty": "Deck is empty — reset to play again!",
+    "explanation": "You drew {{card}}. Now there {{are}} {{count}} {{suit}} left in {{remaining}} cards — chance: {{prob}}%",
+    "suits_display": {
+      "hearts": "Hearts ♥",
+      "diamonds": "Diamonds ♦",
+      "clubs": "Clubs ♣",
+      "spades": "Spades ♠"
+    },
+    "ranks": {
+      "A": "Ace",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "J": "Jack",
+      "Q": "Queen",
+      "K": "King"
+    },
+    "instructions": "Click Draw a Card and watch how the probability percentages change with each draw. Can you predict which suit will run out first?"
+  },
+  "common": {
+    "backHome": "← Home"
+  },
+  "prizeMachine": {
+    "title": "Prize Machine",
+    "subtitle": "Design your own prize machine. Will players win money or lose it over time? The math will tell you before you even spin.",
+    "prizeTable": "Prize Table",
+    "addPrize": "+ Add Prize",
+    "label": "Label",
+    "prob": "Prob %",
+    "payout": "Payout",
+    "probTotal": "Total probability",
+    "probWarning": "Total exceeds 100%!",
+    "noPrize": "No prize (remainder)",
+    "cost": "Cost per play",
+    "startBalance": "Starting balance",
+    "ev": "Expected value",
+    "evPerPlay": "per play",
+    "balance": "Balance",
+    "plays": "plays",
+    "play1": "Play ×1",
+    "play10": "Play ×10",
+    "play100": "Play ×100",
+    "reset": "Reset",
+    "chartTitle": "Balance vs. Expected Trend",
+    "actual": "Your balance",
+    "evTrend": "EV trend",
+    "coins": "coins",
+    "remove": "×",
+    "explainer": {
+      "title": "What You Win (or Lose) on Average",
+      "body": "Before you play once, you can already calculate the average outcome per play: multiply each prize by its probability and add them all up, then subtract the cost. If the result is positive, you gain money on average. If it's negative, you lose. The balance chart shows whether reality matches the prediction over many plays.",
+      "example": "Cost: 10 coins. Prizes: Win 50 (10% chance) and Win 0 (90% chance). Average per play = (50 × 0.10) + (0 × 0.90) − 10 = 5 − 10 = −5 coins. Play 100 times and expect to be down about 500 coins.",
+      "callout": "Even a tiny negative EV adds up! After 1000 plays you'd expect to lose about 4700 coins. The chart shows this drift in real time.",
+      "furtherReading": "This average outcome is called Expected Value (EV). It's one of the most powerful ideas in probability and is used everywhere money meets chance: insurance pricing, stock investing, game design, and sports betting. A positive EV is good for the player; a negative EV is good for the house."
+    },
+    "howToPlay": "Edit the prize table — set what each prize pays and how likely it is. Set the cost to play. Then press Play to spin and watch your balance versus the prediction line."
+  },
+  "luckyCombo": {
+    "title": "Lucky Combo",
+    "subtitle": "What happens when two random events must BOTH happen? Or when EITHER one is enough? Set them up and find out.",
+    "eventA": "Event A",
+    "eventB": "Event B",
+    "outcome": "Outcome",
+    "weight": "Weight",
+    "success": "Success",
+    "addOutcome": "+ Add",
+    "combinator": "Combinator",
+    "and": "AND",
+    "or": "OR",
+    "formulaAnd": "P(A) × P(B) = {{pA}} × {{pB}} = {{result}}",
+    "formulaOr": "P(A) + P(B) − P(A AND B) = {{pA}} + {{pB}} − {{pAB}} = {{result}}",
+    "combined": "Combined Probability",
+    "treeTitle": "Probability Tree",
+    "trialTitle": "Run Trials",
+    "trial1": "Run ×1",
+    "trial100": "Run ×100",
+    "observed": "Observed frequency",
+    "theory": "Theory predicts",
+    "trials": "trials",
+    "historyWin": "✓",
+    "historyLose": "✗",
+    "noTrials": "Run trials to see results",
+    "reset": "Reset",
+    "explainer": {
+      "title": "AND vs. OR",
+      "body": "When two independent events happen together the result depends on the combinator. AND means both must succeed — the probability shrinks (multiply). OR means at least one must succeed — the probability grows (add, then subtract the overlap to avoid double-counting).",
+      "example": "Coin flip (50%) AND die shows 6 (1/6): P = 0.5 × 0.167 ≈ 8.3%. Same events with OR: P = 0.5 + 0.167 − 0.083 ≈ 58.3%.",
+      "callout": "AND always gives a smaller probability than either event alone. OR always gives a larger probability — unless one event is impossible."
+    },
+    "defaultA1": "Heads",
+    "defaultA2": "Tails",
+    "defaultB1": "⭐ Six",
+    "defaultB2": "1–5",
+    "howToPlay": "Set up Event A and Event B using the editors. Toggle between AND and OR. Watch the combined probability change. Then run trials to see if the result matches the formula."
+  },
+  "mysteryMachine": {
+    "title": "Mystery Machine",
+    "subtitle": "A hidden machine produces outputs. Can you figure out its secret probabilities?",
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "produce": "Produce Output",
+    "produce10": "×10",
+    "budget": "Trials left",
+    "lowBudget": "⚠ Only {{n}} trials left!",
+    "budgetEmpty": "No trials left — submit your estimate!",
+    "tallyTitle": "Observed Outputs",
+    "tallyTotal": "Total observed",
+    "guessTitle": "Your Probability Estimates",
+    "guessTotal": "Total",
+    "guessMustBe100": "Total must equal 100%",
+    "submit": "Submit My Estimate",
+    "scoreTitle": "Your Score",
+    "playAgain": "Play Again",
+    "outcome": "Output {{label}}",
+    "tableOutput": "Output",
+    "yourGuess": "Your Guess",
+    "trueValue": "True Value",
+    "difference": "Difference",
+    "perfect": "Perfect! 🎉",
+    "great": "Great estimate!",
+    "good": "Good effort!",
+    "tryAgain": "Keep practising!",
+    "explainer": {
+      "title": "How to Be a Probability Detective",
+      "body": "When you can't see inside the machine, you collect evidence by running it many times. Each output is a clue. The more outputs you collect, the clearer the pattern becomes. Your estimate gets closer to the truth with every run.",
+      "example": "If the machine produces A 70 times and B 30 times out of 100 trials, your best estimate is P(A) ≈ 70% and P(B) ≈ 30%. More trials → tighter estimate.",
+      "callout": "Even with many samples your estimate might not be perfectly exact. That's normal — it's why scientists repeat experiments!",
+      "furtherReading": "Using evidence to estimate hidden probabilities is called Statistical Inference. It's one of the most important tools in science. Doctors use it to test medicines, meteorologists use it to predict weather, and pollsters use it to estimate election results — all by collecting samples and drawing conclusions about things they can't directly observe."
+    },
+    "howToPlay": "Press Produce Output to run the machine and collect clues. Watch the tally bars. When you feel confident, adjust the sliders to match your best guess — then Submit!"
+  },
+  "birthdayRoom": {
+    "title": "Birthday Room",
+    "subtitle": "How many people does it take before two share a birthday? Less than you think!",
+    "addPerson": "Add Person",
+    "clearRoom": "Clear Room",
+    "simulate": "Simulate 1000 Rooms",
+    "people": "people",
+    "tooltipSeries": "P(match)",
+    "roomSize": "Room size",
+    "noMatch": "No match yet — keep adding people!",
+    "matchBanner": "🎉 Birthday Match Found!",
+    "matchBannerMultiple": "🎉 {{n}} Birthday Matches Found!",
+    "matchProbability": "Probability of at least one shared birthday",
+    "milestone23": "50% chance reached! Just 23 people — surprising, isn't it?",
+    "moreAvatars": "+{{n}} more",
+    "simTitle": "Monte Carlo Simulation",
+    "simResult": "{{matches}} / 1000 rooms had a match ({{simPct}}%) — theory predicts {{theoryPct}}%",
+    "simEmpty": "Add at least 2 people first",
+    "curveTitle": "Probability Curve (1–60 people)",
+    "explainer": {
+      "title": "Why Does 23 Work?",
+      "body": "Most people guess you need about 183 people (half of 365) for a 50/50 chance. But we're not asking if someone shares YOUR birthday — we're asking if ANY two people in the room share a birthday. With 23 people there are 253 different pairs to check!",
+      "example": "With n people there are n×(n−1)÷2 pairs. 23 people → 253 pairs. Each pair has a 1/365 chance of matching. 253 small chances combine to just over 50%.",
+      "callout": "By 57 people the probability exceeds 99%. The curve grows much faster than intuition suggests!"
+    },
+    "howToPlay": "Press Add Person to fill the room one person at a time. Watch the probability meter rise. How many people does it take before two share a birthday? Place your bet before you start!"
+  },
+  "houseAlwaysWins": {
+    "title": "Why the House Always Wins",
+    "subtitle": "Every casino game is designed so that the house earns a little bit on every single bet — forever.",
+    "balance": "Balance",
+    "plays": "plays",
+    "actual": "Your balance",
+    "evTrend": "Expected trend",
+    "reset": "Reset",
+    "simplified": "Simplified model — real lottery odds are far worse",
+    "explainer": {
+      "title": "Why the Casino Always Profits",
+      "body": "Every casino game is set up so that for every coin bet, the casino keeps a small slice. The lottery keeps 90 cents of every dollar wagered. Slots keep about 20 cents. Roulette keeps only about 2.7 cents — but it never stops playing. Over millions of bets that tiny slice adds up to a guaranteed fortune for the house.",
+      "example": "Bet 100 coins at a 2.7% house edge game → expect to lose about 2.7 coins on average. The more you play, the more the math catches up with you.",
+      "callout": "No lucky streak, strategy, or system can beat the house edge over time. It is pure mathematics.",
+      "furtherReading": "This slice the casino keeps is called the House Edge. It's calculated using Expected Value (EV) — the average outcome per bet over many repetitions. A negative EV means you lose money on average. Every casino game has a negative EV for the player and a positive EV for the house. Knowing EV helps you understand any situation where probability meets money."
+    },
+    "lottery": {
+      "title": "Lottery",
+      "subtitle": "Worst odds, biggest dream",
+      "odds": "Jackpot odds",
+      "payout": "Jackpot payout",
+      "cost": "Ticket cost",
+      "ev": "Expected value",
+      "edge": "House edge",
+      "perPlay": "ticket",
+      "play": "Buy Ticket",
+      "play10": "×10 Tickets"
+    },
+    "slots": {
+      "title": "Slot Machine",
+      "subtitle": "Fast, flashy, and expensive",
+      "odds": "Jackpot odds",
+      "payout": "Jackpot payout",
+      "cost": "Cost per spin",
+      "ev": "Expected value",
+      "edge": "House edge",
+      "perPlay": "spin",
+      "play": "Spin",
+      "play10": "×10 Spins"
+    },
+    "roulette": {
+      "title": "Roulette",
+      "subtitle": "The fairest of the bunch",
+      "odds": "Win probability",
+      "payout": "Payout ratio",
+      "cost": "Bet size",
+      "ev": "Expected value",
+      "edge": "House edge",
+      "perPlay": "bet",
+      "play": "Bet",
+      "play10": "×10 Bets"
+    },
+    "comparison": {
+      "title": "House Edge Comparison",
+      "subtitle": "Higher bar = faster you lose your coins",
+      "edgeLabel": "House Edge"
+    },
+    "edgeBadge": "{{n}}% edge",
+    "howToPlay": "Choose a game and press Play to bet coins. Watch your balance versus the expected trend line. Try playing hundreds of times to see the pattern emerge.",
+    "realOdds": {
+      "title": "Real World Odds",
+      "subtitle": "What would it actually cost to guarantee a win?",
+      "lottery": {
+        "title": "Lottery",
+        "edge": "House keeps ~50%",
+        "summary": "Millions of tickets. Costs more to guarantee than you could ever win.",
+        "il": {
+          "label": "🇮🇱 Israeli Lotto (6 from 37 + strong number)",
+          "combos": "16,273,488 combinations",
+          "cost": "₪7 per ticket × 16.3 million = ₪114 million to guarantee",
+          "prize": "Typical jackpot: ₪5–15 million",
+          "loss": "Guaranteed net loss: at least ₪99 million",
+          "time": "Filling 1 ticket per minute: 31 years"
+        },
+        "pb": {
+          "label": "🇺🇸 Powerball (5 from 69 + 1 from 26)",
+          "combos": "292,201,338 combinations — 18× more than Israeli Lotto",
+          "cost": "$2 per ticket × 292 million = $584 million to guarantee",
+          "prize": "Jackpot after tax: ~$150–250 million",
+          "loss": "Guaranteed net loss: ~$350 million",
+          "time": "Filling 1 ticket per minute: 555 years"
+        },
+        "insight": "Adding 32 more numbers to the pool (37→69) doesn't double the combinations — it multiplies them 18×."
+      },
+      "euRoulette": {
+        "title": "European Roulette",
+        "edge": "House keeps 2.7%",
+        "summary": "Cover every number and you still lose £1 — guaranteed.",
+        "step1": "37 pockets (0–36). Bet £1 on all 37 numbers: costs £37.",
+        "step2": "One number wins: you get 35:1 = £35 + your £1 stake = £36 back.",
+        "step3": "Net result: −£1 every spin. No system changes this.",
+        "insight": "Imagine 37 friends each betting on a different number. One wins £35, 36 lose £1. The casino collects £1 from the group every spin."
+      },
+      "amRoulette": {
+        "title": "American vs European Roulette",
+        "edge": "House keeps 5.26%",
+        "summary": "One extra green pocket (00) nearly doubles the house advantage.",
+        "step1": "European: 37 pockets → cover all for £37 → win £36 → lose £1",
+        "step2": "American: 38 pockets → cover all for £38 → win £36 → lose £2",
+        "step3": "Over 100 spins at £1: European costs you £2.70. American costs £5.26.",
+        "insight": "One extra pocket — the 00 — costs you an extra £2.56 per £100 wagered. Always play European if you have the choice."
+      },
+      "slots": {
+        "title": "Slot Machines",
+        "edge": "House keeps 2–15%",
+        "summary": "The odds are hidden by design. You cannot calculate them.",
+        "step1": "Slots have a Return to Player (RTP) set in software. Typical range: 85–98%.",
+        "step2": "At 92% RTP: feed in £1,000 → expect £920 back.",
+        "step3": "Unlike roulette, you cannot see the mechanism. The combinations are hidden.",
+        "insight": "You can see a roulette wheel and count its pockets. You cannot see inside a slot machine — that is not an accident."
+      },
+      "blackjack": {
+        "title": "Blackjack",
+        "edge": "House keeps 0.5–4%",
+        "summary": "The only common casino game where knowing the rules saves real money.",
+        "step1": "Random play: house edge ~4% → lose ~£400 per £10,000 wagered.",
+        "step2": "Basic strategy (a simple rule chart): house edge ~0.5% → lose ~£50 per £10,000.",
+        "step3": "Difference: £350 saved — just from learning when to hit and stand.",
+        "insight": "Card counting can flip the edge to the player, but casinos ban counters. Basic strategy is legal and cuts your losses by 8×."
+      }
+    }
+  },
+  "quiz": {
+    "title": "Test Your Understanding",
+    "next": "Next question →",
+    "coin": {
+      "q1": {
+        "question": "A coin is flipped 1000 times and lands heads 700 times. Is this coin fair?",
+        "a": "Yes — any coin can land heads 700 times by chance",
+        "b": "No — a fair coin lands heads about 500 times, not 700",
+        "c": "We cannot tell without flipping it 10,000 times",
+        "explanation": "A fair coin has a 50% chance per flip. Over 1000 flips you'd expect about 500 heads. Getting 700 heads strongly suggests the coin is biased toward heads. Try flipping ×100 many times — do your totals stay near 50%?"
+      },
+      "q2": {
+        "question": "You flip a fair coin 10 times and get heads every single time. What is the probability of heads on the 11th flip?",
+        "a": "Less than 50% — tails is overdue after all those heads",
+        "b": "50% — each flip is independent of the ones before it",
+        "c": "More than 50% — the coin is on a lucky streak",
+        "explanation": "Each coin flip is completely independent — the coin has no memory! Past results never affect future flips. It might feel like tails is 'due', but that's just our brain looking for patterns where there are none. Try flipping many times and notice each result is always 50/50."
+      },
+      "q3": {
+        "question": "You flip a fair coin one million times. About how many heads do you expect?",
+        "a": "Exactly 500,000 — always perfectly half",
+        "b": "About 500,000 — close but probably not exactly half",
+        "c": "About 250,000 — tails balance out heads over time",
+        "explanation": "Over many flips, a fair coin averages 50% heads — but random variation means it's rarely exactly 500,000. The more you flip, the closer the percentage gets to 50%, even if the gap in raw counts stays. This is the Law of Large Numbers!"
+      }
+    },
+    "dice": {
+      "q1": {
+        "question": "A loaded die has face 6 weighted 3× heavier than each other face. That makes 5×1 + 1×3 = 8 weight units. What is the probability of rolling a 6?",
+        "a": "1/6 ≈ 17% — there are still 6 faces",
+        "b": "3/8 = 37.5% — three of the eight weight units belong to 6",
+        "c": "1/2 = 50% — it is three times more likely than each other face",
+        "explanation": "Think of it like a spinner: 8 equal slices, but 5 faces each get 1 slice while face 6 gets 3 slices. So 6 has a 3/8 = 37.5% chance — much more than the 1/6 ≈ 16.7% of a fair die!"
+      },
+      "q2": {
+        "question": "With 2 fair dice, which sum is most likely to appear?",
+        "a": "2 — it is the smallest possible sum",
+        "b": "7 — it can be made 6 different ways",
+        "c": "12 — it is the largest possible sum",
+        "explanation": "Sum 7 wins! It can be made as 1+6, 2+5, 3+4, 4+3, 5+2, or 6+1 — that's 6 out of 36 possible rolls. Both 2 and 12 can each only be made one way: 1+1 and 6+6. More ways = higher probability."
+      },
+      "q3": {
+        "question": "With 3 dice, which sum is harder to roll — 3 or 10?",
+        "a": "3 — it can only be rolled as 1+1+1, just one way out of 216",
+        "b": "10 — it is a higher number so it is harder to reach",
+        "c": "They are equally hard to roll",
+        "explanation": "Sum 3 needs exactly 1+1+1 — only 1 way out of 216! Sum 10 has 27 different combinations. With 3 dice, middle sums appear far more often than extremes. Look at your bar chart — the bars near 3 and 18 are almost always empty."
+      }
+    },
+    "candy": {
+      "q1": {
+        "question": "A jar has 2 red and 8 blue candies (10 total). You double the red to 4. What is red's new probability?",
+        "a": "40% — red doubled so its chance doubled from 20% to 40%",
+        "b": "About 33% — 4 red out of 12 total candies",
+        "c": "20% — the same as before, nothing really changed",
+        "explanation": "Red went from 2/10 = 20% to 4/12 ≈ 33%. Doubling the red also increased the total count, so red's chance grew — but not to 40%. The total always matters! Try it: set red=2, blue=8, then change red to 4 and watch the bar."
+      },
+      "q2": {
+        "question": "You want red to have exactly a 50% chance. The jar has red=5. How many total candies should there be?",
+        "a": "5 total — just leave the 5 red and remove everything else",
+        "b": "10 total — red=5 out of 10 is exactly 50%",
+        "c": "20 total — bigger jar makes each candy more special",
+        "explanation": "For 50%, red must be half of the total. If red=5, total must be 10. That means blue + green = 5. A jar of 5 red with nothing else would give 5/5 = 100% red, not 50%. Probability is always about the ratio to the total."
+      },
+      "q3": {
+        "question": "You remove all green candies from the jar. What is the probability of drawing a green candy?",
+        "a": "Very small — almost zero but not quite",
+        "b": "0% — 0 divided by any number is 0",
+        "c": "It depends on how many red and blue candies are left",
+        "explanation": "If there are 0 green candies, the probability is 0/total = 0%, no matter how many other candies are in the jar. Zero divided by any number is always zero. Set green to 0 in the game and confirm — the bar disappears completely!"
+      }
+    },
+    "spinner": {
+      "q1": {
+        "question": "A spinner has slice A weight=3, slice B weight=1, and slice C weight=2. What is slice A's probability?",
+        "a": "33% — there are 3 slices so each gets one-third",
+        "b": "50% — slice A has 3 out of a total weight of 6",
+        "c": "30% — weight 3 out of the maximum possible weight of 10",
+        "explanation": "Add all weights: 3+1+2 = 6. Slice A has weight 3, so its probability is 3/6 = 50%. Weight is about the ratio to the total, not the number of slices. Set A=3, B=1, C=2 on the spinner — A's slice will take up exactly half the wheel!"
+      },
+      "q2": {
+        "question": "Which spinner is perfectly fair — every outcome equally likely?",
+        "a": "A spinner with slice weights 1, 2, 3",
+        "b": "A spinner with slice weights 2, 2, 2",
+        "c": "A spinner with slice weights 1, 1, 2",
+        "explanation": "A fair spinner has all slices with equal weights. With weights 2, 2, 2 each slice is 2/6 ≈ 33% — all the same. When weights differ (like 1, 2, 3), some slices are larger and more likely. Make all weights equal and watch the chart even out!"
+      },
+      "q3": {
+        "question": "A spinner has A weight=1 and B weight=1 (50/50). You change A to weight=2. How often does A win compared to B?",
+        "a": "Twice as often — A gets 2 out of every 3 spins (about 67%)",
+        "b": "The same — changing numbers does not change the odds",
+        "c": "More than twice as often — weight 2 is double so the advantage is squared",
+        "explanation": "Total weight is now 2+1=3. A wins 2/3 ≈ 67% and B wins 1/3 ≈ 33%. A is exactly twice as likely as B — the probabilities scale directly with weight. Set A=2, B=1 on the spinner and confirm!"
+      }
+    },
+    "mysteryMachine": {
+      "q1": {
+        "question": "What does it mean to 'estimate' a probability?",
+        "a": "To measure it exactly using a formula",
+        "b": "To make your best guess based on the evidence you've collected",
+        "c": "To pick a number at random",
+        "explanation": "An estimate is an educated guess based on evidence. You watch the machine produce many outputs and use those observations as your best clue. An estimate might not be exactly right — but more evidence makes it more accurate!"
+      },
+      "q2": {
+        "question": "You ran the machine 100 times and got A=70, B=30. What is P(A) most likely to be?",
+        "a": "Exactly 70% — that's precisely what happened",
+        "b": "Around 70% — but the true value could be slightly different",
+        "c": "50% — the machine is probably fair",
+        "explanation": "70% is your best estimate, but random variation means the true probability could be, say, 68% or 73%. If you ran 1000 trials your estimate would be even closer to the true value. This is the Law of Large Numbers at work!"
+      },
+      "q3": {
+        "question": "After only 5 machine outputs you see A=5, B=0. What should you do?",
+        "a": "Submit immediately — P(A)=100% is proven",
+        "b": "Run more trials — 5 samples is too few to be confident",
+        "c": "The machine is broken and produces only A",
+        "explanation": "Five samples is very few! Even if P(A)=60%, you could easily get 5 A's in a row by chance (0.6^5 ≈ 7.8%). Always collect more evidence before deciding. Try submitting early vs. using all your budget — which score is higher?"
+      }
+    },
+    "birthdayRoom": {
+      "q1": {
+        "question": "How many people do you need in a room for a 50% chance that two share a birthday?",
+        "a": "About 183 — half of 365 days",
+        "b": "Just 23 — far fewer than most people expect!",
+        "c": "About 100 — roughly one quarter of 365",
+        "explanation": "With 23 people there are 253 different pairs to compare (23×22÷2). Each pair has a small chance of sharing a birthday, but 253 chances add up quickly. The answer surprises almost everyone — try adding 23 people to the room!"
+      },
+      "q2": {
+        "question": "Why does the probability grow so fast as you add people?",
+        "a": "Because 365 is not really that big a number",
+        "b": "Because each new person creates a new pair with every existing person",
+        "c": "Because people tend to be born in the same seasons",
+        "explanation": "Every new person added creates N new pairs (one with each person already in the room). With 10 people there are 45 pairs; with 20 there are 190 pairs; with 30 there are 435 pairs. More pairs = much higher chance of at least one match!"
+      },
+      "q3": {
+        "question": "What is the probability of a birthday match when there are 60 people in the room?",
+        "a": "About 50% — 60 is less than one sixth of 365",
+        "b": "About 99% — a match is almost certain",
+        "c": "About 75% — a fairly good chance",
+        "explanation": "With 60 people the probability is about 99.4%! The curve rises steeply after 23 people. By 57 people it exceeds 99%. You can verify this with the Simulate button — almost every room of 60 will find a match."
+      }
+    },
+    "cardDraw": {
+      "q1": {
+        "question": "You draw 4 hearts in a row from a 52-card deck. What happens to the probability of drawing another heart?",
+        "a": "It goes up — hearts are on a hot streak!",
+        "b": "It goes down — fewer hearts remain in a smaller deck",
+        "c": "It stays the same — each draw is independent like a coin flip",
+        "explanation": "Unlike coin flips, drawing cards changes what's left! With 4 hearts gone, only 9 remain out of 48 cards: 9/48 ≈ 18.75% vs. the original 13/52 = 25%. The orange ↓ in the explainer panel shows exactly this drop after each heart you draw."
+      },
+      "q2": {
+        "question": "You draw the Ace of Spades from a full 52-card deck. Does the probability of drawing a Heart change?",
+        "a": "No — you drew a spade, so hearts are completely unaffected",
+        "b": "Yes — there are still 13 hearts but now only 51 cards left",
+        "c": "Yes — removing a spade makes hearts less likely",
+        "explanation": "Hearts go from 13/52 = 25.0% to 13/51 ≈ 25.5% — a tiny increase! Even drawing a non-heart changes the total deck size, which changes every suit's probability. The explainer's ↑ blue indicator shows this small rise."
+      },
+      "q3": {
+        "question": "If you put each card back before drawing again, would past draws change future probabilities?",
+        "a": "Yes — the deck remembers which cards were drawn",
+        "b": "No — the deck resets each time so every draw is independent",
+        "c": "Sometimes — it depends on which card was returned",
+        "explanation": "With replacement, the deck is always complete when you draw — every draw is independent, just like flipping a coin. Without replacement (this game), past draws matter because the deck shrinks and changes. That's what makes card probability so interesting!"
+      }
+    },
+    "prizeMachine": {
+      "q1": {
+        "question": "A machine costs 10 coins to play and has EV = −3 coins per play. What does this mean?",
+        "a": "You will lose exactly 3 coins every single play",
+        "b": "On average, over many plays, you lose about 3 coins per play",
+        "c": "The machine takes 3 coins from you before every play",
+        "explanation": "EV is an average — any single play could win or lose. But over hundreds of plays the average converges to −3 coins per play. After 1000 plays you'd expect to be down about 3000 coins. That's the power of expected value!"
+      },
+      "q2": {
+        "question": "Your prize machine has EV = +2 coins per play. Is it a good deal?",
+        "a": "No — the jackpot odds are too low to be worth it",
+        "b": "Yes — positive EV means you gain money on average over many plays",
+        "c": "It depends on your luck that day",
+        "explanation": "Positive EV means the machine pays out more than it takes in, on average. Over many plays you'd profit about 2 coins per play. Real casinos never offer positive EV games — their machines are always designed with negative EV to guarantee profit for the house."
+      },
+      "q3": {
+        "question": "Machine A has EV = −1 and Machine B has EV = −5. Which is fairer?",
+        "a": "Machine A — it takes less on average per play",
+        "b": "Machine B — bigger losses mean bigger wins are possible",
+        "c": "They're the same — both are negative EV",
+        "explanation": "Machine A is fairer because its expected loss is smaller. A smaller negative EV means you lose money more slowly. The difference is real over many plays: 1000 plays on Machine A costs ~1000 coins; Machine B costs ~5000 coins on average."
+      }
+    },
+    "luckyCombo": {
+      "q1": {
+        "question": "Flip a coin (50%) AND roll a 6 on a die (1/6 ≈ 17%). What is the combined probability?",
+        "a": "About 67% — add the probabilities together",
+        "b": "About 8.3% — multiply the probabilities",
+        "c": "About 33% — split the difference",
+        "explanation": "AND means both must happen simultaneously. Since the events are independent, multiply: 0.5 × (1/6) ≈ 8.3%. Multiplying always gives a smaller result than either event alone — that's why 'and' makes things harder!"
+      },
+      "q2": {
+        "question": "Same coin (50%) OR same die (17%). What is the combined probability?",
+        "a": "About 58% — add them then subtract the overlap",
+        "b": "About 67% — just add them",
+        "c": "About 8.3% — multiply them",
+        "explanation": "OR means at least one succeeds. The formula is P(A) + P(B) − P(A AND B) = 0.5 + 0.167 − 0.083 ≈ 58.4%. We subtract the overlap to avoid counting the case where both succeed twice. Try it in the tree diagram!"
+      },
+      "q3": {
+        "question": "Why does AND always give a lower probability than either event alone?",
+        "a": "Because you need both conditions to be true at the same time",
+        "b": "Because the events interfere with each other",
+        "c": "Because AND is a stricter rule than OR",
+        "explanation": "For AND to succeed, Event A must occur AND Event B must also occur — you need both conditions met at the same time. That's a stricter requirement than just one of them. Mathematically, multiplying two fractions (both < 1) always makes a smaller fraction."
+      }
+    },
+    "galtonBoard": {
+      "q1": {
+        "question": "You drop 1000 balls through a Galton Board. Where do most land?",
+        "a": "Evenly spread across all bins",
+        "b": "All in the leftmost bin — randomness piles up",
+        "c": "Mostly in the middle bins, forming a bell shape",
+        "explanation": "Each ball's path is random, but reaching a middle bin requires a balanced mix of left and right bounces — and there are many ways to achieve that balance. Reaching an edge bin requires all lefts or all rights — extremely unlikely. The result is always a bell curve, no matter how random each bounce feels."
+      },
+      "q2": {
+        "question": "Why does the bell curve appear even though every bounce is completely random?",
+        "a": "The pegs secretly guide balls to the middle",
+        "b": "The ball at the top pushes the others toward the center",
+        "c": "There are far more paths to the middle than to the edges",
+        "explanation": "It's all about counting paths. To land in bin 5 of 10 there are many routes (left-right-left-right...). To land in bin 1 there's only one route (all lefts). More paths = more likely. This is why the Central Limit Theorem works: averages of random things always cluster in the middle."
+      },
+      "q3": {
+        "question": "What real-world things are shaped like a bell curve?",
+        "a": "People's heights, exam scores, and measurement errors",
+        "b": "Lottery jackpot amounts and coin flip streaks",
+        "c": "The number of days in each month",
+        "explanation": "Bell curves (normal distributions) appear whenever a result is influenced by many small independent random factors. Heights depend on many genes and environmental factors. Exam scores depend on many questions. Measurement errors come from many tiny imprecisions. They all add up to the same bell shape."
+      }
+    },
+    "randomWalk": {
+      "q1": {
+        "question": "After 100 random steps, how far from the start is a typical walk?",
+        "a": "100 steps — you travel the full distance",
+        "b": "About 10 steps — roughly √100",
+        "c": "0 steps — random steps cancel perfectly",
+        "explanation": "The typical distance grows as √n (square root of steps). After 100 steps that's √100 = 10. The steps don't cancel perfectly (that would require a planned pattern), but they also don't add up fully (that would require always going the same direction). The square root is the mathematical middle ground."
+      },
+      "q2": {
+        "question": "Why do different random walks end up in very different places, yet the average distance is predictable?",
+        "a": "Individual paths are unpredictable, but the spread of many paths follows the √n law",
+        "b": "All walks secretly converge to the same endpoint",
+        "c": "The √n law only applies to straight-line walks",
+        "explanation": "Each individual path is random and unique — two walks rarely end at the same spot. But if you look at many walks, the cloud of endpoints spreads out in a predictable way. The typical distance (not the exact position) follows √n. This is what makes random walks useful in science: individual events are unpredictable, but statistics are not."
+      },
+      "q3": {
+        "question": "Which real-world phenomenon behaves most like a random walk?",
+        "a": "A ball rolling down a ramp",
+        "b": "The orbit of a planet",
+        "c": "A molecule bouncing around in a liquid",
+        "explanation": "Molecules in a liquid (or gas) are constantly bumped by neighboring molecules in random directions — exactly like a random walk. This is called Brownian motion and was explained by Einstein in 1905. The √n spreading law predicts how far a molecule travels in a given time, which underpins our understanding of diffusion."
+      }
+    },
+    "monteCarloPi": {
+      "q1": {
+        "question": "Why does throwing random darts help us find π?",
+        "a": "Random numbers contain hidden patterns that encode π",
+        "b": "The fraction of darts inside the circle equals π/4, because the circle's area is π/4 of the square's area",
+        "c": "Darts thrown at a circle always land at a distance of π from the center",
+        "explanation": "A circle inscribed in a 2×2 square has area π×1² = π. The square has area 4. So the circle covers π/4 of the square. Random darts hit inside the circle with probability π/4. Multiply the observed fraction by 4 and you have your π estimate. It's a beautiful connection between geometry, probability, and computation."
+      },
+      "q2": {
+        "question": "You've thrown 100 darts and your π estimate is 3.0. What should you do?",
+        "a": "Stop — π = 3 was good enough for ancient mathematicians",
+        "b": "The experiment is broken — try a bigger square",
+        "c": "Throw more darts — estimates improve with more samples",
+        "explanation": "Monte Carlo estimates improve with more samples. At 100 darts you typically get π accurate to 1 decimal place. At 10,000 darts you get 2-3 decimal places. At 1 million you get 3-4. The error shrinks proportionally to 1/√n — slowly but steadily. There's nothing wrong with the experiment; randomness just needs large numbers to work well."
+      },
+      "q3": {
+        "question": "What is a Monte Carlo simulation?",
+        "a": "Using random sampling to approximate answers to mathematical or scientific problems",
+        "b": "A card-counting system used in casinos",
+        "c": "A type of computer that generates random numbers",
+        "explanation": "Monte Carlo simulation uses random sampling to estimate answers that are too complex to calculate exactly. Scientists use it to model particle collisions, weather systems, and drug interactions. Financial analysts use it to price complex investments. Engineers use it to test the reliability of systems. The name comes from Monaco's famous casino — a nod to chance."
+      }
+    },
+    "montyHall": {
+      "q1": {
+        "question": "After the host reveals a goat, what is the probability of winning if you switch?",
+        "a": "1/3 — switching doesn't change anything",
+        "b": "1/2 — now there are only two doors left",
+        "c": "2/3 — switching wins twice as often as staying",
+        "explanation": "When you first picked, you had a 1/3 chance of being right. The other two doors together had a 2/3 chance of hiding the car. When the host opens one of those doors to show a goat, all of that 2/3 probability transfers to the one remaining door. Switching gives you 2/3. Staying keeps 1/3. The simulation proves it every time."
+      },
+      "q2": {
+        "question": "Why is the answer NOT 50/50 after the host reveals a goat?",
+        "a": "The host always opens the door you didn't pick, so your original choice still has 1/3 probability",
+        "b": "The host sometimes reveals the car, which changes the odds",
+        "c": "50/50 is only wrong if the host picks randomly",
+        "explanation": "The key insight is that the host never acts randomly — they always open a door with a goat and always give you the choice to switch. This means your original 1/3 probability doesn't change. The host's action removes one losing option from the other two doors, concentrating their combined 2/3 probability into one door. Without that knowledge, the 50/50 intuition feels right — but it's wrong."
+      },
+      "q3": {
+        "question": "What concept explains why the Monty Hall answer is so counterintuitive?",
+        "a": "Conditional probability — new information changes the odds",
+        "b": "The law of large numbers — you need millions of games to see the pattern",
+        "c": "The gambler's fallacy — past results affect future chances",
+        "explanation": "The host's action is new information. Before the reveal, three doors each seemed equally likely. After the reveal, you know one specific door has no car — and crucially, you know the host chose that door deliberately. Conditional probability captures this: P(car behind other door | host revealed a goat) = 2/3, not 1/2. Information changes everything."
+      }
+    },
+    "greedyPig": {
+      "q1": {
+        "question": "You've accumulated 18 points this turn. Rolling again has a 1-in-6 chance of losing all 18. What is the expected points gained from one more roll?",
+        "a": "Barely positive — about 0.33 points (the average of 2,3,4,5,6 minus the bust risk)",
+        "b": "About 4 points — the average of a die",
+        "c": "0 points — it's too risky to roll",
+        "explanation": "The expected value is: (5/6) × average(2,3,4,5,6) − (1/6) × 18 = (5/6) × 4 − 3 = 3.33 − 3 = 0.33 points. Barely positive! This means rolling again when you have 18 points gives you almost nothing on average — banking is usually the smarter play."
+      },
+      "q2": {
+        "question": "Why does the optimal banking threshold depend on the target score?",
+        "a": "Lower targets mean each turn is worth more relative to the goal, so you should bank sooner",
+        "b": "Higher targets mean the bot is harder, so you need to be more aggressive",
+        "c": "The target doesn't matter — always bank at 20 points",
+        "explanation": "With a target of 30, banking 10 points per turn already moves you 33% toward the goal — huge! With a target of 100, 10 points is only 10% — worth risking more to get a bigger haul. So the optimal threshold scales roughly with the target. This is why changing the target genuinely changes the best strategy."
+      },
+      "q3": {
+        "question": "In Greedy Pig, you and the bot take turns. What is the probability of busting (rolling a 1) on any single roll?",
+        "a": "1/6 — about 17%",
+        "b": "1/3 — about 33%",
+        "c": "1/5 — about 20%",
+        "explanation": "A standard die has 6 faces, and exactly one of them (the 1) causes a bust. So the probability is 1/6 ≈ 16.7%. This means on average, about 1 in every 6 rolls will wipe your turn. Over a long game, both you and the bot will bust several times — and managing that risk is the whole game."
+      }
+    },
+    "guessPhone": {
+      "q1": {
+        "question": "A phone number has 3 digits. How many possible combinations are there?",
+        "a": "30 — 3 positions × 10 digits",
+        "b": "1,000 — 10 × 10 × 10",
+        "c": "100 — 10 digits squared",
+        "explanation": "Each digit is chosen independently from 0–9 (10 options). With 3 independent positions: 10 × 10 × 10 = 1,000 combinations. Multiplying — not adding — is the key. Each new position multiplies the total possibilities by 10."
+      },
+      "q2": {
+        "question": "You correctly guess the first digit of a 4-digit number. How many possibilities remain?",
+        "a": "9,990 — you eliminated 10 wrong combinations",
+        "b": "1,000 — you divided the total by 10",
+        "c": "10 — only the last digit matters now",
+        "explanation": "Cracking one digit out of four removes that factor of 10. The original total was 10^4 = 10,000. With one position solved, the remaining uncertainty is 10^3 = 1,000. Each cracked digit divides the remaining possibilities by 10."
+      },
+      "q3": {
+        "question": "Why does adding one more digit make guessing 10× harder, not just a little harder?",
+        "a": "Because digits are harder to remember with more positions",
+        "b": "Because each digit multiplies the total combinations instead of adding to them",
+        "c": "Because the guesser has to start over from the beginning",
+        "explanation": "This is exponential growth. Going from 4 to 5 digits means multiplying by 10: 10,000 → 100,000. Going from 9 to 10 digits: 1,000,000,000 → 10,000,000,000. The same step (add one digit) always multiplies the difficulty by 10 — that's what makes long numbers impossible to crack by guessing."
+      }
+    },
+    "hackPassword": {
+      "q1": {
+        "question": "A password uses only lowercase letters (26 choices per position). How many 3-character combinations are there?",
+        "a": "78 — 26 × 3 positions",
+        "b": "17,576 — 26 × 26 × 26",
+        "c": "676 — 26 × 26",
+        "explanation": "Each of the 3 positions has 26 independent choices. Multiply them all: 26 × 26 × 26 = 17,576. Compare with digits-only: 10^3 = 1,000. Adding more character types multiplies each position's options, making the total combinations explode."
+      },
+      "q2": {
+        "question": "Switching from digits-only (10 chars) to lowercase + digits (36 chars) for a 3-character password: how much harder does it get?",
+        "a": "3× harder — one extra character type per position",
+        "b": "About 47× harder — 36^3 vs 10^3",
+        "c": "10× harder — you added 10 more letter options",
+        "explanation": "10^3 = 1,000 combinations. 36^3 = 46,656 combinations — about 47 times harder, not 10! This is the power of combining character types. With 5 characters: 10^5 = 100,000 vs 36^5 = 60,466,176 — over 600× harder. Alphabet size matters enormously because it's raised to the power of the length."
+      },
+      "q3": {
+        "question": "A computer tries 10,000 passwords per second. A Hard-mode 4-character password has 62^4 = 14,776,336 combinations. How long to crack it on average?",
+        "a": "About 12 minutes",
+        "b": "About 2 hours",
+        "c": "About 1 day",
+        "explanation": "On average you'd find the password after half the combinations: 14,776,336 ÷ 2 = 7,388,168. At 10,000/second: 7,388,168 ÷ 10,000 ≈ 739 seconds ≈ 12 minutes. Add just one more character (5 chars): 62^5 ÷ 2 ÷ 10,000 ≈ 45,800 seconds ≈ 12 hours. One extra character multiplied cracking time by 62!"
+      }
+    },
+    "rollAndRace": {
+      "q1": {
+        "question": "You're about to pick your car. Which sum has the highest probability of coming up when rolling two dice?",
+        "a": "7 — it can be made 6 different ways",
+        "b": "6 — it's the middle of the range",
+        "c": "Any number — all sums are equally likely",
+        "explanation": "Sum 7 wins because there are 6 different dice combinations that produce it: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1. That's 6 out of 36 possible outcomes — a 1/6 chance every single roll. Compare that to sum 2 (only 1+1 works — just 1/36) or sum 12 (only 6+6 — also 1/36). The sums are very far from equal!"
+      },
+      "q2": {
+        "question": "How many ways are there to roll a sum of 8 with two dice?",
+        "a": "5 ways — 2+6, 3+5, 4+4, 5+3, 6+2",
+        "b": "4 ways — 2+6, 3+5, 5+3, 6+2",
+        "c": "6 ways — same as sum 7",
+        "explanation": "Sum 8 can be made 5 ways: 2+6, 3+5, 4+4, 5+3, 6+2. That's 5/36 ≈ 13.9%. Compare: sum 7 has 6/36, sum 9 has 4/36. The number of ways drops by one as you move away from 7 in either direction, creating the triangular shape you see in the simulator."
+      },
+      "q3": {
+        "question": "In a race to 10 steps, about how many total rolls does it take for a winner to emerge?",
+        "a": "Around 60 rolls — car 7 needs roughly 60 rolls to advance 10 steps",
+        "b": "Around 10 rolls — one roll per step",
+        "c": "Around 360 rolls — the slowest car sets the pace",
+        "explanation": "Car 7 moves on 6 out of every 36 rolls (probability 1/6). To advance 10 steps it needs on average 10 ÷ (1/6) = 60 rolls. Since car 7 is the fastest and usually wins, most races end in about 60 rolls. Car 2 would need 10 ÷ (1/36) = 360 rolls on average — but the race is usually over long before car 2 gets anywhere near the finish!"
+      }
+    },
+    "removeOne": {
+      "q1": {
+        "question": "You have 18 tokens to place. Where should you put the most tokens to win fastest?",
+        "a": "On 6, 7, and 8 — they come up most often with two dice",
+        "b": "Spread evenly — every number is equally likely",
+        "c": "On 2 and 12 — they're rare so saving them for last helps",
+        "explanation": "Sum 7 comes up 6/36 times, sum 6 and 8 come up 5/36 each. Together that's 16/36 — nearly half of all rolls! Placing most tokens on 6, 7, 8 means they get removed quickly. Tokens on 2 or 12 (each only 1/36) will sit there for roll after roll while opponents clear their boards."
+      },
+      "q2": {
+        "question": "Lucky Larry spreads his 18 tokens evenly — about 2 per number. Why does Max almost always beat him?",
+        "a": "Max puts more tokens on high-probability sums, so they get removed faster on average",
+        "b": "Max has fewer total tokens to remove",
+        "c": "Larry's even spread means he always runs out of tokens on 7 first",
+        "explanation": "Both players have exactly 18 tokens — the difference is WHERE they are. Larry's 2 tokens on sum 2 will take an average of 72 rolls to remove (2 × 36 rolls each). Max skips 2 entirely! Max's tokens are concentrated on 5, 6, 7, 8, 9 — the sums that roll constantly. He removes tokens fast; Larry's board clears slowly because his tokens are stuck on unlikely numbers."
+      },
+      "q3": {
+        "question": "If you place 1 token on sum 2, how many rolls do you expect to wait before it gets removed?",
+        "a": "36 rolls — sum 2 has probability 1/36",
+        "b": "6 rolls — same as any other sum",
+        "c": "2 rolls — there are only 2 ways to roll a 2",
+        "explanation": "Sum 2 can only be rolled one way: 1+1. Out of 36 possible outcomes, that's a probability of 1/36. On average, you'd need to roll 36 times to see sum 2 once. Compare that to sum 7: probability 6/36 = 1/6, so you'd expect to wait only 6 rolls. A token on 2 takes 6× longer to remove than a token on 7!"
+      }
+    },
+    "higherOrLower": {
+      "q1": {
+        "question": "The die shows 4. You say 'Higher'. The next roll is also 4. What happens to your streak?",
+        "a": "It's a push — streak is safe, but no point scored",
+        "b": "Correct — 4 is higher than or equal to 4",
+        "c": "Wrong — streak resets to 0",
+        "explanation": "A tie is called a push. Your streak is preserved because you weren't wrong — but you don't gain a point either. The key fact: P(equal) = 1/6 no matter what face is showing. The equal outcome always carries the same 1-in-6 risk."
+      },
+      "q2": {
+        "question": "The die shows 1. What is the probability that the next roll is higher?",
+        "a": "5/6 — every other face (2, 3, 4, 5, 6) is higher",
+        "b": "1/2 — roughly half the faces are higher",
+        "c": "1/6 — only one face is strictly one step higher",
+        "explanation": "When the die shows 1, every other possible outcome (2, 3, 4, 5, 6) is strictly higher. That's 5 out of 6 faces, so P(higher | current = 1) = 5/6 ≈ 83%. The Lower button is disabled because P(lower | current = 1) = 0 — it's impossible to roll lower than 1."
+      },
+      "q3": {
+        "question": "The die shows 3. If you always pick the more likely outcome, what is your chance of being correct?",
+        "a": "50% — Higher (3/6) and Lower (2/6) are nearly equal, and equal (1/6) is a push",
+        "b": "83% — the same as rolling from a 1",
+        "c": "33% — there are three outcomes: higher, lower, equal",
+        "explanation": "From a 3, P(higher) = 3/6 = 50% and P(lower) = 2/6 = 33%. The smart pick is Higher. But you still have a 1/6 = 17% push risk and a 2/6 = 33% chance of being wrong. Compare that to rolling a 1: P(higher) = 5/6 = 83%, much safer. The middle values (3 and 4) are where the game gets genuinely uncertain."
+      }
+    },
+    "probabilityBingo": {
+      "q1": {
+        "question": "You have a 7 on your card. You can place it in the centre or in a corner. Which is the better placement and why?",
+        "a": "Centre — it belongs to 4 lines (row, column, and both diagonals)",
+        "b": "Corner — corners have fewer shared lines so the number is harder to block",
+        "c": "It doesn't matter — 7 is rolled equally often regardless of position",
+        "explanation": "The centre square (index 4) appears in 4 lines: row 1, column 1, and both diagonals. A corner appears in only 2 lines. Because 7 is the most-rolled sum, placing it in the centre maximises how many lines it helps complete. Placement changes your win rate — not just the probability of the number being rolled."
+      },
+      "q2": {
+        "question": "Probability Pete puts 6, 7, and 8 in one row. How does this differ from the Remove One strategy of spreading high numbers across all sums?",
+        "a": "In Bingo you need a full line — concentrating fast numbers in one row clears that line fastest",
+        "b": "Pete's strategy is worse — spreading high numbers across the card is always better",
+        "c": "Both strategies are equally good — total crossings are what matter",
+        "explanation": "In Remove One, you want to clear as many sums as possible (breadth). In Bingo, you only need one complete line (depth). Concentrating 6, 7, and 8 in one row means that row has a ~42% chance of advancing on any given roll. Spreading those numbers across the grid helps many lines a little — but no single line as fast as Pete's concentrated row."
+      },
+      "q3": {
+        "question": "Two cards both contain the numbers 7, 7, 6. Card A places them in one row. Card B spreads them across different rows. Which card wins more often?",
+        "a": "Card A — the concentrated row completes faster because rolls of 6 or 7 all advance the same line",
+        "b": "Card B — spreading across rows means more lines have a chance to complete",
+        "c": "Neither — the numbers are identical so win rates must be identical",
+        "explanation": "Card A wins more often. When 6 or 7 is rolled, all three numbers in Card A's row advance simultaneously. In Card B, those same rolls are scattered — no single line benefits from all three. This is why concentration beats spreading in Bingo: a complete line is the goal, and focusing high-probability numbers in one line gets you there fastest."
+      }
+    },
+    "pizzaBuilder": {
+      "q1": {
+        "question": "You have 2 crusts and 3 toppings on your menu. How many different pizzas is that?",
+        "a": "6 — because 2 × 3 = 6, each crust pairs with every topping",
+        "b": "5 — because 2 + 3 = 5",
+        "c": "3 — because you can only pick one topping per pizza",
+        "explanation": "Each crust can be combined with any topping independently. Thin goes with mushroom, pepper, or cheese — that's 3 pizzas. Thick goes with mushroom, pepper, or cheese — another 3. Total: 2 × 3 = 6. The grid shows this: 2 rows × 3 columns = 6 cells. Adding options multiplies, never adds."
+      },
+      "q2": {
+        "question": "You tap the 'Thin' row header to mark it as a winner. How many winning pizzas do you have if the menu is 2 crusts × 4 toppings?",
+        "a": "4 — tapping the row selects one pizza for each topping in that row",
+        "b": "1 — tapping selects only the first cell in the row",
+        "c": "8 — tapping a row selects all cells in the whole grid",
+        "explanation": "Tapping a row header selects every cell in that row — one per topping. With 4 toppings, the thin crust row has 4 cells. All 4 are now winners. The grid makes this visual: a whole row lights up, not just one cell. This is what 'thin crust OR any topping' means — all 4 combinations count."
+      },
+      "q3": {
+        "question": "Does it matter whether the kitchen puts the mushrooms on first or the crust first? Does it change which pizza you get?",
+        "a": "No — thin + mushroom is the same pizza as mushroom + thin. Order doesn't matter.",
+        "b": "Yes — the topping always goes after the crust, so the order is fixed",
+        "c": "Yes — putting mushrooms first creates a different flavour",
+        "explanation": "In the grid, thin + mushroom is one cell, full stop. It doesn't matter whether you think 'thin crust with mushrooms' or 'mushrooms on thin crust' — it's the same combination. This is why combinations (not permutations) are the right tool for pizzas: when order doesn't matter, each unique set of choices is one outcome."
+      }
+    }
+  },
+  "explainer": {
+    "coin": {
+      "title": "Why Does It Even Out?",
+      "body": "Every single flip is completely random — heads and tails are equally likely. But here's the surprising part: the more you flip, the closer your totals creep toward 50/50. One or two flips can look very one-sided. A thousand flips almost always land near even.",
+      "exampleZero": "Try flipping 10, then 100, then 1000 times — watch what happens to the heads %!",
+      "exampleLive": "You've flipped {{n}} times. Heads came up {{pct}}% of the time. Flip more to watch it get closer to 50%!",
+      "furtherReading": "What you just saw has a famous name: the Law of Large Numbers. It says that as you repeat a random experiment many times, the average result gets closer and closer to the true probability. Scientists and statisticians use this idea every day."
+    },
+    "dice1": {
+      "title": "Every Face Is Equally Likely",
+      "body": "A fair die has 6 faces. Each face has exactly 1 chance in 6 of landing on top. No number is luckier than another — they're all equally likely every single roll.",
+      "example": "Roll 60 times and you'd expect each face about 10 times. Roll more — do they even out?"
+    },
+    "dice2": {
+      "title": "Why Does 7 Come Up Most Often?",
+      "body": "With 2 dice there are 36 different combinations. Some sums can be made in more ways than others, so they appear more often — it's not luck, it's counting!",
+      "example": "Sum 7 can be made 6 ways: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1. That's 6 out of 36 rolls — more than any other sum!"
+    },
+    "dice3": {
+      "title": "Why Do Middle Numbers Show Up More?",
+      "body": "With three dice, there are many different ways to roll a middle total like 10 or 11 — you can get there by combining high and low numbers in lots of different orders. But the extreme totals (3 or 18) can only happen one way: all ones or all sixes. More ways to get a number = higher chance. This creates a smooth bump shape.",
+      "example": "Sum 10 has 27 ways out of 216. Sum 3 has only 1 way. Spot the difference in your chart!",
+      "furtherReading": "This bump shape is called a Normal Distribution or Bell Curve. A deep idea in mathematics — called the Central Limit Theorem — says that whenever you add many random things together, you almost always get this same bell shape. It shows up in heights of people, test scores, weather measurements, and much more."
+    },
+    "candy": {
+      "title": "More Candies = Better Chance",
+      "body": "The chance of picking any colour is simply: how many of that colour ÷ total candies in the jar. Add 8 red and 2 blue — red is 4× more likely. The more of one colour you add, the bigger its share of the total, and the more often it gets picked.",
+      "example": "Right now: {{r}} {{rLabel}} + {{b}} {{bLabel}} + {{g}} {{gLabel}} = {{total}} total. Chance of {{spotlightLabel}} = {{spotlightCount}}/{{total}} = {{pct}}%. Try drawing lots to check!",
+      "furtherReading": "This way of calculating probability is called Classical Probability: count the favourable outcomes and divide by total outcomes. It works whenever every outcome is equally likely — like picking a random candy from a well-mixed jar."
+    },
+    "spinner": {
+      "title": "Bigger Slice = Better Chance",
+      "body": "The spinner lands on a slice in proportion to its size. A slice that takes up half the wheel gets hit about half the time — it's geometry turned into probability!",
+      "callout": "A fair spinner has equal slices — every outcome gets the same chance. Make all weights equal and watch the chart even out!"
+    },
+    "cards": {
+      "title": "Probability Changes as Cards Disappear",
+      "body": "Unlike coins or dice, drawing cards without putting them back changes the probabilities. Every card you draw tells you something new about what's left in the deck.",
+      "prompt": "Draw your first card to see how the odds change!",
+      "before": "Before this draw: {{prevCount}} cards, {{prevSuitCount}} {{suit}} → {{prevProb}}%",
+      "after": "After drawing {{card}}: {{newCount}} cards, {{newSuitCount}} {{suit}} → {{newProb}}%",
+      "callout": "The chance of the next draw depends on what has already happened — past draws change the deck, and a changed deck changes the odds.",
+      "furtherReading": "When the probability of one event depends on what happened before, mathematicians call it Conditional Probability. It appears everywhere: medical testing, weather forecasting, spam filters, and game strategy."
+    }
+  },
+  "galtonBoard": {
+    "title": "Galton Board",
+    "subtitle": "Drop balls through a maze of pegs. Every bounce is random — yet something beautiful and predictable always appears at the bottom.",
+    "drop1": "Drop ×1",
+    "drop10": "Drop ×10",
+    "drop100": "Drop ×100",
+    "drop1000": "Drop ×1000",
+    "reset": "Reset",
+    "ballsDropped": "Balls dropped",
+    "histogramTitle": "Landing Distribution",
+    "bin": "Bin",
+    "count": "Count",
+    "explainer": {
+      "title": "Why Does Randomness Make a Shape?",
+      "body": "Each peg gives a ball a 50/50 chance to go left or right. To land in a middle bin, a ball must mix left and right bounces — and there are many ways to do that. To land at the far edge, every single bounce must go the same way, which is very rare. More paths to a bin means more balls land there. The result is always a smooth, symmetric bump.",
+      "example": "Drop 1000 balls. The tallest bar will always be near the center. No matter how random each bounce feels, the overall shape is completely predictable.",
+      "callout": "Bell curves appear everywhere in nature — heights, test scores, measurement errors — because they're all the result of many small random influences added together.",
+      "furtherReading": "This bump shape is called a Normal Distribution or Bell Curve. The reason it keeps appearing is captured by one of mathematics' most important ideas: the Central Limit Theorem. It says that whenever you combine many small random effects, the result takes this bell shape — no matter what the individual random effects look like. It explains why heights, weights, test scores, and measurement errors all form bell curves."
+    },
+    "howToPlay": "Press Drop ×1 to drop a single ball and watch it bounce. Then try ×100 or ×1000 and see the shape that builds in the bins. Can you predict where most balls will land?"
+  },
+  "randomWalk": {
+    "title": "Random Walk",
+    "subtitle": "A dot takes random steps in random directions. Its path looks wild and unpredictable — but how far it travels follows a hidden rule.",
+    "start": "Start",
+    "stop": "Stop",
+    "reset": "Reset",
+    "newWalk": "New Walk",
+    "steps": "Steps",
+    "distance": "Distance from start",
+    "driftRing": "Expected drift (√steps)",
+    "overlaysLabel": "Past walks",
+    "explainer": {
+      "title": "The Surprising Rule of Random Steps",
+      "body": "Even though every step is random, the typical distance from the start follows a clear pattern. After 100 steps, most walks end up about 10 units away. After 400 steps, about 20 units. After 900 steps, about 30 units. The distance doesn't grow as fast as the number of steps — it grows much more slowly, following the square root.",
+      "example": "Steps: 100 → typical distance ≈ 10. Steps: 400 → typical distance ≈ 20. Steps: 900 → typical distance ≈ 30. The yellow ring on the canvas tracks this exactly — watch it grow as you walk.",
+      "callout": "Random walks explain how molecules diffuse, how stock prices move, and even how animals explore territory — all governed by the same √n law.",
+      "furtherReading": "This pattern is called the √n Diffusion Law (square root of n). The physical version — where molecules bump around randomly in a liquid — is called Brownian Motion, first explained by Albert Einstein in 1905. The same mathematics describes how gases spread, how heat moves, how animals explore territory, and even how prices in financial markets drift over time."
+    },
+    "howToPlay": "Press Start and watch the dot wander. Press New Walk to save the path and start a fresh one — add up to 10 walks to compare. Watch the yellow ring: it shows where walkers typically end up."
+  },
+  "monteCarloPi": {
+    "title": "Monte Carlo π",
+    "subtitle": "Throw random darts at a square. Count how many land inside the circle. Multiply by 4. You've discovered π.",
+    "start": "Start",
+    "pause": "Pause",
+    "reset": "Reset",
+    "speed": "Speed",
+    "slow": "Slow",
+    "fast": "Fast",
+    "instant": "Instant",
+    "inside": "Inside circle",
+    "outside": "Outside circle",
+    "total": "Total darts",
+    "ratio": "Inside ratio",
+    "estimate": "π estimate",
+    "accuracy": "Accuracy",
+    "explainer": {
+      "title": "Why Does This Find π?",
+      "body": "A circle inscribed in a square takes up exactly π/4 of the square's area. If you throw darts randomly, the fraction landing inside the circle equals π/4. Multiply by 4 and you have π. The more darts you throw the closer the estimate gets.",
+      "example": "After 1000 darts the estimate is usually accurate to 1-2 decimal places. After 100,000 it's accurate to 3-4. This is Monte Carlo simulation: use randomness to solve math.",
+      "callout": "The same idea is used in science and finance to solve problems too complex for exact formulas — from simulating nuclear reactions to pricing options on Wall Street.",
+      "furtherReading": "Using random sampling to estimate mathematical answers is called the Monte Carlo Method, named after the famous casino in Monaco. Scientists use it to model nuclear reactions, climate systems, and protein folding. Financial analysts use it to price complex investments. It's one of the most widely used computational tools in the world."
+    },
+    "howToPlay": "π (pi) is a famous number — about 3.14159 — that appears whenever circles are involved. Press Start and watch random darts reveal it. Try Instant mode to fire thousands of darts at once and see how close the estimate gets!"
+  },
+  "montyHall": {
+    "title": "Monty Hall",
+    "subtitle": "Pick a door. The host reveals a goat. Switch or stay? Play it yourself before you trust the math.",
+    "door": "Door {{n}}",
+    "pickPrompt": "Pick a door to start",
+    "hostReveal": "The host opens Door {{n}} — it's a goat!",
+    "switchPrompt": "Switch or stay?",
+    "switchBtn": "Switch",
+    "stayBtn": "Stay",
+    "win": "You won the car!",
+    "lose": "You got the goat.",
+    "playAgain": "Play Again",
+    "stats": "Your Results",
+    "switchWins": "Switch wins",
+    "switchLosses": "Switch losses",
+    "stayWins": "Stay wins",
+    "stayLosses": "Stay losses",
+    "simulatorTitle": "Simulate Many Games",
+    "simulate100": "Simulate 100",
+    "simulate1000": "Simulate 1000",
+    "simulate10000": "Simulate 10,000",
+    "simResults": "Simulation results",
+    "switchRate": "Switch win rate",
+    "stayRate": "Stay win rate",
+    "lockedHint": "Play at least one round to unlock the simulator",
+    "explainer": {
+      "title": "Why Switching Wins 2/3 of the Time",
+      "body": "When you first pick a door, you have a 1/3 chance of having the car. The other two doors together hold a 2/3 chance. When the host reveals a goat behind one of those doors, the full 2/3 probability shifts to the remaining door. Switching gives you that 2/3 chance. Staying keeps your original 1/3.",
+      "example": "Imagine 1,000 doors. You pick one (1/1000 chance). The host opens 998 doors showing goats. The one remaining door holds all the 999/1000 probability. You would switch without hesitation. The logic is identical with 3 doors.",
+      "callout": "The host's action is not random — they always reveal a goat and always leave you a choice. That knowledge is information, and information changes probabilities. This is conditional probability in action.",
+      "furtherReading": "The Monty Hall Problem is a famous example of Conditional Probability — the idea that new information changes the odds. When the host reveals a goat, that action gives you real information about where the car is. This can also be understood using Bayes' Theorem, a fundamental tool for updating beliefs based on evidence. The problem became famous in 1990 when it appeared in a magazine column and thousands of readers — including many mathematicians — wrote in to argue (incorrectly) that switching makes no difference."
+    },
+    "wins": "Wins",
+    "gamesEach": "{{n}} games each strategy",
+    "howToPlay": "Pick a door — a car is hidden behind one of the three. The host will always open a different door to reveal a goat. Then decide: stick with your first door, or switch to the other one? Play several rounds before checking the simulator."
+  },
+  "guessPhone": {
+    "title": "Guess the Phone Number",
+    "emoji": "📱",
+    "subtitle": "A secret phone number is hiding. Crack it one digit at a time.",
+    "howToPlay": "Tap a position box, then tap a digit below to guess it. Green means correct! See how much harder it gets as the number grows longer — try all five lengths.",
+    "lengthLabel": "Length",
+    "attemptsLabel": "Attempts",
+    "probabilityLabel": "Remaining possibilities",
+    "probabilityValue": "1 in {{n}}",
+    "newGame": "New Game",
+    "giveUp": "Give Up",
+    "win": "You cracked it! 🎉",
+    "winMessage": "Solved in {{n}} attempts",
+    "positionLabel": "Pos {{n}}",
+    "positionHint": "Tap a position to select it",
+    "selectDigitHint": "Now tap a digit",
+    "revealLabel": "The number was:",
+    "explainer": {
+      "title": "Why Does a Longer Number Get So Much Harder?",
+      "body": "Each digit is chosen independently from 0 to 9 — that's 10 choices per position. A 1-digit number has just 10 possibilities. A 2-digit number has 10 × 10 = 100. A 3-digit number has 10 × 10 × 10 = 1,000. Each extra digit multiplies the total by 10. This is called exponential growth — even a short number becomes surprisingly hard to guess.",
+      "example": "1 digit → 10 possibilities. 2 digits → 100. 3 digits → 1,000. 4 digits → 10,000. 5 digits → 100,000. Adding one more digit makes it 10× harder every time!",
+      "callout": "Real phone numbers are 10 digits long — that's 10,000,000,000 (10 billion) possible combinations. Even a fast computer couldn't guess one in a reasonable time if limited to a few tries.",
+      "furtherReading": "When possibilities multiply like this — 10, 100, 1,000, 10,000 — it's called Exponential Growth, written as 10^n (10 to the power of n). This is the same principle behind PIN security and password strength: every extra character multiplies the combinations by the alphabet size, making the search space grow astronomically fast."
+    }
+  },
+  "hackPassword": {
+    "title": "Hack the Password",
+    "emoji": "🔐",
+    "subtitle": "A secret password is locked away. Crack it character by character — if you can.",
+    "howToPlay": "Choose a length and difficulty. Tap a position, then tap a character to guess. Easy uses digits only. Medium adds letters. Hard is enormous. Try changing both length and difficulty to watch the combinations explode!",
+    "lengthLabel": "Length",
+    "difficultyLabel": "Difficulty",
+    "diffEasy": "Easy (0–9)",
+    "diffMedium": "Medium (a–z + 0–9)",
+    "diffHard": "Hard (A–Z + a–z + 0–9)",
+    "hardModeHint": "Hard mode is case-sensitive — 0 is zero, O is letter O; 1 is one, l is lowercase L, I is uppercase i",
+    "attemptsLabel": "Attempts",    "combinationsLabel": "Total combinations",
+    "probabilityLabel": "Remaining possibilities",
+    "probabilityValue": "1 in {{n}}",
+    "comparisonGrain": "More than grains of sand on a beach 🏖️",
+    "comparisonStars": "More than stars in the Milky Way ✨",
+    "comparisonAtoms": "More than atoms you can count 🌌",
+    "newGame": "New Game",
+    "giveUp": "Give Up",
+    "win": "Password cracked! 🎉",
+    "winMessage": "Cracked in {{n}} attempts",
+    "positionLabel": "Pos {{n}}",
+    "positionHint": "Tap a position to select it",
+    "selectCharHint": "Now tap a character",
+    "revealLabel": "The password was:",
+    "explainer": {
+      "title": "Why Are Longer Passwords So Much Safer?",
+      "body": "Every character in a password is chosen from an alphabet — a set of possible characters. With digits only, the alphabet has 10 characters. With lowercase + digits, it has 36. With upper + lower + digits, it has 62. Each position multiplies the total: a 5-character password with 62 choices per position gives 62 × 62 × 62 × 62 × 62 = over 900 million combinations.",
+      "example": "Easy, 3 chars: 10^3 = 1,000. Medium, 3 chars: 36^3 = 46,656. Hard, 3 chars: 62^3 = 238,328. Hard, 5 chars: 62^5 = 916,132,832. One extra character, larger alphabet = enormous difference.",
+      "callout": "Most real passwords are 8+ characters from a large alphabet. That's why computers need days, months, or years to crack them — the combinations are astronomical.",
+      "furtherReading": "Trying every possible combination is called a Brute Force Attack. The number of combinations grows as alphabet_size^length — this is Exponential Growth. Password strength is measured in bits of entropy: each extra bit doubles the search space. An 8-character password from 62 characters has 62^8 ≈ 218 trillion combinations. This is why security experts recommend long passwords with mixed character types (uppercase, lowercase, digits, symbols)."
+    }
+  },
+  "greedyPig": {
+    "title": "Greedy Pig",
+    "emoji": "🐷",
+    "subtitle": "Roll the die and keep going — but roll a 1 and you lose everything you banked this turn. How greedy will you be?",
+    "howToPlay": "Click Roll to add to your turn total. Click Bank to lock in your points safely. But if you roll a 1 — BUST! You lose your whole turn. First to reach the target wins!",
+    "targetLabel": "First to",
+    "yourScore": "You",
+    "botScore": "Greedy Bot",
+    "turnTotal": "This turn",
+    "turnTotalHint": "not banked yet!",
+    "rollBtn": "Roll 🎲",
+    "bankBtn": "Bank it! 🏦",
+    "playerTurn": "Your turn",
+    "botTurn": "Bot's turn",
+    "botThinking": "Greedy Bot is thinking...",
+    "botRolling": "Bot rolls!",
+    "bust": "BUST! 💥",
+    "playerBust": "Oh no — you rolled a 1! Turn lost.",
+    "botBust": "Bot busted! Your turn.",
+    "banked": "Banked {{n}} points!",
+    "botBanked": "Bot banks {{n}} points.",
+    "win": "You win! 🎉",
+    "lose": "Bot wins! 🐷",
+    "playAgain": "Play Again",
+    "gamesPlayed": "Games played",
+    "botReaction": {
+      "lucky": "Bot got lucky! 😏",
+      "close": "That was close... 😰",
+      "bust": "Bot busted! 🐷💥",
+      "bank": "Bot banks! 🏦😤"
+    },
+    "explainer": {
+      "title": "When Should You Stop Rolling?",
+      "body": "Every roll is a choice: keep going and risk losing everything, or stop and keep what you have. If you never bust, you roll 2–6 which averages 4 points. But a 1 (1 in 6 chance) wipes your whole turn. The maths says: once you've built up a comfortable lead for the turn, stopping is smarter than continuing — but exactly when depends on your score and the target.",
+      "example": "You've rolled 4, 5, 3 this turn — that's 12 points safely accumulated. Rolling again has a 1-in-6 chance of losing all 12. The expected gain from non-bust rolls is about 3 points — but subtract the 1-in-6 bust risk and the net expected value is much lower. At some point the risk outweighs the reward.",
+      "callout": "The tension you feel — 'should I roll again?' — is your brain doing expected value maths. The more you play, the better your instinct gets.",
+      "furtherReading": "The question of when to stop is called the Optimal Stopping Problem. In Greedy Pig specifically, mathematicians have worked out that the best strategy is roughly to bank when your turn total reaches about 20–25% of the winning target. This connects to Expected Value — the average outcome of a decision weighted by probability. Casino games, insurance, and financial decisions all use the same reasoning."
+    },
+    "simulator": {
+      "title": "Strategy Simulator",
+      "lockedHint": "Finish a game to unlock the simulator",
+      "simulate100": "100 games",
+      "simulate1000": "1,000 games",
+      "simulate10000": "10,000 games",
+      "resultsLabel": "Win rate by strategy",
+      "strategyLabel": "Bank at {{n}}",
+      "winRateLabel": "Win %"
+    }
+  },
+  "removeOne": {
+    "title": "Remove One",
+    "emoji": "🎯",
+    "subtitle": "Place your tokens, roll the dice, and clear your board — but where you put your tokens is everything.",
+    "howToPlay": "Spread your 18 tokens across the numbers 2–12. Then roll — whenever that number comes up, remove one token from it. First to clear all tokens wins. Watch how Lucky Larry and Max place theirs!",
+    "tokensLabel": "Tokens placed: {{n}} / 18",
+    "tokensReady": "Ready to roll!",
+    "rollBtn": "Roll Dice",
+    "yourBoard": "You",
+    "larry": "Lucky Larry",
+    "max": "Max",
+    "larryHint": "Spreads evenly",
+    "maxHint": "Follows the odds",
+    "rollResult": "{{a}} + {{b}} = {{sum}}",
+    "win": "🎉 You win! Your placement paid off.",
+    "lose": "{{name}} wins! See how their placement helped?",
+    "tie": "It's a tie! You and {{name}} cleared at the same time.",
+    "playAgain": "Play Again",
+    "explainer": {
+      "title": "Why does where you place matter so much?",
+      "body": "With two dice there are 36 possible outcomes. Sum 7 can happen 6 ways (1+6, 2+5, 3+4, 4+3, 5+2, 6+1) — that's 1 in 6 rolls. Sum 2 can only happen one way (1+1) — just 1 in 36 rolls. If you put tokens on 2 and 12, you'll wait a very long time for them to be removed. Max puts his tokens where the dice actually land most often.",
+      "example": "If you place 4 tokens on number 7, you'd expect to remove one roughly every 6 rolls. If you place 4 tokens on number 2, you'd expect to wait about 36 rolls per removal — 6× longer!",
+      "callout": "The number of ways to make each sum: 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1 (for sums 2 to 12). Put your tokens where the numbers are biggest!",
+      "furtherReading": "Max's strategy is called probability-weighted allocation — he places tokens proportional to how often each sum appears. This is the core idea behind Expected Value: if something happens 6/36 of the time and removes a token, you'd expect to wait 36/6 = 6 rolls per removal. Placing more tokens on high-probability sums minimises your expected total rolls. This kind of thinking is used in real life whenever you need to allocate a limited resource — like time or money — across options with different probabilities."
+    },
+    "simulator": {
+      "title": "Strategy Simulator",
+      "lockedHint": "Finish a game to unlock the simulator",
+      "sim100": "100 games",
+      "sim500": "500 games",
+      "sim1000": "1000 games",
+      "resultsLabel": "Win rate after {{n}} games",
+      "winRateLabel": "Win %"
+    }
+  },
+  "rollAndRace": {
+    "title": "Roll & Race",
+    "emoji": "🏎️",
+    "subtitle": "Pick a car, roll two dice, and cheer it on — but watch out for the sneaky favourite!",
+    "howToPlay": "Pick your car (a number from 2 to 12). Then roll the dice — whichever sum comes up, that car moves one step. First car to the finish wins. Can you figure out which car is fastest?",
+    "trackLabel": "Track length",
+    "pickPrompt": "Pick your car!",
+    "yourCar": "Your car: {{n}}",
+    "rollBtn": "Roll!",
+    "autoBtn": "Auto-finish",
+    "stopBtn": "Stop",
+    "win": "🎉 Car {{n}} wins — that's you!",
+    "lose": "Car {{n}} wins! Better luck next race.",
+    "playAgain": "Play Again",
+    "rollResult": "{{a}} + {{b}} = {{sum}} → Car {{sum}} moves!",
+    "explainer": {
+      "title": "Why does car 7 keep winning?",
+      "body": "When you roll two dice, not every sum is equally likely. There are 36 possible outcomes (6 × 6). Only one gives a sum of 2 (rolling 1+1), and only one gives 12 (rolling 6+6). But there are SIX ways to get a sum of 7: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1. That means car 7 moves forward on 6 out of every 36 rolls — about 17% of the time. Cars 2 and 12 move on just 1 out of 36 rolls — less than 3%.",
+      "example": "In a race to 10, car 7 needs roughly 60 rolls to win on average. Car 2 needs about 360 rolls for the same distance. That's why car 7 almost always finishes first!",
+      "callout": "The number of ways to make each sum forms a perfect triangle: 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1 — for sums 2 through 12.",
+      "furtherReading": "The shape you see in the simulator — with 7 winning far more than the others — is called a Triangular Distribution. It appears whenever you add two uniform random numbers together. This is a first glimpse at the Central Limit Theorem: adding random values together always tends toward a bell-shaped curve. With two dice you get a triangle; with more dice the curve gets smoother and rounder."
+    },
+    "simulator": {
+      "title": "Race Simulator",
+      "lockedHint": "Finish a race to unlock the simulator",
+      "sim100": "100 races",
+      "sim500": "500 races",
+      "sim1000": "1000 races",
+      "resultsLabel": "Win count after {{n}} races",
+      "carLabel": "Car",
+      "winsLabel": "Wins"
+    }
+  },
+  "probabilityBingo": {
+    "title": "Probability Bingo",
+    "emoji": "🎱",
+    "subtitle": "Pick your numbers wisely — it's not just what you pick, but where you put them.",
+    "howToPlay": "You start with a 3×3 card. Roll dice to cross out matching numbers. First to complete a row, column, or diagonal wins! Can you outsmart Lucky Larry and Probability Pete?",
+    "editBtn": "Edit Card",
+    "doneBtn": "Done",
+    "rollBtn": "Roll!",
+    "player": "You",
+    "larry": "Lucky Larry",
+    "pete": "Probability Pete",
+    "larryHint": "Random fill",
+    "peteHint": "Pete always places 6, 7, 8 in one row (most-rolled sums)",
+    "rollResult": "{{a}} + {{b}} = {{sum}}",
+    "bingo": "BINGO!",
+    "win": "🎉 You got bingo!",
+    "lose": "{{name}} got bingo first!",
+    "tie": "It's a tie with {{name}}!",
+    "playAgain": "Play Again",
+    "pickNumber": "Pick a number",
+    "nearBingo": "Almost there!",
+    "explainer": {
+      "title": "Why does placement matter in Bingo?",
+      "body": "In Probability Bingo, it's not just about picking high-probability numbers — it's about where you put them. A number like 7 is rolled often, but if it only appears in cells that don't share a line, it never helps you complete a row, column, or diagonal. Concentration beats spreading: packing 6, 7, and 8 into one row gives that row the highest chance of clearing quickly.",
+      "example": "Probability Pete packs 6, 7, 8 into one row. Those three numbers together cover 15 out of 36 possible outcomes — nearly 42% of rolls advance that row. Your balanced card spreads the risk across all lines. Which strategy wins more often? Try the simulator!",
+      "callout": "Placement is the hidden variable. Two cards with identical numbers can have very different win rates depending on how those numbers are arranged across the nine squares.",
+      "furtherReading": "What Pete is doing is called expected value optimization with spatial constraints — maximising the probability that a specific row clears first by concentrating the highest-probability sums in one line. This concept appears in operations research (scheduling tasks with the highest throughput first) and in machine learning (greedy feature selection)."
+    },
+    "simulator": {
+      "title": "Strategy Simulator",
+      "lockedHint": "Finish a game to unlock the simulator",
+      "sim100": "100 games",
+      "sim500": "500 games",
+      "sim1000": "1000 games",
+      "resultsLabel": "Win rate after {{n}} games",
+      "winRateLabel": "Win %",
+      "larryNote": "Larry plays randomly each game"
+    }
+  },
+  "pizzaBuilder": {
+    "title": "Pizza Builder",
+    "emoji": "🍕",
+    "subtitle": "Build your menu, pick your favourites, and see how often you get lucky!",
+    "howToPlay": "Start with a small menu of crusts and toppings. Every combo is a possible pizza — tap the grid to pick your winning ones. Then order random pizzas and watch the math in action!",
+    "addCrust": "+ Add Crust",
+    "addTopping": "+ Add Topping",
+    "removeCrust": "Remove",
+    "removeTopping": "Remove",
+    "winnerHint": "Tap cells (or a whole row/column) to mark your winning pizzas",
+    "winCount": "{{n}} of your {{total}} pizzas are winners!",
+    "noWinners": "Tap a cell to pick your winning pizzas",
+    "noWinnersHint": "Pick some winners first to have a chance!",
+    "orderBtn": "Order a Random Pizza!",
+    "win": "🎉 {{crust}} + {{topping}} — that's yours!",
+    "lose": "😬 {{crust}} + {{topping}} — not this time!",
+    "ordersLabel": "{{n}} orders so far",
+    "heatmapTitle": "How spread out are your orders?",
+    "heatmapEven": "Looks pretty even! Each pizza comes up about equally.",
+    "heatmapUneven": "Keep ordering — it'll even out!",
+    "resetBtn": "Reset",
+    "crust": {
+      "thin": "Thin",
+      "thick": "Thick",
+      "sourdough": "Sourdough",
+      "deepDish": "Deep Dish"
+    },
+    "topping": {
+      "mushroom": "🍄 Mushroom",
+      "pepper": "🫑 Pepper",
+      "cheese": "🧀 Cheese",
+      "olive": "🫒 Olive",
+      "pepperoni": "🍖 Pepperoni"
+    },
+    "explainer": {
+      "title": "Why do combinations multiply?",
+      "body": "When you choose independently from two lists, the total number of outcomes is always the two list sizes multiplied together — never added. 2 crusts and 3 toppings give you 2 × 3 = 6 different pizzas. Add one more topping and you get 2 × 4 = 8. Add a crust and every topping gets a new partner: 3 × 4 = 12. This is the multiplication principle: each extra option multiplies, not adds.",
+      "example": "Tap the row and column headers to select a whole crust or a whole topping. Notice how the winning count jumps by a whole row or column — not just one cell. That jump IS multiplication.",
+      "callout": "Two choices that each feel small (2 crusts, 5 toppings) combine into 10 unique pizzas. Add one more crust and you suddenly have 15. Each new option multiplies everything already there.",
+      "furtherReading": "What you just discovered is called the Fundamental Counting Principle (or the Multiplication Rule for independent events). It says: if one event can happen in m ways and another independent event can happen in n ways, then both together can happen in m × n ways. This rule is the foundation of combinatorics — the mathematics of counting — and it explains why passwords with just a few extra characters become astronomically harder to guess."
+    }
+  },
+  "higherOrLower": {
+    "title": "Higher or Lower",
+    "emoji": "🎲",
+    "subtitle": "Read the odds, trust the math, and build the longest streak you can.",
+    "howToPlay": "A die is rolled. Will the next roll be higher or lower? Check the odds panel, make your call, then roll. A tie is a push — your streak is safe but you don't score. How long can you keep it going?",
+    "currentRoll": "Current roll: {{n}}",
+    "higherBtn": "Higher ▲",
+    "lowerBtn": "Lower ▼",
+    "streak": "Streak: {{n}}",
+    "best": "Best: {{n}}",
+    "correct": "✓ Correct!",
+    "wrong": "✗ Wrong — streak resets.",
+    "push": "Push — same number!",
+    "pushHint": "P(equal) is always 1/6, no matter what face is showing.",
+    "oddsHigher": "Higher",
+    "oddsEqual": "Equal",
+    "oddsLower": "Lower",
+    "explainer": {
+      "title": "Why do the odds change with every roll?",
+      "body": "A fair die has 6 faces, all equally likely. But 'higher than 3' and 'higher than 5' are very different bets. From 3, there are 3 faces above it (4, 5, 6) — a 3/6 = 50% chance. From 5, only one face is higher (6) — just 1/6 = 17%. The current face tells you exactly how the remaining 5 faces split between higher, equal, and lower. That's conditional probability: the chance of the next outcome depends on what you can see right now.",
+      "example": "Roll a 1 → P(higher) = 5/6 = 83%. Roll a 6 → P(higher) = 0%. Roll a 3 → P(higher) = 3/6 = 50%, P(lower) = 2/6 = 33%. The equal probability is always exactly 1/6 — it never changes.",
+      "callout": "P(equal) = 1/6 always. Whether the die shows 1 or 6 or anything in between, the chance of rolling the same number again is always exactly one in six.",
+      "furtherReading": "What you're reading from the odds panel is called Conditional Probability — the probability of an event given that you already know something. Written P(next > current | current = 3) = 3/6. Unlike coin flips, where every flip is independent, here the current face gives you real information. In statistics, data that updates your probability estimate is called evidence — and this game shows exactly how evidence changes the odds in real time."
+    }
+  },
+  "climberRace": {
+    "title": "Climber Race",
+    "emoji": "🧗",
+    "subtitle": "Bet on one or two climbers and add their chances together!",
+    "howToPlay": "Four climbers race up a mountain — first to 6 steps wins! Before each spin, pick 1 or 2 climbers as your OR bet. The spinner changes every turn, so check the odds each time. The arc on the spinner shows your combined chance. Can you pick the winner?",
+    "sunny": "Sunny",
+    "blaze": "Blaze",
+    "storm": "Storm",
+    "ivy": "Ivy",
+    "pickBet": "Pick your climber(s) — up to 2",
+    "betLabel": "Your bet: {{bet}}",
+    "betOr": "{{a}} OR {{b}}",
+    "betArc": "Your colours cover {{pct}}% of the spinner",
+    "betRatio": "— {{ratio}}",
+    "ratioAlways": "almost every spin",
+    "ratio2in3": "about 2 in 3 spins",
+    "ratio1in2": "about 1 in 2 spins",
+    "ratio1in3": "about 1 in 3 spins",
+    "ratio1in5": "about 1 in 5 spins",
+    "ratioRarely": "rarely",
+    "spinnerThisTurn": "Spinner this turn",
+    "mountainTapToBet": "Mountain — tap to bet",
+    "betWinIf": "You WIN if {{bet}} reaches the top first!",
+    "noBet": "Tap a climber to place your bet",
+    "spinBtn": "Spin!",
+    "spinResult": "{{name}} advances!",
+    "betWon": "✓ Your colour!",
+    "betMissed": "✗ Not yours",
+    "noBetResult": "No bet placed — {{name}} advances!",
+    "warning": "⚠️ {{name}} is one step away!",
+    "win": "🎉 {{name}} wins — that's your bet!",
+    "lose": "{{name}} wins — your bet missed.",
+    "playAgain": "Play Again",
+    "historyTitle": "Last races",
+    "historyWon": "✓",
+    "historyLost": "✗",
+    "explainer": {
+      "title": "Why add probabilities for OR bets?",
+      "body": "When two outcomes can't happen at the same time — like two different climbers winning the same spin — they're called mutually exclusive. For mutually exclusive events, P(A OR B) = P(A) + P(B). If Sunny covers 30% and Storm covers 25%, betting on Sunny OR Storm gives you a 55% chance on every spin. The combined arc on the spinner shows this visually: the two sections literally sit side-by-side, and their sizes add up.",
+      "example": "Check the spinner before each spin. If your two climbers together cover more than half the wheel, your OR bet is better than 50-50. If they cover less than a third, you're the underdog. The arc makes the addition rule concrete.",
+      "callout": "Adding only works for mutually exclusive events. If two things COULD happen at the same time (like rolling above 3 AND rolling an even number), you'd have to subtract the overlap. But a spinner can only land on one colour at a time — so here, you just add.",
+      "furtherReading": "The rule P(A OR B) = P(A) + P(B) is called the Addition Rule for mutually exclusive events. It's one half of a pair: the other half is the Multiplication Rule for independent events (P(A AND B) = P(A) × P(B)), which you may have seen in Pizza Builder. Together these two rules let you calculate the probability of almost any combined event — and they're the foundation of probability theory."
+    }
+  },
+  "bridgeQuest": {
+    "title": "Bridge Quest",
+    "emoji": "🌉",
+    "subtitle": "Find the safest path across the bridges — and beat the Greedy Bot!",
+    "howToPlay": "Three paths lead from START to END. Each path has bridges with different survival chances. Tap a path to see your combined survival odds, then commit. The Greedy Bot picks its path — watch both characters cross, bridge by bridge. Best of 3 races wins the tournament!",
+    "pathLabel": "Path {{letter}}",
+    "tapToPreview": "Tap to see your odds",
+    "survival": "{{n}} in 100 make it through",
+    "choosePath": "Choose this path",
+    "botChoice": "Greedy Bot chose Path {{letter}}",
+    "botReason": "It avoids the scariest bridge",
+    "crossing": "Crossing...",
+    "safe": "Safe! ✓",
+    "fell": "Fell! ✗",
+    "survived": "You made it! 🎉",
+    "didNotSurvive": "You fell...",
+    "botSurvived": "Bot made it!",
+    "botFell": "Bot fell!",
+    "pointYou": "You win this race! +1",
+    "pointBot": "Bot wins this race! +1",
+    "tie": "Tie — no point",
+    "score": "You {{p}} – Bot {{b}}",
+    "nextRace": "Next Race →",
+    "winTournament": "🏆 You won the tournament!",
+    "loseTournament": "Bot won the tournament.",
+    "drawTournament": "It's a draw!",
+    "playAgain": "Play Again",
+    "raceN": "Race {{n}} of 3",
+    "greedyBot": "Greedy Bot",
+    "you": "You",
+    "explainer": {
+      "title": "Why multiply bridge probabilities?",
+
+      "body": "To survive a full path, you must survive every bridge — one after another. Because each bridge is independent (one fall doesn't affect the next), you multiply: P(path) = P(bridge 1) × P(bridge 2) × … × P(bridge n). An 80% bridge followed by a 70% bridge gives you only 0.8 × 0.7 = 0.56, or 56 in 100. Every extra bridge shrinks your odds — even a 'safe' 90% bridge multiplied in drops a 70% path to 63%.",
+      "example": "Compare: Path A has bridges [85%, 75%, 70%] → 85 × 75 × 70 ÷ 10000 ≈ 45 in 100. Path B has bridges [50%, 98%, 98%] → 50 × 98 × 98 ÷ 10000 ≈ 48 in 100. Path B looks scarier at first glance — that 50% bridge! — but it's actually safer overall. The Greedy Bot always falls for this trap.",
+      "callout": "The Greedy Bot picks the path whose worst bridge is best. You pick the path whose total product is best. That difference is exactly why the bot is beatable — and why multiplying matters.",
+      "furtherReading": "What you just used is the Multiplication Rule for independent events: P(A AND B AND C) = P(A) × P(B) × P(C). It applies whenever each event's outcome doesn't change the others — like separate bridge rolls, coin flips, or dice. This rule is how scientists calculate the probability of a DNA match, engineers calculate system reliability, and insurance companies set premiums. Multiplying independent probabilities is one of the most powerful tools in all of probability theory."
+    }
+  },
+  "diceDetective": {
+    "title": "Dice Detective",
+    "subtitle": "Count how many outcomes match the clue",
+    "howToPlay": "Two dice, 16 outcomes. Tap the matching cells or type the count.",
+    "dieA": "🔴 Red Die",
+    "dieB": "🔵 Blue Die",
+    "colorA": "red",
+    "colorB": "blue",
+    "round": "Round {{n}} of {{total}}",
+    "tapInstruction": "Tap every outcome that matches ↓",
+    "countInstruction": "How many outcomes match?",
+    "submit": "Submit",
+    "next": "Next Round",
+    "finish": "See Results",
+    "correct": "✓ Correct!",
+    "wrong": "Answer: {{n}}",
+    "missed": "You missed {{n}} cell",
+    "missed_plural": "You missed {{n}} cells",
+    "q": {
+      "oneDie": "How many outcomes show {{shape}} on the {{color}} die?",
+      "bothSame": "How many outcomes show {{shape}} on BOTH dice?",
+      "atLeastOne": "How many outcomes include at least one {{shape}}?",
+      "exactlyOne": "How many outcomes show {{shape}} on exactly ONE die?",
+      "differentShapes": "How many outcomes show a different shape on each die?"
+    },
+    "shape": {
+      "triangle": "triangle △",
+      "square": "square ■",
+      "circle": "circle ●"
+    },
+    "explain": {
+      "oneDie": "{{color}} die shows {{shape}} on {{cX}} of 4 faces × 4 = {{answer}}",
+      "bothSame": "{{cA}} (red) × {{cB}} (blue) = {{answer}}",
+      "atLeastOne": "16 − {{missA}} × {{missB}} (no {{shape}}) = {{answer}}",
+      "exactlyOne": "{{cA}}×{{nb}} + {{na}}×{{cB}} = {{answer}}",
+      "differentShapes": "16 − {{same}} matching pairs = {{answer}}"
+    },
+    "results": {
+      "title": "Round Up",
+      "score": "{{n}} / {{total}} correct first time",
+      "perfect": "Sharp eye! 🔍",
+      "good": "Good start!",
+      "keep": "Keep practising",
+      "again": "Play Again"
+    }
+  }
+}

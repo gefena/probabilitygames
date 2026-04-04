@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-purple: #7C3AED;
+  --color-pink: #EC4899;
+  --color-orange: #F97316;
+  --color-green: #10B981;
+  --color-blue: #3B82F6;
+  --color-yellow: #F59E0B;
+  --color-red: #EF4444;
+
+  --radius-card: 1.25rem;
+  --radius-btn: 0.75rem;
+
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.10);
+  --shadow-btn: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Heebo', system-ui, sans-serif;
+  background: #F5F3FF;
+  min-height: 100vh;
+}
+
+/* Perspective for 3D coin flip */
+.perspective-500 {
+  perspective: 500px;
+}
+
+/* Die face dots */
+.die-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+}
