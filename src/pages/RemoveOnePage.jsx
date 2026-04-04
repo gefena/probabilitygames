@@ -23,7 +23,7 @@ function DieFace({ value, shaking }) {
     <motion.div
       animate={shaking ? { x: [0, -5, 5, -4, 4, 0] } : { x: 0 }}
       transition={{ duration: 0.3 }}
-      className="w-14 h-14 rounded-xl border-4 border-gray-300 bg-white shadow relative select-none"
+      className="w-14 h-14 rounded-xl border-4 border-gray-300 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] relative select-none border border-slate-200/60"
     >
       {value ? (
         <div className="absolute inset-0 p-1.5 grid grid-cols-3 grid-rows-3 gap-0">
@@ -238,7 +238,7 @@ export default function RemoveOnePage() {
           </div>
 
           {/* Player placement rows */}
-          <div className="bg-white rounded-3xl p-4 shadow-sm mb-4">
+          <div className="bg-white rounded-3xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-4 border border-slate-200/60">
             {SUMS.map(s => (
               <div key={s} className="flex items-center gap-2 mb-2">
                 <span className="w-5 text-right text-xs font-extrabold text-gray-500 flex-shrink-0">{s}</span>
@@ -272,7 +272,7 @@ export default function RemoveOnePage() {
               { label: t('removeOne.larry'), hint: t('removeOne.larryHint'), tokens: larryTokens() },
               { label: t('removeOne.max'), hint: t('removeOne.maxHint'), tokens: maxTokens() },
             ].map(({ label, hint, tokens }) => (
-              <div key={label} className="bg-white rounded-2xl p-3 shadow-sm">
+              <div key={label} className="bg-white rounded-2xl p-3 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
                 <p className="font-extrabold text-gray-700 text-xs mb-0.5">{label}</p>
                 <p className="text-gray-400 text-xs mb-2 italic">{hint}</p>
                 {SUMS.map(s => (
@@ -304,7 +304,7 @@ export default function RemoveOnePage() {
 
       {/* ── THREE-COLUMN BOARD (rolling / finished) ────────────────────────── */}
       {(phase === 'rolling' || phase === 'finished') && initBoards && (
-        <div className="mb-6 bg-white rounded-3xl p-4 shadow-sm overflow-x-auto">
+        <div className="mb-6 bg-white rounded-3xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] overflow-x-auto border border-slate-200/60">
           <div className="min-w-[300px]">
             {/* Headers */}
             <div className="grid grid-cols-[1.5rem_1fr_1fr_1fr] gap-1 mb-2">

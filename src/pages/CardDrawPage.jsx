@@ -127,7 +127,7 @@ export default function CardDrawPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {/* Deck + draw */}
-        <div className="bg-white rounded-3xl p-6 shadow-sm flex flex-col items-center gap-4">
+        <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col items-center gap-4 border border-slate-200/60">
           <div className="relative">
             {[2, 1, 0].map(i => (
               <div key={i} className="absolute" style={{ top: -i * 2, left: i * 2 }}>
@@ -170,7 +170,7 @@ export default function CardDrawPage() {
 
         {/* Probability panels */}
         <div className="flex flex-col gap-4">
-          <div className="bg-white rounded-3xl p-5 shadow-sm">
+          <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
             <h3 className="font-extrabold text-gray-700 mb-3">{t('cards.suits')}</h3>
             <div className="grid grid-cols-2 gap-2">
               {suitProbs.map(sp => (
@@ -183,13 +183,13 @@ export default function CardDrawPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-5 shadow-sm">
+          <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
             <h3 className="font-extrabold text-gray-700 mb-3">{t('cards.rankPanel')}</h3>
             <div className="flex items-center gap-3">
               <select
                 value={selectedRank}
                 onChange={e => setSelectedRank(e.target.value)}
-                className="px-3 py-2 rounded-xl border-2 border-blue-200 text-blue-700 font-semibold bg-white focus:outline-none focus:border-blue-500"
+                className="px-3 py-2 rounded-xl border-2 border-blue-200 text-blue-700 font-semibold bg-white focus:outline-none focus:border-blue-500 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
               >
                 {RANKS.map(r => <option key={r} value={r}>{t(`cards.ranks.${r}`)}</option>)}
               </select>
@@ -260,7 +260,7 @@ export default function CardDrawPage() {
 
       {/* Drawn history */}
       {drawn.length > 0 && (
-        <div className="bg-white rounded-3xl p-5 shadow-sm">
+        <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
           <h3 className="font-extrabold text-gray-700 mb-3">{t('cards.drawnHistory')} ({drawn.length})</h3>
           <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto">
             {drawn.map((card, i) => (

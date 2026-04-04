@@ -152,7 +152,7 @@ export default function PizzaBuilderPage() {
       <p className="text-sm text-gray-500 mb-6">{t('pizzaBuilder.howToPlay')}</p>
 
       {/* ── Menu Builder ──────────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+      <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-5 border border-slate-200/60">
 
         {/* Crusts row */}
         <div className="mb-3">
@@ -184,7 +184,7 @@ export default function PizzaBuilderPage() {
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
-                      className="absolute top-9 left-0 bg-white border border-gray-200 rounded-xl shadow-lg z-10 p-2 flex flex-col gap-1 min-w-[120px]"
+                      className="absolute top-9 left-0 bg-white rounded-xl shadow-lg z-10 p-2 flex flex-col gap-1 min-w-[120px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
                     >
                       {availableCrusts.map(id => (
                         <button
@@ -233,7 +233,7 @@ export default function PizzaBuilderPage() {
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
-                      className="absolute top-9 left-0 bg-white border border-gray-200 rounded-xl shadow-lg z-10 p-2 flex flex-col gap-1 min-w-[140px]"
+                      className="absolute top-9 left-0 bg-white rounded-xl shadow-lg z-10 p-2 flex flex-col gap-1 min-w-[140px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
                     >
                       {availableToppings.map(id => (
                         <button
@@ -254,7 +254,7 @@ export default function PizzaBuilderPage() {
       </div>
 
       {/* ── Grid ──────────────────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+      <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-5 border border-slate-200/60">
         <div className="text-sm text-gray-500 mb-3">{t('pizzaBuilder.winnerHint')}</div>
 
         <div className="overflow-x-auto">
@@ -373,7 +373,7 @@ export default function PizzaBuilderPage() {
 
       {/* ── Heatmap ───────────────────────────────────────────────────────────── */}
       {orders.length >= 20 && (
-        <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-6">
+        <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
           <div className="flex items-center justify-between mb-2">
             <h3 className="font-extrabold text-gray-800 text-sm">{t('pizzaBuilder.heatmapTitle')}</h3>
             <button

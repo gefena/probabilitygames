@@ -12,7 +12,7 @@
  */
 export default function ExplainerPanel({ title, body, example, visual, callout, furtherReading, accentColor = 'border-violet-400' }) {
   return (
-    <div className={`bg-white rounded-3xl p-5 shadow-sm border-s-4 ${accentColor} my-6`}>
+    <div className={`bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60 border-s-4 ${accentColor} my-6`}>
       <h3 className="font-extrabold text-gray-800 text-base mb-2">💡 {title}</h3>
 
       {body && (

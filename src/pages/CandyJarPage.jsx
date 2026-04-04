@@ -165,7 +165,7 @@ export default function CandyJarPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {/* Jar */}
-        <div className="bg-white rounded-3xl p-6 shadow-sm flex flex-col items-center">
+        <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col items-center border border-slate-200/60">
           <div className="relative w-44 h-52 mb-4">
             <svg viewBox="0 0 176 208" className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
               <rect x="16" y="32" width="144" height="160" rx="24" fill="#F3F4F6" stroke="#D1D5DB" strokeWidth="3" />
@@ -201,7 +201,7 @@ export default function CandyJarPage() {
         </div>
 
         {/* Controls */}
-        <div className="bg-white rounded-3xl p-6 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
           <h3 className="font-extrabold text-gray-700 mb-4">{t('candy.probability')}</h3>
           <div className="space-y-3 mb-4">
             {(noRefill ? savedColors : colors).map(c => {
@@ -341,7 +341,7 @@ export default function CandyJarPage() {
       <QuizPanel questions={candyJarQuestions} accentColor="border-pink-400" />
 
       {/* Chart */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={chartData}>
             <XAxis dataKey="name" />

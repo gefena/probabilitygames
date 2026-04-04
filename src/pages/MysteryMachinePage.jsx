@@ -132,7 +132,7 @@ export default function MysteryMachinePage() {
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('mysteryMachine.howToPlay')}</p>
 
       {/* ── Difficulty Selector ──────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <h3 className="font-extrabold text-gray-700 mb-4">{t('mysteryMachine.difficulty')}</h3>
         <div className="flex gap-3 flex-wrap">
           {['easy', 'medium', 'hard'].map(d => (
@@ -154,7 +154,7 @@ export default function MysteryMachinePage() {
       {difficulty && (
         <>
           {/* ── Tally Bars ──────────────────────────────────────────────── */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+          <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
             <div className="flex items-baseline justify-between mb-4">
               <h3 className="font-extrabold text-gray-700">{t('mysteryMachine.tallyTitle')}</h3>
               <span className="text-sm text-gray-500 font-semibold">
@@ -234,7 +234,7 @@ export default function MysteryMachinePage() {
 
           {/* ── Estimate Sliders ─────────────────────────────────────────── */}
           {phase === 'playing' && (
-            <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+            <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
               <div className="flex items-baseline justify-between mb-4">
                 <h3 className="font-extrabold text-gray-700">{t('mysteryMachine.guessTitle')}</h3>
                 <span className={`text-sm font-bold ${sliderTotal === 100 ? 'text-emerald-600' : 'text-orange-500'}`}>
@@ -292,7 +292,7 @@ export default function MysteryMachinePage() {
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white rounded-3xl p-6 shadow-sm mb-6"
+                className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60"
               >
                 {/* Score */}
                 <div className="text-center mb-6">

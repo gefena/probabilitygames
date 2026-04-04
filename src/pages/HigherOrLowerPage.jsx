@@ -22,7 +22,7 @@ function DieFace({ value, shaking }) {
     <motion.div
       animate={shaking ? { x: [0, -6, 6, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.35 }}
-      className="w-20 h-20 rounded-2xl border-4 border-gray-300 bg-white shadow-lg relative select-none"
+      className="w-20 h-20 rounded-2xl border-4 border-gray-300 bg-white shadow-lg relative select-none shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
     >
       <div className="absolute inset-0 p-2 grid grid-cols-3 grid-rows-3 gap-0">
         {Array.from({ length: 9 }, (_, idx) => {
@@ -123,7 +123,7 @@ export default function HigherOrLowerPage() {
       </div>
 
       {/* ── Odds panel ───────────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-4 shadow-sm mb-6 max-w-sm mx-auto">
+      <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 max-w-sm mx-auto border border-slate-200/60">
         {[
           { label: t('higherOrLower.oddsHigher'), prob: p.higher, num: 6 - currentFace, color: 'bg-indigo-500' },
           { label: t('higherOrLower.oddsEqual'),  prob: p.equal,  num: 1,               color: 'bg-gray-400' },

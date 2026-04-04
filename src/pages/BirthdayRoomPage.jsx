@@ -104,7 +104,7 @@ export default function BirthdayRoomPage() {
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('birthdayRoom.howToPlay')}</p>
 
       {/* ── Room ──────────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         {/* Avatar grid */}
         <div className="flex flex-wrap gap-2 min-h-16 mb-5">
           <AnimatePresence>
@@ -196,7 +196,7 @@ export default function BirthdayRoomPage() {
       </div>
 
       {/* ── Probability Meter ──────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <div className="flex items-baseline justify-between mb-3">
           <h3 className="font-extrabold text-gray-700">{t('birthdayRoom.matchProbability')}</h3>
           <span className="text-3xl font-extrabold tabular-nums" style={{ color: meterColor }}>
@@ -219,7 +219,7 @@ export default function BirthdayRoomPage() {
       </div>
 
       {/* ── Probability Curve ──────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <h3 className="font-extrabold text-gray-700 mb-4">{t('birthdayRoom.curveTitle')}</h3>
         <ResponsiveContainer width="100%" height={220}>
           <LineChart data={probCurve} margin={{ top: 8, right: 16, left: -20, bottom: 0 }}>
@@ -256,7 +256,7 @@ export default function BirthdayRoomPage() {
       </div>
 
       {/* ── Simulation ─────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <h3 className="font-extrabold text-gray-700 mb-3">{t('birthdayRoom.simTitle')}</h3>
         <div className="flex flex-wrap gap-3 items-center">
           <button

@@ -369,7 +369,7 @@ export default function ClimberRacePage() {
 
           {/* Race result */}
           {raceWinner && (
-            <div className="text-center bg-white rounded-2xl shadow p-4 w-full">
+            <div className="text-center bg-white rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] p-4 w-full border border-slate-200/60">
               <p className="text-xl font-extrabold mb-3">
                 {history[history.length - 1]?.betWon === true
                   ? t('climberRace.win', { name: t(`climberRace.${raceWinner}`) })

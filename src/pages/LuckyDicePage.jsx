@@ -54,7 +54,7 @@ function DieFace({ value, rolling }) {
     <motion.div
       animate={rolling ? { rotate: [0, 15, -15, 10, -10, 0], scale: [1, 1.1, 0.95, 1.05, 1] } : {}}
       transition={{ duration: 0.55 }}
-      className="w-24 h-24 bg-white rounded-2xl shadow-lg border-4 border-violet-200 relative"
+      className="w-24 h-24 bg-white rounded-2xl shadow-lg border-4 border-violet-200 relative shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
     >
       <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full">
         {dots.map(([cx, cy], i) => (
@@ -71,7 +71,7 @@ function CustomDieFace({ value, rolling }) {
     <motion.div
       animate={rolling ? { rotate: [0, 15, -15, 10, -10, 0], scale: [1, 1.1, 0.95, 1.05, 1] } : {}}
       transition={{ duration: 0.55 }}
-      className="w-24 h-24 bg-white rounded-2xl shadow-lg border-4 border-violet-200 flex items-center justify-center"
+      className="w-24 h-24 bg-white rounded-2xl shadow-lg border-4 border-violet-200 flex items-center justify-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
     >
       <span className="text-3xl font-extrabold text-violet-700">{value}</span>
     </motion.div>
@@ -237,7 +237,7 @@ export default function LuckyDicePage() {
 
       {/* Custom die face editor */}
       {isCustom && (
-        <div className="bg-white rounded-3xl p-5 shadow-sm mb-6">
+        <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-extrabold text-gray-700 text-sm">{t('dice.custom.facesTitle')}</h3>
             <button
@@ -281,7 +281,7 @@ export default function LuckyDicePage() {
         <select
           value={prediction}
           onChange={e => setPrediction(e.target.value)}
-          className="px-4 py-2 rounded-xl border-2 border-violet-200 text-violet-700 font-semibold bg-white focus:outline-none focus:border-violet-500"
+          className="px-4 py-2 rounded-xl border-2 border-violet-200 text-violet-700 font-semibold bg-white focus:outline-none focus:border-violet-500 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
         >
           <option value="">{predictLabel}</option>
           {predOptions.map(o => <option key={o} value={o}>{o}</option>)}
@@ -366,10 +366,10 @@ export default function LuckyDicePage() {
 
       {/* Stats + Chart */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-3xl p-5 shadow-sm">
+        <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
           <p className="font-extrabold text-gray-700">{t('dice.totalRolls')}: <span className="text-orange-500">{totalRolls}</span></p>
         </div>
-        <div className="bg-white rounded-3xl p-5 shadow-sm">
+        <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
           <p className="font-bold text-gray-600 mb-3 text-sm">
             {isCustom ? t('dice.custom.facesTitle') : numDice === 1 ? t('dice.faceChart') : t('dice.sumChart')}
           </p>

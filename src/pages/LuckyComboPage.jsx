@@ -75,7 +75,7 @@ function EventEditor({ outcomes, setOutcomes, colors, label, disabled }) {
               value={o.labelKey ? t(o.labelKey) : o.label}
               disabled={disabled}
               onChange={e => updateOutcome(o.id, 'label', e.target.value)}
-              className="flex-1 min-w-0 border border-gray-200 rounded-lg px-2 py-1 text-xs disabled:bg-white"
+              className="flex-1 min-w-0 rounded-lg px-2 py-1 text-xs disabled:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
               style={{ borderColor: o.success ? colors[i] : undefined }}
             />
             <input
@@ -84,7 +84,7 @@ function EventEditor({ outcomes, setOutcomes, colors, label, disabled }) {
               disabled={disabled}
               min={1}
               onChange={e => updateOutcome(o.id, 'weight', e.target.value)}
-              className="w-12 border border-gray-200 rounded-lg px-2 py-1 text-xs text-end disabled:bg-white"
+              className="w-12 rounded-lg px-2 py-1 text-xs text-end disabled:bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
             />
             <button
               onClick={() => setSuccess(o.id)}
@@ -265,7 +265,7 @@ export default function LuckyComboPage() {
       <p className="text-center text-sm text-violet-600 font-medium mb-6 max-w-xl mx-auto">{t('luckyCombo.howToPlay')}</p>
 
       {/* ── Event Editors ────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <div className="flex gap-4 flex-wrap mb-4">
           <EventEditor
             outcomes={outcomesA}
@@ -304,7 +304,7 @@ export default function LuckyComboPage() {
       </div>
 
       {/* ── Combined Probability ─────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <h3 className="font-extrabold text-gray-700 mb-3">{t('luckyCombo.combined')}</h3>
         <p className="text-sm font-mono text-gray-600 bg-gray-50 rounded-xl px-4 py-2 mb-4">
           {t(formulaKey, formulaArgs)}
@@ -317,7 +317,7 @@ export default function LuckyComboPage() {
       </div>
 
       {/* ── Tree Diagram ─────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <h3 className="font-extrabold text-gray-700 mb-4">{t('luckyCombo.treeTitle')}</h3>
         <div className="flex justify-center overflow-x-auto">
           <TreeDiagram outcomesA={outcomesA} outcomesB={outcomesB} combinator={combinator} />
@@ -325,7 +325,7 @@ export default function LuckyComboPage() {
       </div>
 
       {/* ── Trial Simulation ─────────────────────────────────────────────── */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mb-6">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
         <h3 className="font-extrabold text-gray-700 mb-4">{t('luckyCombo.trialTitle')}</h3>
         <div className="flex flex-wrap gap-3 mb-4">
           <button

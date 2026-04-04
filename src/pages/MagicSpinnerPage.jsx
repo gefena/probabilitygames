@@ -310,7 +310,7 @@ export default function MagicSpinnerPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {/* Spinner SVG */}
-        <div className="bg-white rounded-3xl p-6 shadow-sm flex flex-col items-center">
+        <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col items-center border border-slate-200/60">
           <div className="relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 z-10 text-3xl">▼</div>
             <svg
@@ -364,7 +364,7 @@ export default function MagicSpinnerPage() {
         </div>
 
         {/* Slice controls */}
-        <div className="bg-white rounded-3xl p-6 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
           <div className="space-y-3 mb-4">
             {slices.map(sl => (
               <div key={sl.id} className="flex items-center gap-2">
@@ -394,7 +394,7 @@ export default function MagicSpinnerPage() {
 
       {/* Two-rounds tree / summary */}
       {twoRounds && (
-        <div className="bg-white rounded-3xl p-5 shadow-sm mb-6">
+        <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mb-6 border border-slate-200/60">
           <h3 className="font-extrabold text-gray-700 mb-3 text-sm">
             {t('spinner.twoRounds.toggle')} — {t('spinner.twoRounds.combined')}
           </h3>
@@ -440,7 +440,7 @@ export default function MagicSpinnerPage() {
       <QuizPanel questions={spinnerQuestions} accentColor="border-emerald-400" />
 
       {/* Results chart */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={chartData}>
             <XAxis dataKey="name" />

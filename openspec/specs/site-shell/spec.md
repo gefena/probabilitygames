@@ -8,11 +8,11 @@ The home page SHALL include a new "Crack the Code" section containing cards for 
 ### Requirement: Routes for new game pages
 `App.jsx` SHALL include routes `/guess-the-phone` and `/hack-the-password` pointing to the respective page components.
 
-#### Scenario: Direct navigation to guess-the-phone
+#### Scenario: Direct navigation to guess-phone-game
 - **WHEN** the user navigates to `#/guess-the-phone`
 - **THEN** GuessThePhonePage renders
 
-#### Scenario: Direct navigation to hack-the-password
+#### Scenario: Direct navigation to hack-password-game
 - **WHEN** the user navigates to `#/hack-the-password`
 - **THEN** HackThePasswordPage renders
 
@@ -136,11 +136,16 @@ The home page "Explore More" section SHALL include a card for GreedyPigPage.
 - **WHEN** the user navigates to `#/climber-race`
 - **THEN** ClimberRacePage renders
 
-## ADDED Requirements
-
 ### Requirement: Route for Bridge Quest page
 `App.jsx` SHALL include the route `/bridge-quest` pointing to `BridgeQuestPage`.
 
 #### Scenario: Direct navigation to bridge-quest
 - **WHEN** the user navigates to `#/bridge-quest`
 - **THEN** BridgeQuestPage renders
+
+### Requirement: Localized mobile header title
+The mobile header title (visible on screens < 640px) SHALL be retrieved via the i18n key `site.title` and SHALL NOT be hardcoded in English.
+
+#### Scenario: Mobile header in Hebrew
+- **WHEN** the user switches to Hebrew and views the site on a mobile device
+- **THEN** the mobile header displays the translated site title ("מגרש המשחקים של ההסתברות")

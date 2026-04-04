@@ -23,7 +23,7 @@ function DieFace({ value, shaking }) {
     <motion.div
       animate={shaking ? { x: [0, -5, 5, -4, 4, 0] } : { x: 0 }}
       transition={{ duration: 0.3 }}
-      className="w-14 h-14 rounded-xl border-4 border-gray-300 bg-white shadow relative select-none"
+      className="w-14 h-14 rounded-xl border-4 border-gray-300 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] relative select-none border border-slate-200/60"
     >
       {value ? (
         <div className="absolute inset-0 p-1.5 grid grid-cols-3 grid-rows-3 gap-0">
@@ -368,7 +368,7 @@ export default function ProbabilityBingoPage() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="bg-white rounded-2xl p-4 shadow-lg border border-violet-200 mb-4"
+            className="bg-white rounded-2xl p-4 shadow-lg border-violet-200 mb-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60"
           >
             <div className="text-sm font-semibold text-gray-600 mb-3">{t('probabilityBingo.pickNumber')}</div>
             <div className="flex flex-wrap gap-2 justify-center">

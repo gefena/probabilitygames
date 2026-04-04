@@ -276,7 +276,7 @@ export default function CoinFlipPage() {
 
           {/* Stats + Chart */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-3xl p-6 shadow-sm">
+            <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
               <h3 className="font-extrabold text-gray-700 mb-4 text-lg">{t('coin.totalFlips')}: <span className="text-violet-600">{total}</span></h3>
               <div className="space-y-2">
                 {[
@@ -291,7 +291,7 @@ export default function CoinFlipPage() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-3xl p-6 shadow-sm">
+            <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
               <ResponsiveContainer width="100%" height={180}>
                 <BarChart data={chartData}>
                   <XAxis dataKey="name" />
@@ -314,7 +314,7 @@ export default function CoinFlipPage() {
         <div className="flex flex-col gap-6">
 
           {/* Current streak */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm text-center">
+          <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] text-center border border-slate-200/60">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
               {t('coin.streak.currentStreak')}
             </p>
@@ -333,7 +333,7 @@ export default function CoinFlipPage() {
           </div>
 
           {/* Flip history */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm">
+          <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
               {t('coin.streak.history')}
             </p>
@@ -357,7 +357,7 @@ export default function CoinFlipPage() {
           </div>
 
           {/* Prediction + Flip */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm flex flex-col gap-4 items-center">
+          <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col gap-4 items-center border border-slate-200/60">
             {flipHistory.length > 0 && (
               <div className="w-full">
                 <p className="text-sm font-semibold text-gray-500 text-center mb-3">
@@ -429,7 +429,7 @@ export default function CoinFlipPage() {
           </div>
 
           {/* Streak length histogram */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm">
+          <div className="bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
             <h3 className="font-extrabold text-gray-700 mb-4">{t('coin.streak.histogramTitle')}</h3>
             {streakChartData.length === 0 ? (
               <p className="text-gray-300 text-sm text-center py-8">{t('coin.streak.histogramEmpty')}</p>

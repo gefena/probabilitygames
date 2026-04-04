@@ -10,8 +10,8 @@ export default function AppLayout() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-violet-50 to-pink-50">
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+    <div className="min-h-screen flex flex-col bg-slate-100">
+      <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <span className="text-lg sm:text-2xl font-extrabold text-violet-700 tracking-tight">
             🎲 <span className="hidden sm:inline">{t('site.title')}</span>

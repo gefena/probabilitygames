@@ -35,7 +35,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
   const isCorrect = selectedOption?.correct === true
 
   return (
-    <div className={`bg-white rounded-3xl p-5 shadow-sm border-s-4 ${accentColor} my-6`}>
+    <div className={`bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60 border-s-4 ${accentColor} my-6`}>
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-extrabold text-gray-800 text-base">🧠 {t('quiz.title')}</h3>
         <div className="flex items-center gap-3">

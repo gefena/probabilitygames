@@ -398,7 +398,7 @@ export default function HouseAlwaysWinsPage() {
       </div>
 
       {/* House Edge Comparison Chart */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm mt-8">
+      <div className="bg-white rounded-3xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mt-8 border border-slate-200/60">
         <h2 className="font-extrabold text-gray-800 mb-1">{t('houseAlwaysWins.comparison.title')}</h2>
         <p className="text-gray-400 text-sm mb-5">{t('houseAlwaysWins.comparison.subtitle')}</p>
         <ResponsiveContainer width="100%" height={130}>

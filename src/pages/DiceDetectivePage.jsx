@@ -426,7 +426,7 @@ export default function DiceDetectivePage() {
           className="flex flex-col gap-5"
         >
           {/* Dice display */}
-          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col gap-3">
+          <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col gap-3 border border-slate-200/60">
             <DieFaces
               shapes={round.dieA}
               color="#F43F5E"

@@ -354,7 +354,7 @@ export default function BridgeQuestPage() {
 
       {/* Race result */}
       {(phase === 'result' || phase === 'tournament') && playerSurvived !== null && botSurvived !== null && (
-        <div className="bg-white rounded-2xl shadow p-4 mb-4 text-center space-y-2">
+        <div className="bg-white rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] p-4 mb-4 text-center space-y-2 border border-slate-200/60">
           <div className="flex justify-center gap-6 text-sm">
             <span className={`font-bold ${playerSurvived ? 'text-green-600' : 'text-red-500'}`}>
               👤 {playerSurvived ? t('bridgeQuest.survived') : t('bridgeQuest.didNotSurvive')}
@@ -384,7 +384,7 @@ export default function BridgeQuestPage() {
 
       {/* Tournament result */}
       {phase === 'tournament' && (
-        <div className="bg-white rounded-3xl shadow-lg p-6 text-center space-y-3">
+        <div className="bg-white rounded-3xl shadow-lg p-6 text-center space-y-3 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60">
           <p className="text-3xl font-extrabold text-slate-800">{tournamentMsg}</p>
           <p className="text-slate-500 font-bold text-lg">
             {t('bridgeQuest.score', { p: scores.player, b: scores.bot })}
