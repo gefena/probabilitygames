@@ -9,5 +9,5 @@
 
 ## 3. Verify
 
-- [ ] 3.1 Load `/dice-detective` in the browser and confirm the game and quiz panel both render without error in English
-- [ ] 3.2 Switch to Hebrew and confirm the quiz panel renders in Hebrew with no missing translation keys
+- [x] 3.1 Load `/dice-detective` in the browser and confirm the game and quiz panel both render without error in English
+- [x] 3.2 Switch to Hebrew and confirm the quiz panel renders in Hebrew with no missing translation keys
