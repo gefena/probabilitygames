@@ -37,6 +37,30 @@
       "cards": {
         "title": "Card Draw",
         "desc": "Draw cards from a deck and watch probabilities change with every draw."
+      },
+      "higherOrLower": {
+        "desc": "Guess whether the next card is higher or lower — and watch the odds shift with every draw."
+      },
+      "rollAndRace": {
+        "desc": "Pick a car, roll two dice, and cheer it on — but watch out for the sneaky favourite!"
+      },
+      "diceDetective": {
+        "desc": "Two dice, 16 outcomes. Count the matching cells and crack the probability clue."
+      },
+      "pizzaBuilder": {
+        "desc": "Build your menu, pick your favourites, and see how often you get lucky!"
+      },
+      "removeOne": {
+        "desc": "Place your tokens, roll the dice, and clear your board — but where you put them is everything."
+      },
+      "probabilityBingo": {
+        "desc": "Pick your numbers wisely — it's not just what you pick, but where you put them."
+      },
+      "climberRace": {
+        "desc": "Bet on one or two climbers, add their chances together, and race to the summit!"
+      },
+      "bridgeQuest": {
+        "desc": "Find the safest path across the bridges — and beat the Greedy Bot!"
       }
     },
     "learnMore": "Explore More",
