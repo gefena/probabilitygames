@@ -2,8 +2,260 @@
   "nav": {
     "home": "Home"
   },
-  "site": {
-    "title": "Probability Playground"
+  "lang": {
+    "switch": "עב"
+  },
+  "home": {
+    "subtitle": "Learn probability by playing games!",
+    "tiers": {
+      "startHere": {
+        "title": "Start Here",
+        "tagline": "Tap once and see what chance looks like"
+      },
+      "goDeeper": {
+        "title": "Go Deeper",
+        "tagline": "Make decisions — and find out if they pay off"
+      }
+    },
+    "games": {
+      "coinFlip": {
+        "title": "Coin Flip Lab",
+        "desc": "Flip a coin and discover why heads and tails each happen half the time."
+      },
+      "dice": {
+        "title": "Lucky Dice",
+        "desc": "Roll dice and see which numbers come up most often."
+      },
+      "candy": {
+        "title": "Candy Jar",
+        "desc": "Reach into a jar of candies and learn how colour counts affect your chances."
+      },
+      "spinner": {
+        "title": "Magic Spinner",
+        "desc": "Build your own spinner and compare what you expect with what actually happens."
+      },
+      "cards": {
+        "title": "Card Draw",
+        "desc": "Draw cards from a deck and watch probabilities change with every draw."
+      }
+    },
+    "learnMore": "Explore More",
+    "houseAlwaysWins": {
+      "desc": "Discover why lotteries, slot machines, and roulette are all designed to take your coins — and see it happen live."
+    },
+    "birthdayRoom": {
+      "desc": "How many people until two share a birthday? The answer will surprise you!"
+    },
+    "mysteryMachine": {
+      "desc": "Observe a hidden machine's outputs and guess its secret probabilities. Can you crack it?"
+    },
+    "prizeMachine": {
+      "desc": "Build your own prize machine, calculate expected value, and see if reality matches the math!"
+    },
+    "luckyCombo": {
+      "desc": "Combine two events with AND or OR and explore how compound probability works."
+    },
+    "greedyPig": {
+      "desc": "Roll the die and keep going — but a 1 wipes your turn! Beat the Greedy Bot and discover when to stop."
+    },
+    "higherOrLower": {
+      "title": "Higher or Lower",
+      "desc": "A die is rolled — will the next one be higher or lower? Read the odds, make your call, and build the longest streak you can!"
+    },
+    "rollAndRace": {
+      "title": "Roll & Race",
+      "desc": "Pick a car numbered 2–12, roll two dice, and watch the race unfold. Which car crosses the finish line first?"
+    },
+    "removeOne": {
+      "title": "Remove One",
+      "desc": "Place your tokens across the numbers, then roll two dice. Remove one token when your number comes up — first to clear the board wins!"
+    },
+    "probabilityBingo": {
+      "title": "Probability Bingo",
+      "desc": "Fill a 3×3 card with two-dice sums and race to complete a row, column, or diagonal. Position matters as much as probability!"
+    },
+    "pizzaBuilder": {
+      "title": "Pizza Builder",
+      "desc": "Build a pizza menu and watch combinations multiply. Pick your favourites, order randomly, and see the math of compound events in action!"
+    },
+    "climberRace": {
+      "title": "Climber Race",
+      "desc": "Four climbers, one spinner, changing odds every turn. Bet on one or two — add their chances and see who reaches the summit first!"
+    },
+    "bridgeQuest": {
+      "title": "Bridge Quest",
+      "desc": "Three paths, rickety bridges, one Greedy Bot. Multiply the survival odds, pick the safest route, and race across in a 3-round tournament!"
+    },
+    "diceDetective": {
+      "title": "Dice Detective",
+      "desc": "Count how many outcomes match the clue. Two dice, 16 possibilities — tap the cells or type the count."
+    },
+    "crackTheCode": {
+      "title": "Crack the Code",
+      "tagline": "Feel how fast possibilities explode",
+      "guessPhone": {
+        "title": "Guess the Phone Number",
+        "desc": "Crack a secret number digit by digit. Start simple — then watch how one extra digit makes it 10× harder."
+      },
+      "hackPassword": {
+        "title": "Hack the Password",
+        "desc": "Crack a secret password character by character. Bigger alphabet, longer password = astronomical combinations.",
+        "hardModeHint": "Hard mode is case-sensitive — 0 is zero, O is letter O; 1 is one, l is lowercase L, I is uppercase i"
+      }
+    },
+    "patternsInChaos": {
+      "title": "Patterns in Chaos",
+      "tagline": "Watch randomness reveal hidden order",
+      "galtonBoard": {
+        "title": "Galton Board",
+        "desc": "Drop balls through a peg maze and watch a perfect bell curve build itself from pure randomness."
+      },
+      "randomWalk": {
+        "title": "Random Walk",
+        "desc": "A dot wanders randomly — but its spread follows a precise mathematical law."
+      },
+      "monteCarloPi": {
+        "title": "Monte Carlo π",
+        "desc": "Throw random darts at a square and discover π hiding inside the chaos."
+      },
+      "montyHall": {
+        "title": "Monty Hall",
+        "desc": "Pick a door, the host reveals a goat — should you switch? The answer will shock you."
+      }
+    }
+  },
+  "coin": {
+    "flip": "Flip!",
+    "heads": "Heads",
+    "tails": "Tails",
+    "reset": "Reset",
+    "totalFlips": "Total Flips",
+    "headsCount": "Heads",
+    "tailsCount": "Tails",
+    "headsPercent": "Heads %",
+    "multiplier": "Flip count",
+    "result_heads": "Heads!",
+    "result_tails": "Tails!",
+    "instructions": "Press Flip and watch what happens! Flip many times and see how the result gets closer and closer to half-and-half.",
+    "streak": {
+      "modeLab": "Flip Lab",
+      "modeStreak": "Streak Hunter",
+      "currentStreak": "Current Streak",
+      "noStreak": "No streak yet — flip to start!",
+      "history": "Flip History",
+      "historyEmpty": "Nothing yet…",
+      "predictionPrompt": "What happens next?",
+      "continues": "Streak continues",
+      "breaks": "Streak breaks",
+      "correct": "✓ Correct! +1",
+      "wrong": "✗ Wrong!",
+      "score": "Score",
+      "flipToStart": "Flip to Start",
+      "histogramTitle": "Streak Length History",
+      "histogramX": "Length",
+      "histogramY": "Count",
+      "histogramEmpty": "No completed streaks yet"
+    }
+  },
+  "dice": {
+    "roll": "Roll!",
+    "reset": "Reset",
+    "diceCount": "Number of dice",
+    "predict": "What do you predict?",
+    "predict1": "Pick a face (1–6)",
+    "predict2": "Pick a sum (2–12)",
+    "predict3": "Pick a sum (3–18)",
+    "correct": "You got it!",
+    "incorrect": "Not this time!",
+    "chance": "Chance of",
+    "is": "is",
+    "totalRolls": "Total Rolls",
+    "faceChart": "Face Distribution",
+    "sumChart": "Sum Distribution",
+    "expected": "Expected",
+    "actual": "Actual",
+    "instructions": "Pick how many dice to roll, make a prediction, then roll! Watch how the chart of results builds up over many rolls.",
+    "custom": {
+      "label": "Custom",
+      "facesTitle": "Custom Die Faces",
+      "face": "Face {{n}}",
+      "reset": "Reset to standard",
+      "predict": "Pick a value"
+    }
+  },
+  "candy": {
+    "draw": "Draw!",
+    "reset": "Reset Draws",
+    "totalDraws": "Total Draws",
+    "probability": "Probability",
+    "actual": "Actual",
+    "expected": "Expected",
+    "multiplier": "Draw count",
+    "colors": {
+      "red": "Red",
+      "blue": "Blue",
+      "green": "Green"
+    },
+    "instructions": "Use the + and − buttons to change how many of each candy colour are in the jar. Then draw candies and watch the chart!",
+    "noRefill": {
+      "toggle": "No Refill",
+      "empty": "Jar is empty — reset to refill"
+    }
+  },
+  "spinner": {
+    "spin": "Spin!",
+    "reset": "Reset Spins",
+    "addSection": "Add Section",
+    "remove": "Remove",
+    "totalSpins": "Total Spins",
+    "section": "Section",
+    "probability": "Probability",
+    "actual": "Actual",
+    "expected": "Expected",
+    "instructions": "Adjust the slice sizes with the + and − buttons, then hit Spin! Can you predict which slice wins most often? Try making one slice very large and see what happens.",
+    "twoRounds": {
+      "toggle": "Two Rounds",
+      "round1": "Round 1",
+      "round2": "Round 2",
+      "spinRound2": "Spin Round 2!",
+      "nextTournament": "Next Tournament",
+      "combined": "Combined Probability",
+      "summary": "Round 1: {{r1}} → Round 2: {{r2}} — combined: {{prob}}%"
+    },
+    "treeStart": "Start"
+  },
+  "cards": {
+    "draw": "Draw a Card",
+    "reset": "Shuffle & Reset",
+    "remaining": "cards remaining",
+    "drawnHistory": "Drawn Cards",
+    "suits": "Suit Probabilities",
+    "rankPanel": "Rank Probability",
+    "selectRank": "Select rank",
+    "deckEmpty": "Deck is empty — reset to play again!",
+    "explanation": "You drew {{card}}. Now there {{are}} {{count}} {{suit}} left in {{remaining}} cards — chance: {{prob}}%",
+    "suits_display": {
+      "hearts": "Hearts ♥",
+      "diamonds": "Diamonds ♦",
+      "clubs": "Clubs ♣",
+      "spades": "Spades ♠"
+    },
+    "ranks": {
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "A": "Ace",
+      "J": "Jack",
+      "Q": "Queen",
+      "K": "King"
+    },
+    "instructions": "Click Draw a Card and watch how the probability percentages change with each draw. Can you predict which suit will run out first?"
   },
   "common": {
     "backHome": "← Home",
@@ -965,7 +1217,8 @@
     "diffMedium": "Medium (a–z + 0–9)",
     "diffHard": "Hard (A–Z + a–z + 0–9)",
     "hardModeHint": "Hard mode is case-sensitive — 0 is zero, O is letter O; 1 is one, l is lowercase L, I is uppercase i",
-    "attemptsLabel": "Attempts",    "combinationsLabel": "Total combinations",
+    "attemptsLabel": "Attempts",
+    "combinationsLabel": "Total combinations",
     "probabilityLabel": "Remaining possibilities",
     "probabilityValue": "1 in {{n}}",
     "comparisonGrain": "More than grains of sand on a beach 🏖️",
@@ -1286,7 +1539,6 @@
     "you": "You",
     "explainer": {
       "title": "Why multiply bridge probabilities?",
-
       "body": "To survive a full path, you must survive every bridge — one after another. Because each bridge is independent (one fall doesn't affect the next), you multiply: P(path) = P(bridge 1) × P(bridge 2) × … × P(bridge n). An 80% bridge followed by a 70% bridge gives you only 0.8 × 0.7 = 0.56, or 56 in 100. Every extra bridge shrinks your odds — even a 'safe' 90% bridge multiplied in drops a 70% path to 63%.",
       "example": "Compare: Path A has bridges [85%, 75%, 70%] → 85 × 75 × 70 ÷ 10000 ≈ 45 in 100. Path B has bridges [50%, 98%, 98%] → 50 × 98 × 98 ÷ 10000 ≈ 48 in 100. Path B looks scarier at first glance — that 50% bridge! — but it's actually safer overall. The Greedy Bot always falls for this trap.",
       "callout": "The Greedy Bot picks the path whose worst bridge is best. You pick the path whose total product is best. That difference is exactly why the bot is beatable — and why multiplying matters.",
@@ -1338,5 +1590,8 @@
       "keep": "Keep practising",
       "again": "Play Again"
     }
+  },
+  "site": {
+    "title": "Probability Playground"
   }
 }
