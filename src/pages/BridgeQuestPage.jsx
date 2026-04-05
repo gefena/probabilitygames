@@ -179,7 +179,7 @@ function PathRow({
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div>
               <p className="text-blue-700 font-bold text-sm">
-                {showFraction
+                {showFraction && path.survivalDen <= 30
                   ? t('bridgeQuest.survivalFraction', { frac: `${path.survivalNum}/${path.survivalDen}` })
                   : t('bridgeQuest.survival', { n: survivalN })
                 }
@@ -381,7 +381,8 @@ export default function BridgeQuestPage() {
       <div className="flex justify-end mb-3">
         <button
           onClick={() => setShowFractions(f => !f)}
-          className="text-xs font-semibold px-3 py-1 rounded-full border border-violet-300 bg-violet-50 text-violet-700 hover:bg-violet-100 transition-colors"
+          disabled={phase === 'crossing' || phase === 'botCross'}
+          className="text-xs font-semibold px-3 py-1 rounded-full border border-violet-300 bg-violet-50 text-violet-700 hover:bg-violet-100 transition-colors disabled:opacity-40 disabled:cursor-default"
         >
           {showFractions ? t('bridgeQuest.showPercent') : t('bridgeQuest.showFractions')}
         </button>
