@@ -92,12 +92,16 @@ const gameConnections = {
     { to: '/lucky-combo',       emoji: '🔗', titleKey: 'common.games.lucky-combo',       reasonKey: 'suggestions.prizeMachine.1' },
   ],
   'guess-the-phone': [
-    { to: '/hack-the-password', emoji: '🔐', titleKey: 'common.games.hack-the-password', reasonKey: 'suggestions.guessThePhone.0' },
-    { to: '/lucky-combo',       emoji: '🔗', titleKey: 'common.games.lucky-combo',       reasonKey: 'suggestions.guessThePhone.1' },
+    { to: '/hack-the-password',    emoji: '🔐', titleKey: 'common.games.hack-the-password',    reasonKey: 'suggestions.guessThePhone.0' },
+    { to: '/pattern-lock-hacker',  emoji: '🔒', titleKey: 'common.games.pattern-lock-hacker',  reasonKey: 'suggestions.guessThePhone.1' },
   ],
   'hack-the-password': [
-    { to: '/guess-the-phone', emoji: '📱', titleKey: 'common.games.guess-the-phone', reasonKey: 'suggestions.hackThePassword.0' },
-    { to: '/lucky-combo',     emoji: '🔗', titleKey: 'common.games.lucky-combo',     reasonKey: 'suggestions.hackThePassword.1' },
+    { to: '/guess-the-phone',     emoji: '📱', titleKey: 'common.games.guess-the-phone',     reasonKey: 'suggestions.hackThePassword.0' },
+    { to: '/pattern-lock-hacker', emoji: '🔒', titleKey: 'common.games.pattern-lock-hacker', reasonKey: 'suggestions.hackThePassword.1' },
+  ],
+  'pattern-lock-hacker': [
+    { to: '/guess-the-phone',   emoji: '📱', titleKey: 'common.games.guess-the-phone',   reasonKey: 'suggestions.patternLock.0' },
+    { to: '/hack-the-password', emoji: '🔐', titleKey: 'common.games.hack-the-password', reasonKey: 'suggestions.patternLock.1' },
   ],
   'mystery-machine': [
     { to: '/lucky-dice',     emoji: '🎲', titleKey: 'common.games.lucky-dice',     reasonKey: 'suggestions.mysteryMachine.0' },

@@ -43,7 +43,8 @@ const TIERS = [
     dark: 'bg-slate-800',
     games: [
       { to: '/guess-the-phone',   emoji: '📱', color: 'bg-violet-600', titleKey: 'common.games.guess-the-phone',   descKey: 'home.crackTheCode.guessPhone.desc'   },
-      { to: '/hack-the-password', emoji: '🔐', color: 'bg-rose-600',   titleKey: 'common.games.hack-the-password', descKey: 'home.crackTheCode.hackPassword.desc' },
+      { to: '/hack-the-password',    emoji: '🔐', color: 'bg-rose-600',   titleKey: 'common.games.hack-the-password',    descKey: 'home.crackTheCode.hackPassword.desc'    },
+      { to: '/pattern-lock-hacker', emoji: '🔒', color: 'bg-slate-600', titleKey: 'common.games.pattern-lock-hacker', descKey: 'home.crackTheCode.patternLock.desc' },
     ],
   },
   {

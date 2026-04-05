@@ -28,6 +28,7 @@ import BridgeQuestPage from './pages/BridgeQuestPage'
 import DiceDetectivePage from './pages/DiceDetectivePage'
 import GuessThePhonePage from './pages/GuessThePhonePage'
 import HackThePasswordPage from './pages/HackThePasswordPage'
+import PatternLockHackerPage from './pages/PatternLockHackerPage'
 
 const PAGE_TITLES = {
   '/': null,
@@ -56,6 +57,7 @@ const PAGE_TITLES = {
   '/dice-detective': 'common.games.dice-detective',
   '/guess-the-phone': 'common.games.guess-the-phone',
   '/hack-the-password': 'common.games.hack-the-password',
+  '/pattern-lock-hacker': 'common.games.pattern-lock-hacker',
 }
 
 export default function App() {
@@ -106,6 +108,7 @@ export default function App() {
         <Route path="/dice-detective" element={<DiceDetectivePage />} />
         <Route path="/guess-the-phone" element={<GuessThePhonePage />} />
         <Route path="/hack-the-password" element={<HackThePasswordPage />} />
+        <Route path="/pattern-lock-hacker" element={<PatternLockHackerPage />} />
       </Route>
     </Routes>
   )

@@ -125,6 +125,9 @@
         "title": "Hack the Password",
         "desc": "Crack a secret password character by character. Bigger alphabet, longer password = astronomical combinations.",
         "hardModeHint": "Hard mode is case-sensitive — 0 is zero, O is letter O; 1 is one, l is lowercase L, I is uppercase i"
+      },
+      "patternLock": {
+        "desc": "Draw patterns on a 3×3 grid to crack a secret lock. Then trigger the smudge attack and watch thousands of possibilities collapse to just 24."
       }
     },
     "patternsInChaos": {
@@ -308,7 +311,8 @@
       "monte-carlo-pi": "Monte Carlo π",
       "birthday-room": "Birthday Room",
       "monty-hall": "Monty Hall",
-      "mystery-machine": "Mystery Machine"
+      "mystery-machine": "Mystery Machine",
+      "pattern-lock-hacker": "Pattern Lock Hacker"
     }
   },
   "prizeMachine": {
@@ -1128,6 +1132,36 @@
         "c": "80% — because you've already survived two bridges so you're on a lucky streak",
         "explanation": "Bridge 3 is 60% regardless of what happened before. The bridges are independent events — your past crossings have no effect on the next one. The total path survival (80% × 70% × 60% ≈ 34%) is the probability you calculated at the start before crossing anything. Once you're standing at bridge 3 having already crossed bridges 1 and 2, the only relevant probability is 60%."
       }
+    },
+    "patternLock": {
+      "q1": {
+        "question": "A 4-dot pattern on a 3×3 grid: how many possible patterns are there?",
+        "a": "36 — 9 dots × 4 positions",
+        "b": "3,024 — 9 × 8 × 7 × 6",
+        "c": "10,000 — same as a 4-digit PIN",
+        "explanation": "Each dot is chosen from the remaining unused dots. First: 9 choices. Second: 8. Third: 7. Fourth: 6. Total: 9 × 8 × 7 × 6 = 3,024. This is P(9, 4) — the number of ordered arrangements of 4 items from 9. You multiply because each choice depends on what came before."
+      },
+      "q2": {
+        "question": "A 4-dot pattern lock vs. a 4-digit PIN — which has more combinations?",
+        "a": "Pattern lock — drawing feels more complex",
+        "b": "PIN — 10,000 vs. only 3,024 patterns",
+        "c": "They're about equal",
+        "explanation": "Surprising but true: a 4-digit PIN (10,000 combos) is more secure than a 4-dot pattern (3,024 combos). PINs allow repeated digits (e.g., 1-1-1-1), giving 10 choices per position every time. Pattern dots can't repeat, so choices shrink: 9, then 8, then 7, then 6."
+      },
+      "q3": {
+        "question": "A smudge attack reveals which 4 dots were used (but not the order). How many orderings remain?",
+        "a": "4 — one per dot",
+        "b": "24 — 4 × 3 × 2 × 1",
+        "c": "3,024 — still the same",
+        "explanation": "Knowing which 4 dots means you're just finding their order: 4 choices for first, 3 for second, 2 for third, 1 for last. That's 4! = 4 × 3 × 2 × 1 = 24. From 3,024 down to 24 is a 99.2% reduction — just from seeing a fingerprint smudge on the screen."
+      },
+      "q4": {
+        "question": "Why do pattern combinations use P(9, k) = 9 × 8 × 7 × … rather than 9^k?",
+        "a": "Because 9^k is too hard to calculate",
+        "b": "Because each dot chosen removes it from future choices",
+        "c": "Because the grid has only 9 positions total",
+        "explanation": "9^k (like 9 × 9 × 9 × 9) would apply if each dot could be reused — like rolling a 9-sided die four times. But a pattern visits each dot at most once: after the first dot (9 options), only 8 remain, then 7, then 6. This \"without replacement\" selection is what makes it a permutation, not a simple power."
+      }
     }
   },
   "explainer": {
@@ -1819,16 +1853,50 @@
       "1": "Combine your luck to beat the odds"
     },
     "guessThePhone": {
-      "0": "Same puzzle, harder password",
-      "1": "How many combinations are really out there?"
+      "0": "Same idea, but crack a password with letters too",
+      "1": "Now try cracking a visual pattern — and discover the smudge attack"
     },
     "hackThePassword": {
-      "0": "A shorter code — can you crack it faster?",
-      "1": "Combinations in a different shape"
+      "0": "Start simpler — crack a 4-digit phone number first",
+      "1": "Try drawing patterns instead of typing — and see how smudges break security"
     },
     "mysteryMachine": {
       "0": "Is the machine rigged? Same question, different game",
       "1": "Figure out which face is loaded from the data"
+    },
+    "patternLock": {
+      "0": "Compare: independent digits vs. ordered dots — which is more secure?",
+      "1": "Now crack passwords with letters and symbols — watch the numbers explode"
+    }
+  },
+  "patternLock": {
+    "title": "Pattern Lock Hacker",
+    "emoji": "🔒",
+    "subtitle": "Crack a phone's pattern lock by drawing the secret path.",
+    "howToPlay": "A secret pattern is hidden on the 3×3 grid. Click dots one by one to draw your attempt — the order matters! Submit when you've drawn all the dots. Use the Smudge Attack to reveal which dots belong to the pattern (but not the order), and watch the possibilities collapse.",
+    "lengthLabel": "Pattern length",
+    "attemptsLabel": "Wrong attempts",
+    "possibleLabel": "Possible patterns",
+    "smudgeBtn": "Smudge Attack",
+    "smudgeUsed": "Smudge revealed!",
+    "afterSmudge": "After smudge attack",
+    "submitBtn": "Submit",
+    "clearBtn": "Clear",
+    "giveUpBtn": "Give Up",
+    "playAgain": "Play Again",
+    "tryAgain": "Try Again",
+    "wonTitle": "Pattern cracked!",
+    "wrongMsg": "Wrong pattern — {{n}} wrong so far",
+    "gaveUpMsg": "The secret pattern:",
+    "reductionLabel": "fewer to try",
+    "dotsCounter": "{{n}} / {{k}} dots",
+    "wonSummary": "Cracked in {{attempts}} wrong attempts. Without smudge: {{total}} patterns. With smudge: just {{smudge}} orderings.",
+    "explainer": {
+      "title": "Why does order matter so much?",
+      "body": "When you draw a pattern, each dot you touch reduces the remaining choices for the next one. With a 4-dot pattern on 9 dots: 9 choices for the first, 8 for the second, 7 for the third, 6 for the fourth. Total: 9 × 8 × 7 × 6 = 3,024. This is called a permutation — ordered selection without replacement, written P(9, 4). It's different from the PIN game where each digit is independent (10 × 10 × 10 × 10 = 10,000): patterns have fewer combinations because you can't reuse a dot.",
+      "example": "The smudge attack shows why pattern locks are weaker than they seem. Fingerprint oils leave marks on the dots that were touched. If you can see which 4 dots were used, you only need to find their order: 4 × 3 × 2 × 1 = 24 tries. From 3,024 down to 24 — a 99.2% reduction, just from a dirty screen. Real security researchers use this attack on physical phones.",
+      "callout": "Surprising fact: a 4-dot pattern (3,024 options) is actually LESS secure than a 4-digit PIN (10,000 options), because digits can repeat but dots cannot. To beat a PIN, use a 5-dot pattern: P(9, 5) = 15,120 combinations — 50% more secure than a PIN.",
+      "furtherReading": "P(n, k) is the number of ways to arrange k items chosen from n without repetition: P(n, k) = n! / (n−k)!. Compare this to combinations C(n, k) = n! / (k! × (n−k)!) — combinations don't care about order, permutations do. Pattern locks use permutations because 1→2→3 is a different pattern from 3→2→1. This distinction — ordered vs. unordered selection — is one of the core ideas in combinatorics and appears in card games, passwords, DNA sequences, and lottery draws."
     }
   }
 }
