@@ -1556,7 +1556,25 @@
       "body": "A fair die has 6 faces, all equally likely. But 'higher than 3' and 'higher than 5' are very different bets. From 3, there are 3 faces above it (4, 5, 6) — a 3/6 = 50% chance. From 5, only one face is higher (6) — just 1/6 = 17%. The current face tells you exactly how the remaining 5 faces split between higher, equal, and lower. That's conditional probability: the chance of the next outcome depends on what you can see right now.",
       "example": "Roll a 1 → P(higher) = 5/6 = 83%. Roll a 6 → P(higher) = 0%. Roll a 3 → P(higher) = 3/6 = 50%, P(lower) = 2/6 = 33%. The equal probability is always exactly 1/6 — it never changes.",
       "callout": "P(equal) = 1/6 always. Whether the die shows 1 or 6 or anything in between, the chance of rolling the same number again is always exactly one in six.",
-      "furtherReading": "What you're reading from the odds panel is called Conditional Probability — the probability of an event given that you already know something. Written P(next > current | current = 3) = 3/6. Unlike coin flips, where every flip is independent, here the current face gives you real information. In statistics, data that updates your probability estimate is called evidence — and this game shows exactly how evidence changes the odds in real time."
+      "furtherReading": "What you're reading from the odds panel is called Conditional Probability — the probability of an event given that you already know something. Written P(next > current | current = 3) = 3/6. Unlike coin flips, where every flip is independent, here the current face gives you real information. In statistics, data that updates your probability estimate is called evidence — and this game shows exactly how evidence changes the odds in real time.",
+      "sumTitle": "Why is 7 the most common sum with two dice?",
+      "sumBody": "When you roll two dice, each combination is equally likely — but sums aren't! To get a sum of 2, only one combo works (1+1). To get a 7, six combos work: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1. That's why 7 appears in 6 out of 36 rolls — the most of any sum. Numbers near the middle have more ways to happen, so they show up more often."
+    },
+    "levelUp": "Level Up! Two-Dice Mode Unlocked! 🎲🎲",
+    "twoMode": {
+      "currentSum": "Sum: {{n}}",
+      "subtitle": "Two dice now — guess if the sum will be higher or lower",
+      "oddsHigher": "Higher",
+      "oddsLower": "Lower",
+      "oddsEqual": "Same"
+    },
+    "bet": {
+      "button": "Bet it all!",
+      "prompt": "Pick the exact next value:",
+      "chance": "{{frac}} chance",
+      "win": "Exact match! Streak doubled! 🎯",
+      "lose": "Not this time. Streak reset.",
+      "cancel": "Cancel"
     }
   },
   "climberRace": {
