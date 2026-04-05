@@ -13,10 +13,10 @@
 export default function ExplainerPanel({ title, body, example, visual, callout, furtherReading, accentColor = 'border-violet-400' }) {
   return (
     <div className={`bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60 border-s-4 ${accentColor} my-6`}>
-      <h3 className="font-extrabold text-gray-800 text-base mb-2">💡 {title}</h3>
+      <h3 className="font-extrabold text-gray-800 text-lg mb-2">💡 {title}</h3>
 
       {body && (
-        <p className="text-gray-600 text-sm leading-relaxed mb-3">{body}</p>
+        <p className="text-gray-600 text-base leading-relaxed mb-3">{body}</p>
       )}
 
       {visual && (
@@ -24,13 +24,13 @@ export default function ExplainerPanel({ title, body, example, visual, callout, 
       )}
 
       {example && (
-        <div className="bg-gray-50 rounded-2xl px-4 py-3 text-sm text-gray-700 leading-relaxed">
+        <div className="bg-gray-50 rounded-2xl px-4 py-3 text-base text-gray-700 leading-relaxed">
           {example}
         </div>
       )}
 
       {callout && (
-        <div className="mt-3 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 text-sm text-amber-800 leading-relaxed">
+        <div className="mt-3 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 text-base text-amber-800 leading-relaxed">
           ⭐ {callout}
         </div>
       )}

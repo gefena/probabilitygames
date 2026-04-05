@@ -37,7 +37,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
   return (
     <div className={`bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60 border-s-4 ${accentColor} my-6`}>
       <div className="flex items-center justify-between mb-3">
-        <h3 className="font-extrabold text-gray-800 text-base">🧠 {t('quiz.title')}</h3>
+        <h3 className="font-extrabold text-gray-800 text-lg">🧠 {t('quiz.title')}</h3>
         <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
             {questions.map((_, i) => (
@@ -66,7 +66,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
         >
-          <p className="font-bold text-gray-800 text-sm mb-4 leading-relaxed">
+          <p className="font-bold text-gray-800 text-base mb-4 leading-relaxed">
             {t(question.question)}
           </p>
 
@@ -93,7 +93,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
                   disabled={revealed}
                   animate={isShaking ? { x: [0, -8, 8, -6, 6, 0] } : {}}
                   transition={{ duration: 0.4 }}
-                  className={`text-start px-4 py-2.5 rounded-2xl border-2 text-sm font-medium transition-colors ${style} disabled:cursor-default`}
+                  className={`text-start px-4 py-2.5 rounded-2xl border-2 text-base font-medium transition-colors ${style} disabled:cursor-default`}
                 >
                   <span className="flex items-center gap-2">
                     {revealed && opt.correct && (
@@ -124,7 +124,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.25 }}
               >
-                <div className={`rounded-2xl px-4 py-3 text-sm leading-relaxed mb-4 ${isCorrect ? 'bg-green-50 text-green-800' : 'bg-amber-50 text-amber-800'}`}>
+                <div className={`rounded-2xl px-4 py-3 text-base leading-relaxed mb-4 ${isCorrect ? 'bg-green-50 text-green-800' : 'bg-amber-50 text-amber-800'}`}>
                   {isCorrect ? '🎉 ' : '💡 '}{t(question.explanation)}
                 </div>
               </motion.div>
@@ -136,7 +136,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onClick={handleNext}
-              className="px-5 py-2 bg-gray-100 text-gray-700 font-bold rounded-2xl hover:bg-gray-200 transition-colors text-sm"
+              className="px-5 py-2 bg-gray-100 text-gray-700 font-bold rounded-2xl hover:bg-gray-200 transition-colors text-base"
             >
               {t('quiz.next')}
             </motion.button>

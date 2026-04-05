@@ -9,7 +9,7 @@ export default function GamePageLayout({ children, title, emoji }) {
     <div className="max-w-5xl mx-auto px-4 py-6">
       <button
         onClick={() => navigate('/')}
-        className="mb-4 text-violet-600 font-semibold hover:text-violet-800 transition-colors text-sm"
+        className="mb-4 py-3 px-2 -mx-2 rounded-lg text-violet-600 font-semibold hover:text-violet-800 hover:bg-violet-50 transition-colors text-sm"
       >
         {t('common.backHome')}
       </button>
