@@ -8,6 +8,7 @@ import QuizPanel from '../components/QuizPanel'
 import probabilityBingoQuestions from '../quizzes/probabilityBingo'
 import { usePersonalBest } from '../hooks/usePersonalBest'
 import PersonalBestBadge from '../components/PersonalBestBadge'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Pip layouts ────────────────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -514,6 +515,7 @@ export default function ProbabilityBingoPage() {
       />
 
       <QuizPanel questions={probabilityBingoQuestions} />
+          <GameSuggestions gameId="probability-bingo" />
     </GamePageLayout>
   )
 }

@@ -6,6 +6,7 @@ import QuizPanel from '../components/QuizPanel'
 import bridgeQuestQuestions from '../quizzes/bridgeQuest'
 import { usePersonalBest } from '../hooks/usePersonalBest'
 import PersonalBestBadge from '../components/PersonalBestBadge'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -419,6 +420,7 @@ export default function BridgeQuestPage() {
 
       {/* Quiz */}
       <QuizPanel questions={bridgeQuestQuestions} accentColor="border-blue-400" />
+          <GameSuggestions gameId="bridge-quest" />
     </GamePageLayout>
   )
 }

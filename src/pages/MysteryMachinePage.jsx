@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import mysteryMachineQuestions from '../quizzes/mysteryMachine'
+import GameSuggestions from '../components/GameSuggestions'
 
 const DIFFICULTY_CONFIG = {
   easy:   { numOutcomes: 2, budget: 100, minWeight: 2 },
@@ -356,6 +357,7 @@ export default function MysteryMachinePage() {
 
       {/* ── Quiz ─────────────────────────────────────────────────────────── */}
       <QuizPanel questions={mysteryMachineQuestions} accentColor="border-indigo-400" />
+          <GameSuggestions gameId="mystery-machine" />
     </GamePageLayout>
   )
 }

@@ -6,6 +6,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import candyJarQuestions from '../quizzes/candyJar'
+import GameSuggestions from '../components/GameSuggestions'
 
 const DEFAULT_COLORS = [
   { id: 'red',   bg: '#EF4444', label_key: 'candy.colors.red',   count: 5 },
@@ -352,6 +353,7 @@ export default function CandyJarPage() {
           </BarChart>
         </ResponsiveContainer>
       </div>
+          <GameSuggestions gameId="candy-jar" />
     </GamePageLayout>
   )
 }

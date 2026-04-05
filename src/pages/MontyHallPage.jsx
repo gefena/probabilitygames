@@ -6,6 +6,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import montyHallQuestions from '../quizzes/montyHall'
+import GameSuggestions from '../components/GameSuggestions'
 
 // Phase constants
 const PHASE_PICK = 'pick'
@@ -299,6 +300,7 @@ export default function MontyHallPage() {
       />
 
       <QuizPanel questions={montyHallQuestions} accentColor="border-amber-400" />
+          <GameSuggestions gameId="monty-hall" />
     </GamePageLayout>
   )
 }

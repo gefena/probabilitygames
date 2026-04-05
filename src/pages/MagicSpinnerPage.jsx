@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import spinnerQuestions from '../quizzes/magicSpinner'
+import GameSuggestions from '../components/GameSuggestions'
 
 const PALETTE = ['#7C3AED', '#EC4899', '#F97316', '#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#06B6D4']
 
@@ -451,6 +452,7 @@ export default function MagicSpinnerPage() {
           </BarChart>
         </ResponsiveContainer>
       </div>
+          <GameSuggestions gameId="spinner" />
     </GamePageLayout>
   )
 }

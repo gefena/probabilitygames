@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import climberRaceQuestions from '../quizzes/climberRace'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -423,6 +424,7 @@ export default function ClimberRacePage() {
 
       {/* Quiz */}
       <QuizPanel questions={climberRaceQuestions} accentColor="border-violet-400" />
+          <GameSuggestions gameId="climber-race" />
     </GamePageLayout>
   )
 }

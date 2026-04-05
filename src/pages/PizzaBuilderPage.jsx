@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import pizzaBuilderQuestions from '../quizzes/pizzaBuilder'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const ALL_CRUSTS   = ['thin', 'thick', 'sourdough', 'deepDish']
@@ -401,6 +402,7 @@ export default function PizzaBuilderPage() {
       />
 
       <QuizPanel questions={pizzaBuilderQuestions} />
+          <GameSuggestions gameId="pizza-builder" />
     </GamePageLayout>
   )
 }

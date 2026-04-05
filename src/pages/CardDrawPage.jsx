@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import cardDrawQuestions from '../quizzes/cardDraw'
+import GameSuggestions from '../components/GameSuggestions'
 
 const SUITS = ['hearts', 'diamonds', 'clubs', 'spades']
 const SUIT_SYMBOLS = { hearts: '♥', diamonds: '♦', clubs: '♣', spades: '♠' }
@@ -269,6 +270,7 @@ export default function CardDrawPage() {
           </div>
         </div>
       )}
+          <GameSuggestions gameId="card-draw" />
     </GamePageLayout>
   )
 }

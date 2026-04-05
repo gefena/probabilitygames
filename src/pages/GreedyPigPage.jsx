@@ -8,6 +8,7 @@ import QuizPanel from '../components/QuizPanel'
 import greedyPigQuestions from '../quizzes/greedyPig'
 import { usePersonalBest } from '../hooks/usePersonalBest'
 import PersonalBestBadge from '../components/PersonalBestBadge'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Die face pip patterns ─────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -478,6 +479,7 @@ export default function GreedyPigPage() {
       />
 
       <QuizPanel questions={greedyPigQuestions} accentColor="border-amber-400" />
+          <GameSuggestions gameId="greedy-pig" />
     </GamePageLayout>
   )
 }

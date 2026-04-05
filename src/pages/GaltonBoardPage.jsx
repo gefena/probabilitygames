@@ -6,6 +6,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import galtonBoardQuestions from '../quizzes/galtonBoard'
+import GameSuggestions from '../components/GameSuggestions'
 
 const ROWS = 8
 const NUM_BINS = ROWS + 1
@@ -182,6 +183,7 @@ export default function GaltonBoardPage() {
       />
 
       <QuizPanel questions={galtonBoardQuestions} accentColor="border-violet-400" />
+          <GameSuggestions gameId="galton-board" />
     </GamePageLayout>
   )
 }

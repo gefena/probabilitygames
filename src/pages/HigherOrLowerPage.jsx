@@ -7,6 +7,7 @@ import QuizPanel from '../components/QuizPanel'
 import higherOrLowerQuestions from '../quizzes/higherOrLower'
 import { usePersonalBest } from '../hooks/usePersonalBest'
 import PersonalBestBadge from '../components/PersonalBestBadge'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Pip layouts ───────────────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -199,6 +200,7 @@ export default function HigherOrLowerPage() {
       />
 
       <QuizPanel questions={higherOrLowerQuestions} accentColor="border-indigo-600" />
+          <GameSuggestions gameId="higher-or-lower" />
     </GamePageLayout>
   )
 }

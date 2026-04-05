@@ -9,6 +9,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import birthdayRoomQuestions from '../quizzes/birthdayRoom'
+import GameSuggestions from '../components/GameSuggestions'
 
 const AVATAR_COLORS = [
   '#7C3AED', '#EC4899', '#F97316', '#10B981', '#3B82F6',
@@ -298,6 +299,7 @@ export default function BirthdayRoomPage() {
 
       {/* ── Quiz ───────────────────────────────────────────────────────── */}
       <QuizPanel questions={birthdayRoomQuestions} accentColor="border-rose-400" />
+          <GameSuggestions gameId="birthday-room" />
     </GamePageLayout>
   )
 }

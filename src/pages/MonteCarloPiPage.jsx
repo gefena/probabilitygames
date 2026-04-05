@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import monteCarloPiQuestions from '../quizzes/monteCarloPi'
+import GameSuggestions from '../components/GameSuggestions'
 
 const CANVAS_SIZE = 300
 const R = CANVAS_SIZE / 2
@@ -246,6 +247,7 @@ export default function MonteCarloPiPage() {
       />
 
       <QuizPanel questions={monteCarloPiQuestions} accentColor="border-rose-400" />
+          <GameSuggestions gameId="monte-carlo-pi" />
     </GamePageLayout>
   )
 }

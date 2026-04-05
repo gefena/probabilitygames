@@ -6,6 +6,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import removeOneQuestions from '../quizzes/removeOne'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Pip layouts ───────────────────────────────────────────────────────────────
 const PIP_LAYOUTS = {
@@ -472,6 +473,7 @@ export default function RemoveOnePage() {
           </>
         )}
       </div>
+          <GameSuggestions gameId="remove-one" />
     </GamePageLayout>
   )
 }

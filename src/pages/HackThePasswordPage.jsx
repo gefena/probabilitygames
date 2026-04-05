@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import hackThePasswordQuestions from '../quizzes/hackThePassword'
+import GameSuggestions from '../components/GameSuggestions'
 
 const LENGTHS = [1, 2, 3, 4, 5]
 
@@ -300,6 +301,7 @@ export default function HackThePasswordPage() {
       />
 
       <QuizPanel questions={hackThePasswordQuestions} accentColor="border-rose-400" />
+          <GameSuggestions gameId="hack-the-password" />
     </GamePageLayout>
   )
 }

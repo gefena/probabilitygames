@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import luckyComboQuestions from '../quizzes/luckyCombo'
+import GameSuggestions from '../components/GameSuggestions'
 
 const COLORS_A = ['#7C3AED', '#EC4899', '#F97316', '#10B981']
 const COLORS_B = ['#3B82F6', '#F59E0B', '#EF4444', '#06B6D4']
@@ -392,6 +393,7 @@ export default function LuckyComboPage() {
 
       {/* ── Quiz ─────────────────────────────────────────────────────────── */}
       <QuizPanel questions={luckyComboQuestions} accentColor="border-teal-400" />
+          <GameSuggestions gameId="lucky-combo" />
     </GamePageLayout>
   )
 }

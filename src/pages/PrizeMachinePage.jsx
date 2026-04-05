@@ -9,6 +9,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import prizeMachineQuestions from '../quizzes/prizeMachine'
+import GameSuggestions from '../components/GameSuggestions'
 
 const DEFAULT_PRIZES = [
   { id: 1, label: '🏆 Jackpot',   prob: 1,  payout: 200 },
@@ -316,6 +317,7 @@ export default function PrizeMachinePage() {
 
       {/* ── Quiz ─────────────────────────────────────────────────────────── */}
       <QuizPanel questions={prizeMachineQuestions} accentColor="border-amber-400" />
+          <GameSuggestions gameId="prize-machine" />
     </GamePageLayout>
   )
 }

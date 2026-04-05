@@ -6,6 +6,7 @@ import QuizPanel from '../components/QuizPanel'
 import diceDetectiveQuestions from '../quizzes/diceDetective'
 import { usePersonalBest } from '../hooks/usePersonalBest'
 import PersonalBestBadge from '../components/PersonalBestBadge'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const SHAPES = ['triangle', 'square', 'circle']
@@ -554,6 +555,7 @@ export default function DiceDetectivePage() {
       <div className="mt-8">
         <QuizPanel questions={diceDetectiveQuestions} accentColor="border-violet-400" />
       </div>
+          <GameSuggestions gameId="dice-detective" />
     </GamePageLayout>
   )
 }

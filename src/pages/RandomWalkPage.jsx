@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import randomWalkQuestions from '../quizzes/randomWalk'
+import GameSuggestions from '../components/GameSuggestions'
 
 const SVG_SIZE = 300
 const STEP_SIZE = 6
@@ -202,6 +203,7 @@ export default function RandomWalkPage() {
       />
 
       <QuizPanel questions={randomWalkQuestions} accentColor="border-cyan-400" />
+          <GameSuggestions gameId="random-walk" />
     </GamePageLayout>
   )
 }

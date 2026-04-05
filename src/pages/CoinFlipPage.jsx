@@ -8,6 +8,7 @@ import QuizPanel from '../components/QuizPanel'
 import coinFlipQuestions from '../quizzes/coinFlip'
 import { usePersonalBest } from '../hooks/usePersonalBest'
 import PersonalBestBadge from '../components/PersonalBestBadge'
+import GameSuggestions from '../components/GameSuggestions'
 
 const MULTIPLIERS = [1, 10, 100]
 
@@ -456,6 +457,7 @@ export default function CoinFlipPage() {
 
         </div>
       )}
+          <GameSuggestions gameId="coin-flip" />
     </GamePageLayout>
   )
 }

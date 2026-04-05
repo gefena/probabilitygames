@@ -1693,5 +1693,112 @@
   "personalBest": {
     "label": "Best: {{n}}",
     "newRecord": "New record!"
+  },
+  "suggestions": {
+    "sectionTitle": "You might also like",
+    "coinFlip": {
+      "0": "See what happens when you flip 1000 coins at once",
+      "1": "Same idea, but the odds aren't 50/50"
+    },
+    "dice": {
+      "0": "Put your dice knowledge to the test",
+      "1": "Dig deeper — figure out which die is loaded"
+    },
+    "candyJar": {
+      "0": "What if you could see all the cards before drawing?",
+      "1": "Watch how odds change when you take one out"
+    },
+    "spinner": {
+      "0": "More outcomes, more surprises",
+      "1": "Try picking from a mix instead of a wheel"
+    },
+    "higherOrLower": {
+      "0": "See the full deck — can you use it to your advantage?",
+      "1": "Another game about knowing when to push your luck"
+    },
+    "cardDraw": {
+      "0": "Only see one card at a time — can you still guess?",
+      "1": "Watch how drawing a card changes what's left"
+    },
+    "diceDetective": {
+      "0": "Use your counting skills in a different kind of game",
+      "1": "One die might be secretly weighted — can you tell?"
+    },
+    "probabilityBingo": {
+      "0": "Figure out which numbers were hiding on the dice",
+      "1": "Race to fill your card using dice sums"
+    },
+    "greedyPig": {
+      "0": "Another game about knowing when to stop vs push forward",
+      "1": "Race up the mountain — is it worth the risk?"
+    },
+    "bridgeQuest": {
+      "0": "Another push-your-luck game, but against a bot",
+      "1": "The door that looks safe might not be — sound familiar?"
+    },
+    "galtonBoard": {
+      "0": "The coin flip is what makes the bell curve — see why",
+      "1": "Another pattern hiding in randomness"
+    },
+    "randomWalk": {
+      "0": "The board that grows from random steps",
+      "1": "Randomness drawing shapes — a step further"
+    },
+    "luckyDice": {
+      "0": "What if both outcomes were equally likely?",
+      "1": "Count outcomes to spot which die is unfair"
+    },
+    "montyHall": {
+      "0": "Another game where the odds feel wrong until you see it",
+      "1": "More surprises hiding in how we count possibilities"
+    },
+    "birthdayRoom": {
+      "0": "Another result that surprises almost everyone",
+      "1": "Use randomness to estimate something unexpected"
+    },
+    "monteCarloPi": {
+      "0": "Another way randomness draws surprising patterns",
+      "1": "The board that starts with randomness too"
+    },
+    "rollAndRace": {
+      "0": "Use dice sums to mark your bingo card",
+      "1": "Find out which numbers come up most often"
+    },
+    "climberRace": {
+      "0": "Another game where risk vs reward decides the winner",
+      "1": "Plan your path to survive the crossing"
+    },
+    "removeOne": {
+      "0": "Pick from a mix and see how odds shift",
+      "1": "See all the cards — does knowing help?"
+    },
+    "pizzaBuilder": {
+      "0": "Count combinations in a totally different way",
+      "1": "Pick from a mix instead of choosing toppings"
+    },
+    "luckyCombo": {
+      "0": "Build something delicious with the same math",
+      "1": "How many codes can you make? More than you think"
+    },
+    "houseAlwaysWins": {
+      "0": "Pull the lever and see the house edge in action",
+      "1": "Is it ever worth playing if the house always wins?"
+    },
+    "prizeMachine": {
+      "0": "Why does the house always win? This shows how",
+      "1": "Combine your luck to beat the odds"
+    },
+    "guessThePhone": {
+      "0": "Same puzzle, harder password",
+      "1": "How many combinations are really out there?"
+    },
+    "hackThePassword": {
+      "0": "A shorter code — can you crack it faster?",
+      "1": "Combinations in a different shape"
+    },
+    "mysteryMachine": {
+      "0": "Is the machine rigged? Same question, different game",
+      "1": "Figure out which face is loaded from the data"
+    }
   }
 }

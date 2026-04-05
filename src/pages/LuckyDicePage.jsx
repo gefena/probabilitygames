@@ -6,6 +6,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import diceQuestions from '../quizzes/luckyDice'
+import GameSuggestions from '../components/GameSuggestions'
 
 // Theoretical probability of a sum with n standard dice
 function sumProbabilities(numDice) {
@@ -384,6 +385,7 @@ export default function LuckyDicePage() {
           </ResponsiveContainer>
         </div>
       </div>
+          <GameSuggestions gameId="dice" />
     </GamePageLayout>
   )
 }

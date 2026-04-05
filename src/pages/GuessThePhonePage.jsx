@@ -5,6 +5,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import guessThePhoneQuestions from '../quizzes/guessThePhone'
+import GameSuggestions from '../components/GameSuggestions'
 
 const LENGTHS = [1, 2, 3, 4, 5]
 
@@ -256,6 +257,7 @@ export default function GuessThePhonePage() {
       />
 
       <QuizPanel questions={guessThePhoneQuestions} accentColor="border-violet-400" />
+          <GameSuggestions gameId="guess-the-phone" />
     </GamePageLayout>
   )
 }

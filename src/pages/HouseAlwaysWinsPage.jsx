@@ -7,6 +7,7 @@ import {
 } from 'recharts'
 import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Mini-simulator ────────────────────────────────────────────────────────────
 function MiniSimulator({ cost, jackpotProb, payout, ev, playLabel, play10Label, accentColor }) {
@@ -417,6 +418,7 @@ export default function HouseAlwaysWinsPage() {
 
       {/* Real World Odds accordion */}
       <RealOddsSection />
+          <GameSuggestions gameId="house-always-wins" />
     </GamePageLayout>
   )
 }

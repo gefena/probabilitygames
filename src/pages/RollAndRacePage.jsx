@@ -6,6 +6,7 @@ import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
 import rollAndRaceQuestions from '../quizzes/rollAndRace'
+import GameSuggestions from '../components/GameSuggestions'
 
 // ── Pip layouts (same pattern as GreedyPigPage) ──────────────────────────────
 const PIP_LAYOUTS = {
@@ -398,6 +399,7 @@ export default function RollAndRacePage() {
           </>
         )}
       </div>
+          <GameSuggestions gameId="roll-and-race" />
     </GamePageLayout>
   )
 }
