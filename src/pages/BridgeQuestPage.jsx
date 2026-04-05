@@ -40,17 +40,18 @@ function simplifyFraction(num, den) {
 
 // ─── Path generation ──────────────────────────────────────────────────────────
 
+const JUSTIFY_OPTIONS = ['flex-start', 'center', 'flex-end']
+
 function randomPath() {
   const n = BRIDGE_COUNTS[Math.floor(Math.random() * BRIDGE_COUNTS.length)]
 
-  // Zone-based x positions: usable range 10%–90%, each bridge in its own zone
-  const zoneWidth = 80 / n
-  const bridges = Array.from({ length: n }, (_, i) => {
+  // Each bridge gets a random alignment within its equal-width flex cell.
+  // This guarantees no overlap on any screen size while keeping a natural look.
+  const bridges = Array.from({ length: n }, () => {
     const { num, den } = FRACTION_POOL[Math.floor(Math.random() * FRACTION_POOL.length)]
     const pct = Math.round(num / den * 100)
-    const zoneStart = 10 + i * zoneWidth
-    const xPct = zoneStart + zoneWidth * 0.15 + Math.random() * zoneWidth * 0.7
-    return { num, den, pct, xPct }
+    const justifyContent = JUSTIFY_OPTIONS[Math.floor(Math.random() * JUSTIFY_OPTIONS.length)]
+    return { num, den, pct, justifyContent }
   })
 
   // Exact survival as simplified fraction
@@ -154,21 +155,23 @@ function PathRow({
         <div className="relative flex-1 h-14">
           {/* Road surface */}
           <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-2 bg-slate-200 rounded-full" />
-          {/* Bridges */}
-          {path.bridges.map((bridge, bi) => {
-            const playerResult = showPlayerResults ? (playerResults[bi] ?? null) : null
-            const botResult    = showBotResults && !showPlayerResults ? (botResults[bi] ?? null) : null
-            const result = playerResult ?? botResult
-            return (
-              <div
-                key={bi}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2"
-                style={{ left: `${bridge.xPct}%` }}
-              >
-                <BridgePill {...bridge} result={result} showFraction={showFraction} />
-              </div>
-            )
-          })}
+          {/* Bridges — equal flex cells so pills never overlap on any screen width */}
+          <div className="absolute inset-0 flex items-center">
+            {path.bridges.map((bridge, bi) => {
+              const playerResult = showPlayerResults ? (playerResults[bi] ?? null) : null
+              const botResult    = showBotResults && !showPlayerResults ? (botResults[bi] ?? null) : null
+              const result = playerResult ?? botResult
+              return (
+                <div
+                  key={bi}
+                  className="flex-1 flex items-center"
+                  style={{ justifyContent: bridge.justifyContent }}
+                >
+                  <BridgePill {...bridge} result={result} showFraction={showFraction} />
+                </div>
+              )
+            })}
+          </div>
         </div>
         <span className="text-sm shrink-0">🏁</span>
       </div>
