@@ -1089,18 +1089,18 @@
     },
     "climberRace": {
       "q1": {
-        "question": "The spinner shows: Sunny 40%, Blaze 20%, Storm 30%, Ivy 10%. You bet on Sunny OR Storm. What is your chance of winning this spin?",
-        "a": "70% — because P(Sunny OR Storm) = 40% + 30% = 70%",
+        "question": "The spinner shows: Yellow 40%, Red 20%, Blue 30%, Green 10%. You bet on Yellow OR Blue. What is your chance of winning this spin?",
+        "a": "70% — because P(Yellow OR Blue) = 40% + 30% = 70%",
         "b": "35% — because you split the chance between two colors",
         "c": "50% — because you picked two out of four colors",
-        "explanation": "Sunny and Storm cannot both win the same spin — they are mutually exclusive. So you just add: P(Sunny OR Storm) = P(Sunny) + P(Storm) = 40% + 30% = 70%. The combined arc on the spinner shows this directly — the two sectors sit side by side and their sizes add up."
+        "explanation": "Yellow and Blue cannot both win the same spin — they are mutually exclusive. So you just add: P(Yellow OR Blue) = P(Yellow) + P(Blue) = 40% + 30% = 70%. The combined arc on the spinner shows this directly — the two sectors sit side by side and their sizes add up."
       },
       "q2": {
-        "question": "The spinner changes every turn. Last turn Ivy covered 50%. This turn Ivy covers only 15%. Should you keep your bet on Ivy?",
-        "a": "No — check the new arc size. A 15% arc means Ivy only wins about 1 in 7 spins now.",
-        "b": "Yes — Ivy was lucky last turn so it is due to win again.",
-        "c": "It doesn't matter — the spinner change has no effect on Ivy's real chance.",
-        "explanation": "The spinner is re-randomised every turn. Last turn's percentages have no effect on this turn. A 15% arc means Ivy's probability this spin is 15% — about 1 in 7. The arc is the probability. Always re-read it before you spin, and consider switching your bet if the odds have shifted."
+        "question": "The spinner changes every turn. Last turn Green covered 50%. This turn Green covers only 15%. Should you keep your bet on Green?",
+        "a": "No — check the new arc size. A 15% arc means Green only wins about 1 in 7 spins now.",
+        "b": "Yes — Green was lucky last turn so it is due to win again.",
+        "c": "It doesn't matter — the spinner change has no effect on Green's real chance.",
+        "explanation": "The spinner is re-randomised every turn. Last turn's percentages have no effect on this turn. A 15% arc means Green's probability this spin is 15% — about 1 in 7. The arc is the probability. Always re-read it before you spin, and consider switching your bet if the odds have shifted."
       },
       "q3": {
         "question": "Why can you ADD probabilities when you bet on two colors, but not when you bet on two dice outcomes that might overlap?",
@@ -1649,7 +1649,7 @@
     "historyLost": "✗",
     "explainer": {
       "title": "Why add probabilities for OR bets?",
-      "body": "When two outcomes can't happen at the same time — like two different colors winning the same spin — they're called mutually exclusive. For mutually exclusive events, P(A OR B) = P(A) + P(B). If Sunny covers 30% and Storm covers 25%, betting on Sunny OR Storm gives you a 55% chance on every spin. The combined arc on the spinner shows this visually: the two sections literally sit side-by-side, and their sizes add up.",
+      "body": "When two outcomes can't happen at the same time — like two different colors winning the same spin — they're called mutually exclusive. For mutually exclusive events, P(A OR B) = P(A) + P(B). If Yellow covers 30% and Blue covers 25%, betting on Yellow OR Blue gives you a 55% chance on every spin. The combined arc on the spinner shows this visually: the two sections literally sit side-by-side, and their sizes add up.",
       "example": "Check the spinner before each spin. If your two colors together cover more than half the wheel, your OR bet is better than 50-50. If they cover less than a third, you're the underdog. The arc makes the addition rule concrete.",
       "callout": "Adding only works for mutually exclusive events. If two things COULD happen at the same time (like rolling above 3 AND rolling an even number), you'd have to subtract the overlap. But a spinner can only land on one colour at a time — so here, you just add.",
       "furtherReading": "The rule P(A OR B) = P(A) + P(B) is called the Addition Rule for mutually exclusive events. It's one half of a pair: the other half is the Multiplication Rule for independent events (P(A AND B) = P(A) × P(B)), which you may have seen in Pizza Builder. Together these two rules let you calculate the probability of almost any combined event — and they're the foundation of probability theory."

@@ -70,6 +70,10 @@ export default function App() {
   }, [i18n.language])
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
+  useEffect(() => {
     const siteTitle = t('site.title')
     const pageKey = PAGE_TITLES[location.pathname]
     if (pageKey) {
