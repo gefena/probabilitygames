@@ -1619,7 +1619,8 @@
       "example": "Check the spinner before each spin. If your two climbers together cover more than half the wheel, your OR bet is better than 50-50. If they cover less than a third, you're the underdog. The arc makes the addition rule concrete.",
       "callout": "Adding only works for mutually exclusive events. If two things COULD happen at the same time (like rolling above 3 AND rolling an even number), you'd have to subtract the overlap. But a spinner can only land on one colour at a time — so here, you just add.",
       "furtherReading": "The rule P(A OR B) = P(A) + P(B) is called the Addition Rule for mutually exclusive events. It's one half of a pair: the other half is the Multiplication Rule for independent events (P(A AND B) = P(A) × P(B)), which you may have seen in Pizza Builder. Together these two rules let you calculate the probability of almost any combined event — and they're the foundation of probability theory."
-    }
+    },
+    "nextRound": "Next Round"
   },
   "bridgeQuest": {
     "title": "Bridge Quest",

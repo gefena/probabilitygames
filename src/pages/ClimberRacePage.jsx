@@ -188,9 +188,10 @@ export default function ClimberRacePage() {
   const [bet, setBet]               = useState([])
   const [spinner, setSpinner]       = useState(() => randomSpinner())
   const [steps, setSteps]           = useState({ sunny: 0, blaze: 0, storm: 0, ivy: 0 })
-  const [isSpinning, setIsSpinning] = useState(false)
-  const [raceWinner, setRaceWinner] = useState(null)
-  const [lastSpin, setLastSpin]     = useState(null)
+  const [isSpinning, setIsSpinning]         = useState(false)
+  const [pendingNextRound, setPendingNextRound] = useState(false)
+  const [raceWinner, setRaceWinner]         = useState(null)
+  const [lastSpin, setLastSpin]             = useState(null)
   const [history, setHistory]       = useState([])
   const [needleDeg, setNeedleDeg]   = useState(0)
   const lastNeedleRef               = useRef(0)
@@ -236,10 +237,21 @@ export default function ClimberRacePage() {
         setRaceWinner(winner)
         setHistory(h => [...h.slice(-4), { raceWinner: winner, betWon }])
       } else {
-        setSpinner(randomSpinner())
+        setPendingNextRound(true)
       }
       setIsSpinning(false)
     }, 2700)
+  }
+
+  // ── Next round (new spinner, same race) ───────────────────────────────────
+
+  function startNextRound() {
+    setBet([])
+    setSpinner(randomSpinner())
+    setLastSpin(null)
+    setPendingNextRound(false)
+    setNeedleDeg(0)
+    lastNeedleRef.current = 0
   }
 
   // ── Play Again ─────────────────────────────────────────────────────────────
@@ -251,6 +263,7 @@ export default function ClimberRacePage() {
     setIsSpinning(false)
     setRaceWinner(null)
     setLastSpin(null)
+    setPendingNextRound(false)
     setNeedleDeg(0)
     lastNeedleRef.current = 0
   }
@@ -298,15 +311,24 @@ export default function ClimberRacePage() {
             <p className="text-gray-400 text-sm italic">{t('climberRace.noBet')}</p>
           )}
 
-          {/* Spin button */}
+          {/* Spin / Next Round button */}
           {!raceWinner && (
-            <button
-              onClick={doSpin}
-              disabled={isSpinning}
-              className="bg-violet-600 text-white font-extrabold text-lg px-8 py-3 rounded-2xl shadow hover:bg-violet-700 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {t('climberRace.spinBtn')}
-            </button>
+            pendingNextRound ? (
+              <button
+                onClick={startNextRound}
+                className="bg-emerald-600 text-white font-extrabold text-lg px-8 py-3 rounded-2xl shadow hover:bg-emerald-700 active:scale-95 transition-all"
+              >
+                {t('climberRace.nextRound')}
+              </button>
+            ) : (
+              <button
+                onClick={doSpin}
+                disabled={isSpinning}
+                className="bg-violet-600 text-white font-extrabold text-lg px-8 py-3 rounded-2xl shadow hover:bg-violet-700 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {t('climberRace.spinBtn')}
+              </button>
+            )
           )}
 
           {/* Spin result */}
