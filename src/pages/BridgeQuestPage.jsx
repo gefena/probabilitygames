@@ -10,22 +10,63 @@ import GameSuggestions from '../components/GameSuggestions'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const MIN_BRIDGE_PCT = 30
-const MAX_BRIDGE_PCT = 95
 const PATH_COUNT = 3
 const BRIDGE_COUNTS = [2, 3, 3, 4]
 const PATH_LETTERS = ['A', 'B', 'C']
 const TOTAL_RACES = 3
 
+const FRACTION_POOL = [
+  { num: 1, den: 2 },   // 50%
+  { num: 1, den: 3 },   // 33%
+  { num: 2, den: 3 },   // 67%
+  { num: 3, den: 4 },   // 75%
+  { num: 4, den: 5 },   // 80%
+  { num: 5, den: 6 },   // 83%
+  { num: 9, den: 10 },  // 90%
+  { num: 3, den: 5 },   // 60%
+  { num: 2, den: 5 },   // 40%
+]
+
+// ─── Fraction utilities ───────────────────────────────────────────────────────
+
+function gcd(a, b) {
+  return b === 0 ? a : gcd(b, a % b)
+}
+
+function simplifyFraction(num, den) {
+  const g = gcd(num, den)
+  return { num: num / g, den: den / g }
+}
+
 // ─── Path generation ──────────────────────────────────────────────────────────
 
 function randomPath() {
   const n = BRIDGE_COUNTS[Math.floor(Math.random() * BRIDGE_COUNTS.length)]
-  const bridges = Array.from({ length: n }, () =>
-    Math.round(MIN_BRIDGE_PCT + Math.random() * (MAX_BRIDGE_PCT - MIN_BRIDGE_PCT))
-  )
-  const survival = bridges.reduce((p, b) => p * b / 100, 1)
-  return { bridges, survival }
+
+  // Zone-based x positions: usable range 10%–90%, each bridge in its own zone
+  const zoneWidth = 80 / n
+  const bridges = Array.from({ length: n }, (_, i) => {
+    const { num, den } = FRACTION_POOL[Math.floor(Math.random() * FRACTION_POOL.length)]
+    const pct = Math.round(num / den * 100)
+    const zoneStart = 10 + i * zoneWidth
+    const xPct = zoneStart + zoneWidth * 0.15 + Math.random() * zoneWidth * 0.7
+    return { num, den, pct, xPct }
+  })
+
+  // Exact survival as simplified fraction
+  let survNum = 1, survDen = 1
+  for (const b of bridges) {
+    survNum *= b.num
+    survDen *= b.den
+  }
+  const simplified = simplifyFraction(survNum, survDen)
+
+  return {
+    bridges,
+    survivalNum: simplified.num,
+    survivalDen: simplified.den,
+    survival: simplified.num / simplified.den,
+  }
 }
 
 function randomRace() {
@@ -36,7 +77,7 @@ function randomRace() {
 
 function greedyBotPick(paths) {
   return paths.reduce((best, path, i) => {
-    const worstBridge = Math.min(...path.bridges)
+    const worstBridge = Math.min(...path.bridges.map(b => b.pct))
     return worstBridge > best.worstBridge ? { index: i, worstBridge } : best
   }, { index: 0, worstBridge: -1 }).index
 }
@@ -57,12 +98,13 @@ function delay(ms) {
 
 // ─── Bridge pill component ────────────────────────────────────────────────────
 
-function BridgePill({ pct, result }) {
-  const base = 'px-2 py-1 rounded-lg text-xs font-bold border-2 transition-all'
-  if (result === 'safe')    return <span className={`${base} bg-green-100 border-green-400 text-green-700`}>🟢 {pct}%</span>
-  if (result === 'fell')    return <span className={`${base} bg-red-100 border-red-400 text-red-700`}>🔴 {pct}%</span>
-  if (result === 'pending') return <span className={`${base} bg-yellow-50 border-yellow-300 text-yellow-700 animate-pulse`}>⏳ {pct}%</span>
-  return <span className={`${base} bg-slate-100 border-slate-300 text-slate-600`}>🌉 {pct}%</span>
+function BridgePill({ pct, num, den, result, showFraction }) {
+  const label = showFraction ? `${num}/${den}` : `${pct}%`
+  const base = 'px-2 py-1 rounded-lg text-xs font-bold border-2 transition-all whitespace-nowrap'
+  if (result === 'safe')    return <span className={`${base} bg-green-100 border-green-400 text-green-700`}>🟢 {label}</span>
+  if (result === 'fell')    return <span className={`${base} bg-red-100 border-red-400 text-red-700`}>🔴 {label}</span>
+  if (result === 'pending') return <span className={`${base} bg-yellow-50 border-yellow-300 text-yellow-700 animate-pulse`}>⏳ {label}</span>
+  return <span className={`${base} bg-slate-100 border-slate-300 text-slate-600`}>🌉 {label}</span>
 }
 
 // ─── Path row component ───────────────────────────────────────────────────────
@@ -70,7 +112,7 @@ function BridgePill({ pct, result }) {
 function PathRow({
   path, index, letter, preview, chosen, botChosen,
   playerResults, botResults, phase, onTap, onConfirm,
-  t,
+  t, showFraction,
 }) {
   const isPreviewed = preview === index
   const isChosen    = chosen === index
@@ -94,30 +136,41 @@ function PathRow({
       className={`rounded-2xl border-2 p-3 transition-all ${borderClass} ${isPickingPhase && !chosen ? 'cursor-pointer' : ''}`}
       onClick={() => isPickingPhase && !chosen && onTap(index)}
     >
-      <div className="flex items-center gap-2 flex-wrap">
-        {/* Label */}
+      {/* Header: label, tags, tap hint */}
+      <div className="flex items-center gap-2 mb-2 flex-wrap">
         <span className="font-extrabold text-slate-700 text-sm min-w-[60px]">
           {t('bridgeQuest.pathLabel', { letter })}
         </span>
-
-        {/* Bridge pills */}
-        <div className="flex gap-1 flex-wrap">
-          {path.bridges.map((pct, bi) => {
-            const playerResult = showPlayerResults ? (playerResults[bi] ?? null) : null
-            const botResult    = showBotResults && !showPlayerResults ? (botResults[bi] ?? null) : null
-            const result = playerResult ?? botResult
-            return <BridgePill key={bi} pct={pct} result={result} />
-          })}
-        </div>
-
-        {/* Tags */}
         {isChosen && <span className="text-xs font-bold text-violet-600 bg-violet-100 px-2 py-0.5 rounded-full">👤 {t('bridgeQuest.you')}</span>}
         {isBotPath && phase !== 'picking' && <span className="text-xs font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">🤖 Bot</span>}
-
-        {/* Tap hint */}
         {isPickingPhase && !chosen && !isPreviewed && (
           <span className="text-xs text-slate-400 ms-auto">{t('bridgeQuest.tapToPreview')}</span>
         )}
+      </div>
+
+      {/* Road lane */}
+      <div className="flex items-center gap-2">
+        <span className="text-[10px] font-bold text-slate-400 shrink-0 leading-none">▶</span>
+        <div className="relative flex-1 h-14">
+          {/* Road surface */}
+          <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-2 bg-slate-200 rounded-full" />
+          {/* Bridges */}
+          {path.bridges.map((bridge, bi) => {
+            const playerResult = showPlayerResults ? (playerResults[bi] ?? null) : null
+            const botResult    = showBotResults && !showPlayerResults ? (botResults[bi] ?? null) : null
+            const result = playerResult ?? botResult
+            return (
+              <div
+                key={bi}
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2"
+                style={{ left: `${bridge.xPct}%` }}
+              >
+                <BridgePill {...bridge} result={result} showFraction={showFraction} />
+              </div>
+            )
+          })}
+        </div>
+        <span className="text-sm shrink-0">🏁</span>
       </div>
 
       {/* Preview panel */}
@@ -126,7 +179,10 @@ function PathRow({
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div>
               <p className="text-blue-700 font-bold text-sm">
-                {t('bridgeQuest.survival', { n: survivalN })}
+                {showFraction
+                  ? t('bridgeQuest.survivalFraction', { frac: `${path.survivalNum}/${path.survivalDen}` })
+                  : t('bridgeQuest.survival', { n: survivalN })
+                }
               </p>
               {/* Dot bar: 100 dots, survivalN green */}
               <div className="flex flex-wrap gap-[2px] mt-1 max-w-[200px]">
@@ -158,17 +214,18 @@ export default function BridgeQuestPage() {
   const isMountedRef = useRef(true)
 
   const { best: bridgePb, setBestIfHigher: setBridgePb, isNew: isBridgePbNew } = usePersonalBest('bridge-quest')
-  const [race,          setRace]          = useState(() => randomRace())
-  const [phase,         setPhase]         = useState('picking')  // picking | crossing | botCross | result | tournament
-  const [preview,       setPreview]       = useState(null)
-  const [chosen,        setChosen]        = useState(null)
-  const [botChosen,     setBotChosen]     = useState(null)
-  const [playerResults, setPlayerResults] = useState([])   // Array of 'pending'|'safe'|'fell'|null
-  const [botResults,    setBotResults]    = useState([])
+  const [race,           setRace]           = useState(() => randomRace())
+  const [phase,          setPhase]          = useState('picking')
+  const [preview,        setPreview]        = useState(null)
+  const [chosen,         setChosen]         = useState(null)
+  const [botChosen,      setBotChosen]      = useState(null)
+  const [playerResults,  setPlayerResults]  = useState([])
+  const [botResults,     setBotResults]     = useState([])
   const [playerSurvived, setPlayerSurvived] = useState(null)
   const [botSurvived,    setBotSurvived]    = useState(null)
-  const [scores,        setScores]        = useState({ player: 0, bot: 0 })
-  const [raceIndex,     setRaceIndex]     = useState(0)    // 0-based, 0..2
+  const [scores,         setScores]         = useState({ player: 0, bot: 0 })
+  const [raceIndex,      setRaceIndex]      = useState(0)
+  const [showFractions,  setShowFractions]  = useState(false)
 
   useEffect(() => {
     isMountedRef.current = true
@@ -180,7 +237,7 @@ export default function BridgeQuestPage() {
   function handleTap(index) {
     if (phase !== 'picking' || chosen !== null) return
     if (preview === index) {
-      handleConfirm(index)  // second tap on same path = confirm
+      handleConfirm(index)
     } else {
       setPreview(index)
     }
@@ -208,7 +265,7 @@ export default function BridgeQuestPage() {
 
       await delay(300)
       if (!isMountedRef.current) return
-      const survived = Math.random() * 100 < pBridges[i]
+      const survived = Math.random() < pBridges[i].num / pBridges[i].den
       pResults[i] = survived ? 'safe' : 'fell'
       setPlayerResults([...pResults])
 
@@ -236,7 +293,7 @@ export default function BridgeQuestPage() {
 
       await delay(300)
       if (!isMountedRef.current) return
-      const survived = Math.random() * 100 < bBridges[i]
+      const survived = Math.random() < bBridges[i].num / bBridges[i].den
       bResults[i] = survived ? 'safe' : 'fell'
       setBotResults([...bResults])
 
@@ -246,7 +303,6 @@ export default function BridgeQuestPage() {
     if (!isMountedRef.current) return
     setBotSurvived(bSurvived)
 
-    // Score
     const point = racePoint(pSurvived, bSurvived)
     const newScores = { player: scores.player + point.player, bot: scores.bot + point.bot }
     setScores(newScores)
@@ -313,7 +369,7 @@ export default function BridgeQuestPage() {
 
       {/* Race header */}
       {phase !== 'tournament' && (
-        <div className="flex items-center justify-between mb-4 px-1">
+        <div className="flex items-center justify-between mb-3 px-1">
           <span className="font-bold text-violet-600 text-sm">{currentRaceLabel}</span>
           <span className="text-sm text-slate-600 font-bold">
             {t('bridgeQuest.score', { p: scores.player, b: scores.bot })}
@@ -321,25 +377,36 @@ export default function BridgeQuestPage() {
         </div>
       )}
 
-      {/* Path rows — always visible so player can review results on tournament screen */}
+      {/* Fraction / percent toggle */}
+      <div className="flex justify-end mb-3">
+        <button
+          onClick={() => setShowFractions(f => !f)}
+          className="text-xs font-semibold px-3 py-1 rounded-full border border-violet-300 bg-violet-50 text-violet-700 hover:bg-violet-100 transition-colors"
+        >
+          {showFractions ? t('bridgeQuest.showPercent') : t('bridgeQuest.showFractions')}
+        </button>
+      </div>
+
+      {/* Path rows */}
       <div className="flex flex-col gap-3 mb-6">
-          {race.map((path, i) => (
-            <PathRow
-              key={i}
-              path={path}
-              index={i}
-              letter={PATH_LETTERS[i]}
-              preview={preview}
-              chosen={chosen}
-              botChosen={botChosen}
-              playerResults={chosen === i ? playerResults : []}
-              botResults={botChosen === i ? botResults : []}
-              phase={phase}
-              onTap={handleTap}
-              onConfirm={handleConfirm}
-              t={t}
-            />
-          ))}
+        {race.map((path, i) => (
+          <PathRow
+            key={i}
+            path={path}
+            index={i}
+            letter={PATH_LETTERS[i]}
+            preview={preview}
+            chosen={chosen}
+            botChosen={botChosen}
+            playerResults={chosen === i ? playerResults : []}
+            botResults={botChosen === i ? botResults : []}
+            phase={phase}
+            onTap={handleTap}
+            onConfirm={handleConfirm}
+            t={t}
+            showFraction={showFractions}
+          />
+        ))}
       </div>
 
       {/* Bot reveal */}
@@ -420,7 +487,7 @@ export default function BridgeQuestPage() {
 
       {/* Quiz */}
       <QuizPanel questions={bridgeQuestQuestions} accentColor="border-blue-400" />
-          <GameSuggestions gameId="bridge-quest" />
+      <GameSuggestions gameId="bridge-quest" />
     </GamePageLayout>
   )
 }
