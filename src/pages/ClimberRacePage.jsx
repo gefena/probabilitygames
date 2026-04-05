@@ -51,11 +51,11 @@ function toRatioKey(pct) {
   return 'climberRace.ratioRarely'
 }
 
-// ─── SVG pie helpers (adapted from MagicSpinnerPage) ──────────────────────────
+// ─── SVG pie helpers ──────────────────────────────────────────────────────────
 
 function buildArcs(pcts) {
   const cx = 120, cy = 120, r = 110
-  let startAngle = -Math.PI / 2  // start at top
+  let startAngle = -Math.PI / 2
   return COLORS.map((key, i) => {
     const frac = pcts[i] / 100
     const angle = frac * 2 * Math.PI
@@ -75,8 +75,6 @@ function buildArcs(pcts) {
   })
 }
 
-// Convert midAngle (radians from -π/2) to degrees for CSS rotation
-// The needle points up at 0°; midAngle -π/2 = 0° rotation needed
 function midAngleToDeg(midAngle) {
   return (midAngle + Math.PI / 2) * (180 / Math.PI)
 }
@@ -89,7 +87,6 @@ function SpinnerSVG({ pcts, bet, wheelDeg, isSpinning }) {
 
   return (
     <div className="relative">
-      {/* Fixed pointer at top center */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 z-10 text-2xl leading-none select-none">▼</div>
       <svg
         viewBox="0 0 240 240"
@@ -130,53 +127,84 @@ function SpinnerSVG({ pcts, bet, wheelDeg, isSpinning }) {
             </g>
           )
         })}
-        {/* Centre dot */}
         <circle cx={cx} cy={cy} r={8} fill="white" stroke="#e2e8f0" strokeWidth={2} />
       </svg>
     </div>
   )
 }
 
-// ─── Mountain display ──────────────────────────────────────────────────────────
+// ─── Mountain SVG ─────────────────────────────────────────────────────────────
 
-const STEPS = 6
+const PEAK     = { x: 120, y: 10  }
+const USER_BASE = { x: 20,  y: 190 }
+const BOT_BASE  = { x: 220, y: 190 }
 
-function ClimberTrack({ colorKey, steps, bet, name, onBetToggle, raceOver }) {
-  const c = CLIMBER_COLORS[colorKey]
-  const inBet = bet.includes(colorKey)
+function edgePos(step, base) {
+  const t = step / 6
+  return {
+    x: base.x + (PEAK.x - base.x) * t,
+    y: base.y + (PEAK.y - base.y) * t,
+  }
+}
+
+function MountainSVG({ positions, youLabel, botLabel }) {
+  const userPos = edgePos(positions.user, USER_BASE)
+  const botPos  = edgePos(positions.bot,  BOT_BASE)
+
   return (
-    <button
-      onClick={() => onBetToggle(colorKey)}
-      disabled={raceOver}
-      className={`flex flex-col items-center gap-1 px-3 py-2 rounded-2xl transition-all border-2 ${
-        inBet
-          ? `${c.border} bg-white shadow-md scale-105`
-          : 'border-transparent bg-white/60 hover:bg-white'
-      } ${raceOver ? 'cursor-default' : 'cursor-pointer'}`}
-    >
-      <span className="text-xl">{c.emoji}</span>
-      <span className={`text-xs font-bold ${c.text}`}>{name}</span>
-      {/* Step dots — top to bottom = step 6 → 1 */}
-      <div className="flex flex-col gap-1 mt-1">
-        {Array.from({ length: STEPS }, (_, i) => {
-          const step = STEPS - i  // step 6 at top
-          const reached = steps >= step
-          return (
-            <div
-              key={step}
-              className={`w-4 h-4 rounded-full border-2 transition-all ${
-                reached
-                  ? `${c.bg} border-transparent`
-                  : 'bg-white border-gray-300'
-              } ${step === STEPS && reached ? 'ring-2 ring-yellow-300' : ''}`}
-            />
-          )
-        })}
-      </div>
-      {inBet && (
-        <span className="text-[10px] font-bold text-slate-500 mt-1">✓ BET</span>
-      )}
-    </button>
+    <svg viewBox="0 0 240 210" className="w-full max-w-[300px] mx-auto block">
+      {/* Mountain fill */}
+      <polygon
+        points={`${PEAK.x},${PEAK.y} ${USER_BASE.x},${USER_BASE.y} ${BOT_BASE.x},${BOT_BASE.y}`}
+        fill="#f1f5f9"
+        stroke="#94a3b8"
+        strokeWidth={2}
+        strokeLinejoin="round"
+      />
+
+      {/* Step markers — left edge (user, steps 1-5) */}
+      {[1, 2, 3, 4, 5].map(step => {
+        const pos = edgePos(step, USER_BASE)
+        const reached = positions.user >= step
+        return (
+          <circle
+            key={`u${step}`}
+            cx={pos.x} cy={pos.y} r={4.5}
+            fill={reached ? '#7c3aed' : '#e2e8f0'}
+            stroke={reached ? '#5b21b6' : '#cbd5e1'}
+            strokeWidth={1.5}
+          />
+        )
+      })}
+
+      {/* Step markers — right edge (bot, steps 1-5) */}
+      {[1, 2, 3, 4, 5].map(step => {
+        const pos = edgePos(step, BOT_BASE)
+        const reached = positions.bot >= step
+        return (
+          <circle
+            key={`b${step}`}
+            cx={pos.x} cy={pos.y} r={4.5}
+            fill={reached ? '#0284c7' : '#e2e8f0'}
+            stroke={reached ? '#0369a1' : '#cbd5e1'}
+            strokeWidth={1.5}
+          />
+        )
+      })}
+
+      {/* Star at peak */}
+      <text x={PEAK.x} y={PEAK.y - 8} textAnchor="middle" dominantBaseline="auto" fontSize="16">⭐</text>
+
+      {/* Bot climber */}
+      <text x={botPos.x} y={botPos.y} textAnchor="middle" dominantBaseline="middle" fontSize="20">🤖</text>
+
+      {/* User climber */}
+      <text x={userPos.x} y={userPos.y} textAnchor="middle" dominantBaseline="middle" fontSize="20">🧗</text>
+
+      {/* Base labels */}
+      <text x={USER_BASE.x} y={USER_BASE.y + 14} textAnchor="middle" fontSize="9" fill="#64748b">{youLabel}</text>
+      <text x={BOT_BASE.x}  y={BOT_BASE.y  + 14} textAnchor="middle" fontSize="9" fill="#64748b">{botLabel}</text>
+    </svg>
   )
 }
 
@@ -185,21 +213,24 @@ function ClimberTrack({ colorKey, steps, bet, name, onBetToggle, raceOver }) {
 export default function ClimberRacePage() {
   const { t } = useTranslation()
 
-  const [bet, setBet]               = useState([])
-  const [spinner, setSpinner]       = useState(() => randomSpinner())
-  const [steps, setSteps]           = useState({ sunny: 0, blaze: 0, storm: 0, ivy: 0 })
-  const [isSpinning, setIsSpinning]         = useState(false)
-  const [pendingNextRound, setPendingNextRound] = useState(false)
-  const [raceWinner, setRaceWinner]         = useState(null)
-  const [lastSpin, setLastSpin]             = useState(null)
-  const [history, setHistory]       = useState([])
-  const [needleDeg, setNeedleDeg]   = useState(0)
-  const lastNeedleRef               = useRef(0)
+  const [bet, setBet]                           = useState([])
+  const [spinner, setSpinner]                   = useState(() => randomSpinner())
+  const [positions, setPositions]               = useState({ user: 0, bot: 0 })
+  const [isSpinning, setIsSpinning]             = useState(false)
+  const [pendingNextRound, setPendingNextRound]  = useState(false)
+  const [raceWinner, setRaceWinner]             = useState(null)  // 'user' | 'bot'
+  const [lastSpin, setLastSpin]                 = useState(null)
+  const [history, setHistory]                   = useState([])
+  const [wheelDeg, setWheelDeg]                 = useState(0)
+  const lastWheelRef                            = useRef(0)
+
+  // Bot picks the color with the highest spinner percentage (derived, not state)
+  const botBet = COLORS[spinner.indexOf(Math.max(...spinner))]
 
   // ── Bet selection ──────────────────────────────────────────────────────────
 
   function toggleBet(key) {
-    if (raceWinner) return
+    if (raceWinner || isSpinning || pendingNextRound) return
     setBet(prev => {
       if (prev.includes(key)) return prev.filter(k => k !== key)
       if (prev.length >= 2) return prev
@@ -211,31 +242,45 @@ export default function ClimberRacePage() {
 
   function doSpin() {
     if (isSpinning || raceWinner) return
+
+    // Capture derived values before async delay
+    const currentBet    = bet
+    const currentBotBet = botBet
+    const currentPos    = positions
+
     setIsSpinning(true)
 
-    // Compute winning sector angles for needle landing
-    const arcs = buildArcs(spinner)
-    const winner = weightedPick(spinner)
-    const winArc = arcs.find(a => a.key === winner)
+    const arcs     = buildArcs(spinner)
+    const spinColor = weightedPick(spinner)
+    const winArc   = arcs.find(a => a.key === spinColor)
     const targetDeg = midAngleToDeg(winArc.midAngle)
 
-    // Add 3 full rotations on top of whatever the needle is at now
-    const base = lastNeedleRef.current
-    // Normalise base to [0,360), then add 3 rotations + target
+    const base       = lastWheelRef.current
     const normalised = ((base % 360) + 360) % 360
-    const finalDeg = base + (360 * 3) + ((targetDeg - normalised + 360) % 360)
-    lastNeedleRef.current = finalDeg
-    setNeedleDeg(finalDeg)
+    const finalDeg   = base + (360 * 3) + ((targetDeg - normalised + 360) % 360)
+    lastWheelRef.current = finalDeg
+    setWheelDeg(finalDeg)
 
     setTimeout(() => {
-      const newSteps = { ...steps, [winner]: steps[winner] + 1 }
-      setSteps(newSteps)
-      const betWon = bet.length > 0 ? bet.includes(winner) : null  // null = no bet
-      setLastSpin({ winner, betWon })
+      const userWon = currentBet.length > 0 ? currentBet.includes(spinColor) : null
+      const botWon  = currentBotBet === spinColor
 
-      if (newSteps[winner] >= STEPS) {
+      const userMoved = userWon === null ? 0 : (userWon ? 1 : -1)
+      const botMoved  = botWon ? 1 : -1
+
+      const newUserPos = Math.min(6, Math.max(0, currentPos.user + userMoved))
+      const newBotPos  = Math.min(6, Math.max(0, currentPos.bot  + botMoved))
+
+      setPositions({ user: newUserPos, bot: newBotPos })
+      setLastSpin({ spinColor, userWon, botWon, userMoved, botMoved })
+
+      const userAtPeak = newUserPos >= 6
+      const botAtPeak  = newBotPos  >= 6
+
+      if (userAtPeak || botAtPeak) {
+        const winner = userAtPeak ? 'user' : 'bot'
         setRaceWinner(winner)
-        setHistory(h => [...h.slice(-4), { raceWinner: winner, betWon }])
+        setHistory(h => [...h.slice(-4), { winner, userWon }])
       } else {
         setPendingNextRound(true)
       }
@@ -243,15 +288,15 @@ export default function ClimberRacePage() {
     }, 2700)
   }
 
-  // ── Next round (new spinner, same race) ───────────────────────────────────
+  // ── Next round ─────────────────────────────────────────────────────────────
 
   function startNextRound() {
     setBet([])
     setSpinner(randomSpinner())
     setLastSpin(null)
     setPendingNextRound(false)
-    setNeedleDeg(0)
-    lastNeedleRef.current = 0
+    setWheelDeg(0)
+    lastWheelRef.current = 0
   }
 
   // ── Play Again ─────────────────────────────────────────────────────────────
@@ -259,41 +304,44 @@ export default function ClimberRacePage() {
   function playAgain() {
     setBet([])
     setSpinner(randomSpinner())
-    setSteps({ sunny: 0, blaze: 0, storm: 0, ivy: 0 })
+    setPositions({ user: 0, bot: 0 })
     setIsSpinning(false)
     setRaceWinner(null)
     setLastSpin(null)
     setPendingNextRound(false)
-    setNeedleDeg(0)
-    lastNeedleRef.current = 0
+    setWheelDeg(0)
+    lastWheelRef.current = 0
   }
 
-  // ── Derived values ─────────────────────────────────────────────────────────
+  // ── Derived ────────────────────────────────────────────────────────────────
 
   const betPct = bet.reduce((sum, key) => sum + spinner[COLORS.indexOf(key)], 0)
-  const atStep5 = COLORS.filter(k => steps[k] === 5 && !raceWinner)
-
   const betLabel = bet.length === 0
     ? t('climberRace.noBet')
     : bet.length === 1
       ? t(`climberRace.${bet[0]}`)
       : t('climberRace.betOr', { a: t(`climberRace.${bet[0]}`), b: t(`climberRace.${bet[1]}`) })
 
-  // ── Render ─────────────────────────────────────────────────────────────
+  // ── Render ─────────────────────────────────────────────────────────────────
 
   return (
     <GamePageLayout title={t('common.games.climber-race')} emoji={t('climberRace.emoji')}>
       <p className="text-center text-gray-500 text-sm mb-1">{t('climberRace.subtitle')}</p>
-      <p className="text-center text-gray-400 text-xs mb-6">{t('climberRace.howToPlay')}</p>
+      <p className="text-center text-gray-400 text-xs mb-4">{t('climberRace.howToPlay')}</p>
+
+      {/* Scoreboard */}
+      <div className="text-center font-bold text-slate-600 text-sm mb-6 bg-slate-100 rounded-xl px-4 py-2 border border-slate-200/60">
+        {t('climberRace.scoreboard', { user: positions.user, bot: positions.bot })}
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
 
-        {/* Left: Spinner */}
+        {/* Left: Spinner + controls */}
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-bold text-slate-700 text-sm">{t('climberRace.spinnerThisTurn')}</h3>
-          <SpinnerSVG pcts={spinner} bet={bet} wheelDeg={needleDeg} isSpinning={isSpinning} />
+          <SpinnerSVG pcts={spinner} bet={bet} wheelDeg={wheelDeg} isSpinning={isSpinning} />
 
-          {/* Bet info */}
+          {/* User bet info */}
           {bet.length > 0 && (
             <div className="text-center bg-violet-50 rounded-2xl px-4 py-2 text-sm w-full">
               <p className="font-bold text-violet-700">
@@ -307,7 +355,20 @@ export default function ClimberRacePage() {
               </p>
             </div>
           )}
-          {bet.length === 0 && (
+
+          {/* Bot bet (shown after user places a bet) */}
+          {bet.length > 0 && (
+            <div className="text-center bg-sky-50 rounded-2xl px-4 py-2 text-sm w-full border border-sky-100">
+              <p className="text-sky-700 font-semibold">
+                {t('climberRace.botBetLabel', {
+                  emoji: CLIMBER_COLORS[botBet].emoji,
+                  color: t(`climberRace.${botBet}`),
+                })}
+              </p>
+            </div>
+          )}
+
+          {bet.length === 0 && !pendingNextRound && (
             <p className="text-gray-400 text-sm italic">{t('climberRace.noBet')}</p>
           )}
 
@@ -331,70 +392,71 @@ export default function ClimberRacePage() {
             )
           )}
 
-          {/* Spin result */}
-          {lastSpin && (
-            <div className="text-center text-sm">
-              {lastSpin.betWon === null ? (
-                <span className="text-gray-400">
-                  {t('climberRace.noBetResult', { name: t(`climberRace.${lastSpin.winner}`) })}
-                </span>
+          {/* Spin result messages */}
+          {lastSpin && !raceWinner && (
+            <div className="text-center text-sm space-y-1 bg-white rounded-2xl px-4 py-3 border border-slate-100 w-full">
+              <p className="font-semibold text-slate-600">
+                {t('climberRace.spinLanded', { name: t(`climberRace.${lastSpin.spinColor}`) })}
+              </p>
+              {lastSpin.userMoved === 1 && (
+                <p className="text-green-600 font-bold">{t('climberRace.userClimbUp')}</p>
+              )}
+              {lastSpin.userMoved === -1 && (
+                <p className="text-red-500">{t('climberRace.userClimbDown')}</p>
+              )}
+              {lastSpin.userMoved === 0 && (
+                <p className="text-gray-400 text-xs">{t('climberRace.noBetResult', { name: t(`climberRace.${lastSpin.spinColor}`) })}</p>
+              )}
+              {lastSpin.botMoved === 1 ? (
+                <p className="text-sky-600 font-semibold">{t('climberRace.botClimbUp')}</p>
               ) : (
-                <>
-                  <span className="font-bold text-slate-700">
-                    {t('climberRace.spinResult', { name: t(`climberRace.${lastSpin.winner}`) })}
-                  </span>
-                  {' '}
-                  {lastSpin.betWon ? (
-                    <span className="text-green-600 font-bold">{t('climberRace.betWon')}</span>
-                  ) : (
-                    <span className="text-red-500">{t('climberRace.betMissed')}</span>
-                  )}
-                </>
+                <p className="text-orange-500">{t('climberRace.botClimbDown')}</p>
               )}
             </div>
           )}
         </div>
 
-        {/* Right: Mountain */}
-        <div className="flex flex-col items-center gap-3">
-          <h3 className="font-bold text-slate-700 text-sm">{t('climberRace.mountainTapToBet')}</h3>
+        {/* Right: Bet buttons + Mountain */}
+        <div className="flex flex-col items-center gap-4">
 
-          {/* Summit */}
-          <div className="text-center text-2xl">🏔️</div>
-
-          {/* Four climber tracks in 2×2 grid — left col: Sunny/Blaze, right col: Storm/Ivy */}
-          <div className="grid grid-cols-2 gap-3">
-            {['sunny', 'storm', 'blaze', 'ivy'].map(key => (
-              <ClimberTrack
-                key={key}
-                colorKey={key}
-                steps={steps[key]}
-                bet={bet}
-                name={t(`climberRace.${key}`)}
-                onBetToggle={toggleBet}
-                raceOver={!!raceWinner}
-              />
-            ))}
+          {/* Bet selection */}
+          <h3 className="font-bold text-slate-700 text-sm">{t('climberRace.pickBet')}</h3>
+          <div className="flex gap-2 flex-wrap justify-center">
+            {COLORS.map(key => {
+              const c = CLIMBER_COLORS[key]
+              const inBet = bet.includes(key)
+              const pct = spinner[COLORS.indexOf(key)]
+              return (
+                <button
+                  key={key}
+                  onClick={() => toggleBet(key)}
+                  disabled={!!raceWinner || isSpinning || pendingNextRound}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold border-2 transition-all ${
+                    inBet
+                      ? `${c.border} bg-white shadow scale-105`
+                      : 'border-transparent bg-white/60 hover:bg-white'
+                  } disabled:cursor-default`}
+                >
+                  <span>{c.emoji}</span>
+                  <span className={c.text}>{t(`climberRace.${key}`)}</span>
+                  <span className="text-xs text-slate-400">{pct}%</span>
+                  {inBet && <span className="text-[10px] text-slate-500 font-normal">✓</span>}
+                </button>
+              )
+            })}
           </div>
 
-          {/* Warning */}
-          {atStep5.length > 0 && (
-            <div className="text-amber-600 font-bold text-sm bg-amber-50 rounded-xl px-4 py-2 text-center">
-              {atStep5.map(k => (
-                <div key={k}>{t('climberRace.warning', { name: t(`climberRace.${k}`) })}</div>
-              ))}
-            </div>
-          )}
+          <MountainSVG
+            positions={positions}
+            youLabel={t('climberRace.youLabel')}
+            botLabel={t('climberRace.botLabel')}
+          />
 
           {/* Race result */}
           {raceWinner && (
             <div className="text-center bg-white rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] p-4 w-full border border-slate-200/60">
               <p className="text-xl font-extrabold mb-3">
-                {history[history.length - 1]?.betWon === true
-                  ? t('climberRace.win', { name: t(`climberRace.${raceWinner}`) })
-                  : history[history.length - 1]?.betWon === false
-                    ? t('climberRace.lose', { name: t(`climberRace.${raceWinner}`) })
-                    : t('climberRace.noBetResult', { name: t(`climberRace.${raceWinner}`) })}
+                {raceWinner === 'user' ? t('climberRace.userWins') : t('climberRace.botWins')}
               </p>
               <button
                 onClick={playAgain}
@@ -412,20 +474,20 @@ export default function ClimberRacePage() {
         <div className="mt-6">
           <h3 className="font-bold text-slate-600 text-sm mb-2">{t('climberRace.historyTitle')}</h3>
           <div className="flex flex-wrap gap-2">
-            {history.map((entry, i) => {
-              const c = CLIMBER_COLORS[entry.raceWinner]
-              return (
-                <div
-                  key={i}
-                  className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-bold ${c.bg} text-white`}
-                >
-                  <span>{c.emoji} {t(`climberRace.${entry.raceWinner}`)}</span>
-                  <span className="opacity-80">
-                    {entry.betWon === null ? '—' : entry.betWon ? t('climberRace.historyWon') : t('climberRace.historyLost')}
-                  </span>
-                </div>
-              )
-            })}
+            {history.map((entry, i) => (
+              <div
+                key={i}
+                className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-bold text-white ${
+                  entry.winner === 'user' ? 'bg-violet-600' : 'bg-sky-600'
+                }`}
+              >
+                <span>{entry.winner === 'user' ? '🧗' : '🤖'}</span>
+                <span>{entry.winner === 'user' ? t('climberRace.youLabel') : t('climberRace.botLabel')}</span>
+                <span className="opacity-80">
+                  {entry.userWon === null ? '—' : entry.userWon ? t('climberRace.historyWon') : t('climberRace.historyLost')}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -440,9 +502,8 @@ export default function ClimberRacePage() {
         furtherReading={t('climberRace.explainer.furtherReading')}
       />
 
-      {/* Quiz */}
       <QuizPanel questions={climberRaceQuestions} accentColor="border-violet-400" />
-          <GameSuggestions gameId="climber-race" />
+      <GameSuggestions gameId="climber-race" />
     </GamePageLayout>
   )
 }

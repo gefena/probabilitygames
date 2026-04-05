@@ -1580,8 +1580,8 @@
   "climberRace": {
     "title": "Climber Race",
     "emoji": "🧗",
-    "subtitle": "Bet on one or two climbers and add their chances together!",
-    "howToPlay": "Four climbers race up a mountain — first to 6 steps wins! Before each spin, pick 1 or 2 climbers as your OR bet. The spinner changes every turn, so check the odds each time. The arc on the spinner shows your combined chance. Can you pick the winner?",
+    "subtitle": "Race a robot rival up a mountain — bet on colors to climb, bet wrong to slip back!",
+    "howToPlay": "You and a robot climb opposite sides of a triangle mountain. Each round, pick 1 or 2 colors to bet on. The spinner determines which color wins — correct bet moves you UP one step, wrong bet moves you DOWN. The bot always picks the color with the highest chance. First to reach the peak (step 6) wins!",
     "sunny": "Sunny",
     "blaze": "Blaze",
     "storm": "Storm",
@@ -1599,7 +1599,7 @@
     "ratioRarely": "rarely",
     "spinnerThisTurn": "Spinner this turn",
     "mountainTapToBet": "Mountain — tap to bet",
-    "betWinIf": "You WIN if {{bet}} reaches the top first!",
+    "betWinIf": "You move UP if {{bet}} wins the spin",
     "noBet": "Tap a climber to place your bet",
     "spinBtn": "Spin!",
     "spinResult": "{{name}} advances!",
@@ -1620,7 +1620,18 @@
       "callout": "Adding only works for mutually exclusive events. If two things COULD happen at the same time (like rolling above 3 AND rolling an even number), you'd have to subtract the overlap. But a spinner can only land on one colour at a time — so here, you just add.",
       "furtherReading": "The rule P(A OR B) = P(A) + P(B) is called the Addition Rule for mutually exclusive events. It's one half of a pair: the other half is the Multiplication Rule for independent events (P(A AND B) = P(A) × P(B)), which you may have seen in Pizza Builder. Together these two rules let you calculate the probability of almost any combined event — and they're the foundation of probability theory."
     },
-    "nextRound": "Next Round"
+    "nextRound": "Next Round",
+    "spinLanded": "Spinner landed on {{name}}!",
+    "botBetLabel": "Bot bets: {{emoji}} {{color}}",
+    "scoreboard": "You: step {{user}} | Bot: step {{bot}}",
+    "userClimbUp": "⬆ You moved up!",
+    "userClimbDown": "⬇ You moved down",
+    "botClimbUp": "⬆ Bot moved up",
+    "botClimbDown": "⬇ Bot moved down",
+    "userWins": "🎉 You reached the peak! You win!",
+    "botWins": "🤖 Bot reached the peak. Bot wins.",
+    "youLabel": "You",
+    "botLabel": "Bot"
   },
   "bridgeQuest": {
     "title": "Bridge Quest",
