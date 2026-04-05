@@ -257,7 +257,8 @@ export default function ClimberRacePage() {
 
     const base       = lastWheelRef.current
     const normalised = ((base % 360) + 360) % 360
-    const finalDeg   = base + (360 * 3) + ((targetDeg - normalised + 360) % 360)
+    const adjustment = ((-targetDeg - normalised) % 360 + 360) % 360
+    const finalDeg   = base + (360 * 3) + adjustment
     lastWheelRef.current = finalDeg
     setWheelDeg(finalDeg)
 
