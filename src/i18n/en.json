@@ -578,6 +578,7 @@
   "quiz": {
     "title": "Test Your Understanding",
     "next": "Next question →",
+    "finish": "Finish →",
     "summary": "Quiz Complete!",
     "score": "{{correct}} / {{total}}",
     "tryAgain": "Try again",

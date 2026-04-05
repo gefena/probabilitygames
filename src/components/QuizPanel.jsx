@@ -188,7 +188,7 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
               onClick={handleNext}
               className="px-5 py-2 bg-gray-100 text-gray-700 font-bold rounded-2xl hover:bg-gray-200 transition-colors text-base"
             >
-              {t('quiz.next')}
+              {currentIndex === questions.length - 1 ? t('quiz.finish') : t('quiz.next')}
             </motion.button>
           )}
         </motion.div>

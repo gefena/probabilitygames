@@ -578,6 +578,7 @@
   "quiz": {
     "title": "בדקו את ההבנה שלכם",
     "next": "← שאלה הבאה",
+    "finish": "← סיום",
     "summary": "הבחינה הסתיימה!",
     "score": "{{correct}} / {{total}}",
     "tryAgain": "נסו שוב",
