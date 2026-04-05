@@ -578,6 +578,9 @@
   "quiz": {
     "title": "Test Your Understanding",
     "next": "Next question →",
+    "summary": "Quiz Complete!",
+    "score": "{{correct}} / {{total}}",
+    "tryAgain": "Try again",
     "coin": {
       "q1": {
         "question": "A coin is flipped 1000 times and lands heads 700 times. Is this coin fair?",

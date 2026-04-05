@@ -16,23 +16,73 @@ export default function QuizPanel({ questions, accentColor = 'border-violet-400'
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selected, setSelected] = useState(null)
   const [revealed, setRevealed] = useState(false)
+  const [cycleHistory, setCycleHistory] = useState([])
+  const [phase, setPhase] = useState('quiz') // 'quiz' | 'summary'
 
   const question = questions[currentIndex]
 
   function handleSelect(optionIndex) {
     if (revealed) return
+    const isCorrect = questions[currentIndex].options[optionIndex]?.correct === true
     setSelected(optionIndex)
     setRevealed(true)
+    setCycleHistory(prev => [...prev, isCorrect])
   }
 
   function handleNext() {
-    setCurrentIndex((currentIndex + 1) % questions.length)
+    if (currentIndex === questions.length - 1) {
+      setPhase('summary')
+    } else {
+      setCurrentIndex(currentIndex + 1)
+      setSelected(null)
+      setRevealed(false)
+    }
+  }
+
+  function handleTryAgain() {
+    setCurrentIndex(0)
+    setCycleHistory([])
+    setPhase('quiz')
     setSelected(null)
     setRevealed(false)
   }
 
   const selectedOption = selected !== null ? question.options[selected] : null
   const isCorrect = selectedOption?.correct === true
+
+  if (phase === 'summary') {
+    const correctCount = cycleHistory.filter(Boolean).length
+    return (
+      <div className={`bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60 border-s-4 ${accentColor} my-6`}>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+          className="flex flex-col items-center gap-4 py-2"
+        >
+          <h3 className="font-extrabold text-gray-800 text-lg">🏁 {t('quiz.summary')}</h3>
+          <p className="text-4xl font-extrabold text-violet-700">
+            {t('quiz.score', { correct: correctCount, total: questions.length })}
+          </p>
+          <div className="flex gap-2">
+            {cycleHistory.map((correct, i) => (
+              <div
+                key={i}
+                className="w-3.5 h-3.5 rounded-full"
+                style={{ background: correct ? '#4ade80' : '#f87171' }}
+              />
+            ))}
+          </div>
+          <button
+            onClick={handleTryAgain}
+            className="px-5 py-2 bg-violet-100 text-violet-700 font-bold rounded-2xl hover:bg-violet-200 transition-colors text-base"
+          >
+            {t('quiz.tryAgain')}
+          </button>
+        </motion.div>
+      </div>
+    )
+  }
 
   return (
     <div className={`bg-white rounded-3xl p-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-slate-200/60 border-s-4 ${accentColor} my-6`}>

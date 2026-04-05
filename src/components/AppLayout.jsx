@@ -1,8 +1,10 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function AppLayout() {
   const { t, i18n } = useTranslation()
+  const location = useLocation()
 
   function setLang(lang) {
     i18n.changeLanguage(lang)
@@ -34,7 +36,17 @@ export default function AppLayout() {
         </div>
       </header>
       <main className="flex-1">
-        <Outlet />
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <Outlet />
+          </motion.div>
+        </AnimatePresence>
       </main>
     </div>
   )

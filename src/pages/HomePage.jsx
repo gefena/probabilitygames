@@ -69,9 +69,12 @@ export default function HomePage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 space-y-14">
-      <p className="text-center text-lg text-violet-600 font-semibold">
-        {t('home.subtitle')}
-      </p>
+      <div className="flex justify-center">
+        <div className="bg-white/70 border border-violet-100 rounded-2xl px-6 py-4 text-center shadow-sm max-w-md">
+          <div className="text-2xl mb-1">🎲 🪙 🎯</div>
+          <p className="text-lg text-violet-600 font-semibold">{t('home.subtitle')}</p>
+        </div>
+      </div>
 
       {TIERS.map(tier => (
         <section key={tier.key}>
