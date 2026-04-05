@@ -124,18 +124,16 @@ function SpinnerSVG({ pcts, bet, needleDeg, isSpinning }) {
         })}
         {/* Centre dot */}
         <circle cx={cx} cy={cy} r={8} fill="white" stroke="#e2e8f0" strokeWidth={2} />
-        {/* Needle */}
-        <motion.g
-          style={{ originX: `${cx}px`, originY: `${cy}px` }}
-          animate={{ rotate: needleDeg }}
-          transition={isSpinning ? { duration: 2.5, ease: [0.2, 0.8, 0.4, 1] } : { duration: 0 }}
-        >
-          <polygon
-            points={`${cx},${cy - 95} ${cx - 5},${cy + 10} ${cx + 5},${cy + 10}`}
-            fill="#1e293b"
-          />
-          <circle cx={cx} cy={cy} r={6} fill="#1e293b" />
-        </motion.g>
+        {/* Needle — translate to center so rotation is around (0,0) */}
+        <g transform={`translate(${cx}, ${cy})`}>
+          <motion.g
+            animate={{ rotate: needleDeg }}
+            transition={isSpinning ? { duration: 2.5, ease: [0.2, 0.8, 0.4, 1] } : { duration: 0 }}
+          >
+            <polygon points="0,-95 -5,10 5,10" fill="#1e293b" />
+            <circle cx={0} cy={0} r={6} fill="#1e293b" />
+          </motion.g>
+        </g>
       </svg>
     </div>
   )
