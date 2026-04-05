@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
 import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
 import QuizPanel from '../components/QuizPanel'
@@ -84,13 +83,22 @@ function midAngleToDeg(midAngle) {
 
 // ─── Spinner SVG ──────────────────────────────────────────────────────────────
 
-function SpinnerSVG({ pcts, bet, needleDeg, isSpinning }) {
+function SpinnerSVG({ pcts, bet, wheelDeg, isSpinning }) {
   const arcs = buildArcs(pcts)
   const cx = 120, cy = 120
 
   return (
     <div className="relative">
-      <svg viewBox="0 0 240 240" className="w-full max-w-[280px] mx-auto block">
+      {/* Fixed pointer at top center */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 z-10 text-2xl leading-none select-none">▼</div>
+      <svg
+        viewBox="0 0 240 240"
+        className="w-full max-w-[280px] mx-auto block"
+        style={{
+          transform: `rotate(${wheelDeg}deg)`,
+          transition: isSpinning ? 'transform 2.5s cubic-bezier(0.2, 0.8, 0.4, 1)' : 'none',
+        }}
+      >
         {arcs.map(arc => {
           const inBet = bet.includes(arc.key)
           const c = CLIMBER_COLORS[arc.key]
@@ -124,16 +132,6 @@ function SpinnerSVG({ pcts, bet, needleDeg, isSpinning }) {
         })}
         {/* Centre dot */}
         <circle cx={cx} cy={cy} r={8} fill="white" stroke="#e2e8f0" strokeWidth={2} />
-        {/* Needle — translate to center so rotation is around (0,0) */}
-        <g transform={`translate(${cx}, ${cy})`}>
-          <motion.g
-            animate={{ rotate: needleDeg }}
-            transition={isSpinning ? { duration: 2.5, ease: [0.2, 0.8, 0.4, 1] } : { duration: 0 }}
-          >
-            <polygon points="0,-95 -5,10 5,10" fill="#1e293b" />
-            <circle cx={0} cy={0} r={6} fill="#1e293b" />
-          </motion.g>
-        </g>
       </svg>
     </div>
   )
@@ -280,7 +278,7 @@ export default function ClimberRacePage() {
         {/* Left: Spinner */}
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-bold text-slate-700 text-sm">{t('climberRace.spinnerThisTurn')}</h3>
-          <SpinnerSVG pcts={spinner} bet={bet} needleDeg={needleDeg} isSpinning={isSpinning} />
+          <SpinnerSVG pcts={spinner} bet={bet} wheelDeg={needleDeg} isSpinning={isSpinning} />
 
           {/* Bet info */}
           {bet.length > 0 && (
