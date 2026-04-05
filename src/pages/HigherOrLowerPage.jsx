@@ -337,7 +337,6 @@ export default function HigherOrLowerPage() {
             <p className="text-sm font-semibold text-gray-600 mb-3 text-center">{t('higherOrLower.bet.prompt')}</p>
             <div className="flex flex-wrap gap-2 justify-center mb-3">
               {betRange.map(v => {
-                const prob = isDouble ? TWO_DICE_DIST[v] : 1/6
                 return (
                   <button
                     key={v}

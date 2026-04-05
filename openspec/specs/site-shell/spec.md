@@ -43,11 +43,19 @@ The site SHALL remember the user's language choice across page reloads using loc
 - **THEN** the site loads in Hebrew with RTL layout
 
 ### Requirement: Navigation back to home
-Every game page SHALL include a clearly labeled "Home" / "בית" button that returns the user to the home page.
+Every game page SHALL include a clearly labeled "← Games" / "→ משחקים" pill-chip button that returns the user to the home page. The button SHALL use a white background, soft shadow, and `rounded-full` shape consistent with the site's card aesthetic. The button SHALL have sufficient padding to provide a comfortable tap target (minimum ~44 px touch height) on mobile devices.
 
 #### Scenario: Back to home from a game
-- **WHEN** the user clicks the Home button on any game page
+- **WHEN** the user clicks the Games button on any game page
 - **THEN** the browser navigates to `/` and the home page is displayed
+
+#### Scenario: Tap target on mobile
+- **WHEN** the user views any game page on a mobile device (viewport ≤ 640 px)
+- **THEN** the Games button has a vertical tap area of at least 44 px (via padding) and is easy to tap without precision
+
+#### Scenario: Pill chip appearance
+- **WHEN** the Games button is rendered on any game page
+- **THEN** it appears as a white rounded-full chip with a subtle shadow, visually distinct from plain text and consistent with the site's card aesthetic
 
 ### Requirement: Responsive layout
 The site SHALL be usable on screens ≥ 375 px wide (mobile phones, tablets, and desktop). Content SHALL not overflow or clip at any of these widths. Multi-column layouts SHALL collapse to a single column on screens narrower than 768 px.
@@ -77,3 +85,18 @@ The mobile header title (visible on screens < 640px) SHALL be retrieved via the 
 #### Scenario: Mobile header in Hebrew
 - **WHEN** the user switches to Hebrew and views the site on a mobile device
 - **THEN** the mobile header displays the translated site title ("מגרש המשחקים של ההסתברות")
+
+### Requirement: Readable text scale in shared panels
+The `ExplainerPanel` and `QuizPanel` shared components SHALL render reading content (body text, examples, quiz questions, quiz options, quiz explanations) at `text-base` (16 px) — the browser default — not below it. Section headings within panels SHALL be larger than body text to maintain visual hierarchy.
+
+#### Scenario: Explainer body text is legible
+- **WHEN** a game page renders an ExplainerPanel
+- **THEN** the body, example, and callout text is displayed at 16 px (text-base)
+
+#### Scenario: Quiz question is legible
+- **WHEN** a game page renders a QuizPanel
+- **THEN** the question text, option labels, and explanation text are displayed at 16 px (text-base)
+
+#### Scenario: Panel headings are visually distinct
+- **WHEN** ExplainerPanel or QuizPanel are rendered
+- **THEN** the section heading (💡 / 🧠) is larger than the body text beneath it

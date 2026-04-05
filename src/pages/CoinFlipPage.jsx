@@ -152,7 +152,7 @@ export default function CoinFlipPage() {
         setPrediction(null)
       }, 1200)
     }, 600)
-  }, [flipping, flipHistory, prediction])
+  }, [flipping, flipHistory, prediction, setStreakPb])
 
   const chartData = [
     { name: t('coin.heads'), value: heads, fill: '#7C3AED' },
