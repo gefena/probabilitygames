@@ -137,8 +137,8 @@ export default function PatternLockHackerPage() {
   useEffect(() => {
     if (!gaveUp) return
     if (revealStep >= secret.length) return
-    const t = setTimeout(() => setRevealStep(s => s + 1), 500)
-    return () => clearTimeout(t)
+    const timer = setTimeout(() => setRevealStep(s => s + 1), 500)
+    return () => clearTimeout(timer)
   }, [gaveUp, revealStep, secret.length])
 
   const revealed = gaveUp ? secret.slice(0, revealStep) : []
@@ -159,6 +159,7 @@ export default function PatternLockHackerPage() {
 
   function handleDotClick(idx) {
     if (won || gaveUp || shake) return
+    if (attempt.length >= k) return
     if (attempt.includes(idx)) return
     setAttempt(prev => [...prev, idx])
   }
