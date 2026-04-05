@@ -285,7 +285,7 @@
     "instructions": "Click Draw a Card and watch how the probability percentages change with each draw. Can you predict which suit will run out first?"
   },
   "common": {
-    "backHome": "← Home",
+    "backHome": "← Games",
     "games": {
       "coin-flip": "Coin Flip Lab",
       "dice": "Lucky Dice",
