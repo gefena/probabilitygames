@@ -30,38 +30,38 @@ At the start of each turn the game SHALL generate a new random spinner with four
 - **WHEN** any spinner is generated
 - **THEN** the four section percentages sum to exactly 100
 
-### Requirement: Player places an OR bet of 1 or 2 climbers
-Before each spin the player SHALL be able to tap climber tokens to select 1 or 2 climbers as their OR bet. Tapping a selected climber SHALL deselect it. A third tap when 2 are already selected SHALL be ignored. The bet persists turn to turn within a race but resets to empty at the start of each new race.
+### Requirement: Player places an OR bet of 1 or 2 colors
+Before each spin the player SHALL be able to tap color tokens to select 1 or 2 colors as their OR bet. Tapping a selected color SHALL deselect it. A third tap when 2 are already selected SHALL be ignored. The bet persists turn to turn within a race but resets to empty at the start of each new race.
 
-#### Scenario: Player selects one climber
-- **WHEN** the player taps a climber token with no bet placed
-- **THEN** that climber is added to the bet and highlighted
+#### Scenario: Player selects one color
+- **WHEN** the player taps a color token with no bet placed
+- **THEN** that color is added to the bet and highlighted
 
-#### Scenario: Player selects a second climber
-- **WHEN** the player taps a different climber token when one is already selected
-- **THEN** both climbers are in the bet and both are highlighted
+#### Scenario: Player selects a second color
+- **WHEN** the player taps a different color token when one is already selected
+- **THEN** both colors are in the bet and both are highlighted
 
-#### Scenario: Player cannot select a third climber
-- **WHEN** two climbers are already in the bet and the player taps a third
-- **THEN** the bet remains unchanged at two climbers
+#### Scenario: Player cannot select a third color
+- **WHEN** two colors are already in the bet and the player taps a third
+- **THEN** the bet remains unchanged at two colors
 
-#### Scenario: Player deselects a climber
-- **WHEN** the player taps a climber already in the bet
-- **THEN** that climber is removed from the bet
+#### Scenario: Player deselects a color
+- **WHEN** the player taps a color already in the bet
+- **THEN** that color is removed from the bet
 
 #### Scenario: Bet resets at race start
 - **WHEN** the player clicks Play Again to start a new race
 - **THEN** the bet is cleared to empty
 
 ### Requirement: Live arc highlight showing combined bet probability
-The spinner SVG SHALL highlight the arc(s) belonging to the bet climbers with a brighter fill and stroke ring. The combined percentage SHALL be displayed as both a number and a plain-language ratio description.
+The spinner SVG SHALL highlight the arc(s) belonging to the bet colors with a brighter fill and stroke ring. The combined percentage SHALL be displayed as both a number and a plain-language ratio description.
 
 #### Scenario: Bet arc highlighted on spinner
-- **WHEN** the player has selected one or more climbers
-- **THEN** the spinner sections for those climbers are visually highlighted compared to unselected sections
+- **WHEN** the player has selected one or more colors
+- **THEN** the spinner sections for those colors are visually highlighted compared to unselected sections
 
 #### Scenario: Combined percentage shown
-- **WHEN** the player has selected one or more climbers
+- **WHEN** the player has selected one or more colors
 - **THEN** the combined percentage of the bet is displayed (e.g., "Your colours cover 58% of the spinner")
 
 #### Scenario: Plain-language ratio shown
@@ -147,8 +147,12 @@ The ClimberRacePage SHALL include an ExplainerPanel explaining the addition rule
 - **THEN** a QuizPanel with 3 questions about the addition rule is visible
 
 ### Requirement: Climber Race fully bilingual EN/HE
-All text in ClimberRacePage SHALL be provided in both English and Hebrew via the `climberRace.*` i18n namespace.
+All text in ClimberRacePage SHALL be provided in both English and Hebrew via the `climberRace.*` i18n namespace. UI prompts and educational content SHALL refer to betting on colors, not climbers, to avoid confusing the betting mechanic with the climbing mechanic.
 
 #### Scenario: Hebrew locale renders correctly
 - **WHEN** the user switches to Hebrew
 - **THEN** all ClimberRacePage text renders in Hebrew with correct RTL layout
+
+#### Scenario: Color framing in all bet-related text
+- **WHEN** the user reads any prompt about placing or reviewing a bet
+- **THEN** the text refers to "color(s)" / "צבע/ים", not "climber(s)" / "מטפס/ים"
