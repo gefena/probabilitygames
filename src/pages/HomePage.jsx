@@ -12,7 +12,7 @@ const TIERS = [
       { to: '/climber-race',      emoji: '🧗', color: 'bg-violet-500',  titleKey: 'common.games.climber-race',       descKey: 'home.games.climberRace.desc'      },
       { to: '/greedy-pig',        emoji: '🐷', color: 'bg-orange-500',  titleKey: 'common.games.greedy-pig',         descKey: 'home.greedyPig.desc'              },
       { to: '/remove-one',        emoji: '🎯', color: 'bg-emerald-600', titleKey: 'common.games.remove-one',         descKey: 'home.games.removeOne.desc'        },
-      { to: '/roll-and-race',     emoji: '🏎️', color: 'bg-red-500',    titleKey: 'common.games.roll-and-race',      descKey: 'home.games.rollAndRace.desc'      },
+      { to: '/roll-and-race',     emoji: '🏎️', color: 'bg-orange-500', titleKey: 'common.games.roll-and-race',      descKey: 'home.games.rollAndRace.desc'      },
       { to: '/probability-bingo', emoji: '🎱', color: 'bg-violet-600',  titleKey: 'common.games.probability-bingo',  descKey: 'home.games.probabilityBingo.desc' },
     ],
   },

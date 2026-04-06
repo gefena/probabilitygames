@@ -8,7 +8,7 @@ const GAME_ACCENTS = {
   '/spinner':           'from-emerald-500',
   '/higher-or-lower':   'from-indigo-600',
   '/card-draw':         'from-blue-500',
-  '/roll-and-race':     'from-red-500',
+  '/roll-and-race':     'from-orange-500',
   '/dice-detective':    'from-violet-600',
   '/pizza-builder':     'from-orange-500',
   '/remove-one':        'from-emerald-600',
