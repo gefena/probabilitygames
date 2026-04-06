@@ -80,11 +80,19 @@ The site SHALL use a soft, lower-contrast color palette, rounded corners, large 
 - **THEN** the panels are clearly defined but do not cause eye strain from high-brightness contrast against the global background
 
 ### Requirement: Localized mobile header title
-The mobile header title (visible on screens < 640px) SHALL be retrieved via the i18n key `site.title` and SHALL NOT be hardcoded in English.
+The header SHALL display the site title using a single `<span>` element with `t('site.title')`. The previous implementation with two redundant spans (one `hidden sm:inline`, one `sm:hidden`) SHALL be replaced with a single span that renders identically at all breakpoints.
 
 #### Scenario: Mobile header in Hebrew
 - **WHEN** the user switches to Hebrew and views the site on a mobile device
 - **THEN** the mobile header displays the translated site title ("מגרש המשחקים של ההסתברות")
+
+#### Scenario: Desktop header in English
+- **WHEN** the user views the site on desktop in English
+- **THEN** the header displays the English site title
+
+#### Scenario: Single span renders title
+- **WHEN** the header is rendered at any viewport width
+- **THEN** there is exactly one `<span>` element rendering the site title text (no duplicate spans)
 
 ### Requirement: Readable text scale in shared panels
 The `ExplainerPanel` and `QuizPanel` shared components SHALL render reading content (body text, examples, quiz questions, quiz options, quiz explanations) at `text-base` (16 px) — the browser default — not below it. Section headings within panels SHALL be larger than body text to maintain visual hierarchy.

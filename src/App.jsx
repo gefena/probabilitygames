@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import AppLayout from './components/AppLayout'
@@ -29,6 +29,24 @@ import DiceDetectivePage from './pages/DiceDetectivePage'
 import GuessThePhonePage from './pages/GuessThePhonePage'
 import HackThePasswordPage from './pages/HackThePasswordPage'
 import PatternLockHackerPage from './pages/PatternLockHackerPage'
+
+function NotFoundPage() {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6 px-4 text-center">
+      <div className="text-7xl">🎲</div>
+      <h1 className="text-2xl font-extrabold text-violet-800">{t('notFound.title')}</h1>
+      <p className="text-gray-500">{t('notFound.message')}</p>
+      <button
+        onClick={() => navigate('/')}
+        className="px-6 py-3 bg-white rounded-full shadow-sm border border-slate-200 text-violet-600 font-semibold hover:shadow-md transition-shadow text-sm"
+      >
+        {t('notFound.backHome')}
+      </button>
+    </div>
+  )
+}
 
 const PAGE_TITLES = {
   '/': null,
@@ -113,6 +131,7 @@ export default function App() {
         <Route path="/guess-the-phone" element={<GuessThePhonePage />} />
         <Route path="/hack-the-password" element={<HackThePasswordPage />} />
         <Route path="/pattern-lock-hacker" element={<PatternLockHackerPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   )

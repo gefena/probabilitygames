@@ -29,7 +29,7 @@ const gameConnections = {
   ],
   'dice-detective': [
     { to: '/probability-bingo', emoji: '🎱', titleKey: 'common.games.probability-bingo', reasonKey: 'suggestions.diceDetective.0' },
-    { to: '/lucky-dice',        emoji: '🎲', titleKey: 'common.games.lucky-dice',         reasonKey: 'suggestions.diceDetective.1' },
+    { to: '/dice',        emoji: '🎲', titleKey: 'common.games.dice',         reasonKey: 'suggestions.diceDetective.1' },
   ],
   'probability-bingo': [
     { to: '/dice-detective', emoji: '🔍', titleKey: 'common.games.dice-detective', reasonKey: 'suggestions.probabilityBingo.0' },
@@ -104,7 +104,7 @@ const gameConnections = {
     { to: '/hack-the-password', emoji: '🔐', titleKey: 'common.games.hack-the-password', reasonKey: 'suggestions.patternLock.1' },
   ],
   'mystery-machine': [
-    { to: '/lucky-dice',     emoji: '🎲', titleKey: 'common.games.lucky-dice',     reasonKey: 'suggestions.mysteryMachine.0' },
+    { to: '/dice',     emoji: '🎲', titleKey: 'common.games.dice',     reasonKey: 'suggestions.mysteryMachine.0' },
     { to: '/dice-detective', emoji: '🔍', titleKey: 'common.games.dice-detective', reasonKey: 'suggestions.mysteryMachine.1' },
   ],
 }

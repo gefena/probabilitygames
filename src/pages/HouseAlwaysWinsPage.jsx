@@ -7,6 +7,8 @@ import {
 } from 'recharts'
 import GamePageLayout from '../components/GamePageLayout'
 import ExplainerPanel from '../components/ExplainerPanel'
+import QuizPanel from '../components/QuizPanel'
+import houseAlwaysWinsQuestions from '../quizzes/houseAlwaysWins'
 import GameSuggestions from '../components/GameSuggestions'
 
 // ── Mini-simulator ────────────────────────────────────────────────────────────
@@ -308,6 +310,8 @@ export default function HouseAlwaysWinsPage() {
         callout={t('houseAlwaysWins.explainer.callout')}
         furtherReading={t('houseAlwaysWins.explainer.furtherReading')}
       />
+
+      <QuizPanel questions={houseAlwaysWinsQuestions} accentColor="border-red-400" />
 
       {/* Three game cards */}
       <div className="flex flex-col gap-8">

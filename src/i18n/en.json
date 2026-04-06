@@ -1178,6 +1178,29 @@
         "c": "Because the grid has only 9 positions total",
         "explanation": "9^k (like 9 × 9 × 9 × 9) would apply if each dot could be reused — like rolling a 9-sided die four times. But a pattern visits each dot at most once: after the first dot (9 options), only 8 remain, then 7, then 6. This \"without replacement\" selection is what makes it a permutation, not a simple power."
       }
+    },
+    "houseAlwaysWins": {
+      "q1": {
+        "question": "A casino game has a 5% house edge. What does this mean?",
+        "a": "The casino wins 5% of all games played",
+        "b": "On average, players lose 5 coins for every 100 coins wagered",
+        "c": "Players have a 5% chance of winning",
+        "explanation": "House edge means the casino keeps an average of 5 coins per 100 wagered — not that it wins 5% of rounds. You might win many individual rounds, but the math slowly drains your balance over time. This is expected value in action!"
+      },
+      "q2": {
+        "question": "You've been playing roulette and lost 10 rounds in a row. What happens next?",
+        "a": "You're due a win — luck evens out quickly",
+        "b": "The house edge decreases because you've lost so much",
+        "c": "Each spin is independent — you still have the same odds as always",
+        "explanation": "Roulette has no memory. Each spin is a fresh, independent event. Past losses don't increase your future chances — this is the 'Gambler's Fallacy'. The house edge stays the same on every single spin, forever."
+      },
+      "q3": {
+        "question": "Which game from the simulator has the lowest house edge?",
+        "a": "Lottery — biggest jackpots",
+        "b": "Roulette — smallest house cut per bet",
+        "c": "Slots — you can win any time",
+        "explanation": "Roulette has the lowest house edge of the three at about 2.7%. The lottery keeps roughly 50% of every ticket, and slots typically keep 8–15%. Lower house edge means your money lasts longer — though the house always wins in the end!"
+      }
     }
   },
   "explainer": {
@@ -1772,6 +1795,11 @@
   },
   "site": {
     "title": "Probability Playground"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "Oops! This page doesn't exist.",
+    "backHome": "Back to Games"
   },
   "personalBest": {
     "label": "Best: {{n}}",

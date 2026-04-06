@@ -8,6 +8,7 @@ const ACCENT_FILL = {
   'border-pink-400':   '#f472b6',
   'border-emerald-400':'#34d399',
   'border-blue-400':   '#60a5fa',
+  'border-red-400':    '#f87171',
 }
 
 export default function QuizPanel({ questions, accentColor = 'border-violet-400' }) {
