@@ -4,8 +4,8 @@ export default [
     question: 'quiz.galtonBoard.q1.question',
     options: [
       { label: 'quiz.galtonBoard.q1.a', correct: false },
-      { label: 'quiz.galtonBoard.q1.b', correct: true },
-      { label: 'quiz.galtonBoard.q1.c', correct: false },
+      { label: 'quiz.galtonBoard.q1.b', correct: false },
+      { label: 'quiz.galtonBoard.q1.c', correct: true },
     ],
     explanation: 'quiz.galtonBoard.q1.explanation',
   },

@@ -882,7 +882,7 @@
         "question": "Why is the answer NOT 50/50 after the host reveals a goat?",
         "a": "The host always opens the door you didn't pick, so your original choice still has 1/3 probability",
         "b": "The host sometimes reveals the car, which changes the odds",
-        "c": "50/50 is only wrong if the host picks randomly",
+        "c": "50/50 is wrong because the host DOES NOT pick randomly",
         "explanation": "The key insight is that the host never acts randomly — they always open a door with a goat and always give you the choice to switch. This means your original 1/3 probability doesn't change. The host's action removes one losing option from the other two doors, concentrating their combined 2/3 probability into one door. Without that knowledge, the 50/50 intuition feels right — but it's wrong."
       },
       "q3": {

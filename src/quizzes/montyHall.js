@@ -4,8 +4,8 @@ export default [
     question: 'quiz.montyHall.q1.question',
     options: [
       { label: 'quiz.montyHall.q1.a', correct: false },
-      { label: 'quiz.montyHall.q1.b', correct: true },
-      { label: 'quiz.montyHall.q1.c', correct: false },
+      { label: 'quiz.montyHall.q1.b', correct: false },
+      { label: 'quiz.montyHall.q1.c', correct: true },
     ],
     explanation: 'quiz.montyHall.q1.explanation',
   },
