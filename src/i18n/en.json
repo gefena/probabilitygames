@@ -15,6 +15,18 @@
       "goDeeper": {
         "title": "Go Deeper",
         "tagline": "Make decisions — and find out if they pay off"
+      },
+      "beatTheBot": {
+        "title": "Beat the Bot",
+        "tagline": "Pick your strategy. Outsmart the machine."
+      },
+      "testYourWits": {
+        "title": "Test Your Wits",
+        "tagline": "Think fast. Decide smart. Beat the odds."
+      },
+      "fromChaosToOrder": {
+        "title": "From Chaos to Order",
+        "tagline": "Watch randomness become pattern."
       }
     },
     "games": {
