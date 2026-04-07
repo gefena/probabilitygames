@@ -722,7 +722,7 @@
         "a": "Because 365 is not really that big a number",
         "b": "Because each new person creates a new pair with every existing person",
         "c": "Because people tend to be born in the same seasons",
-        "explanation": "Every new person added creates N new pairs (one with each person already in the room). With 10 people there are 45 pairs; with 20 there are 190 pairs; with 30 there are 435 pairs. More pairs = much higher chance of at least one match!"
+        "explanation": "Every new person added creates N-1 new pairs (one with each of the N-1 people already in the room). With 10 people there are 45 pairs; with 20 there are 190 pairs; with 30 there are 435 pairs. More pairs = much higher chance of at least one match!"
       },
       "q3": {
         "question": "What is the probability of a birthday match when there are 60 people in the room?",
@@ -880,7 +880,7 @@
       },
       "q2": {
         "question": "Why is the answer NOT 50/50 after the host reveals a goat?",
-        "a": "The host always opens the door you didn't pick, so your original choice still has 1/3 probability",
+        "a": "It doesn't matter whether you switch — eliminating one door makes the remaining two equally likely at 50% each",
         "b": "The host sometimes reveals the car, which changes the odds",
         "c": "50/50 is wrong because the host DOES NOT pick randomly",
         "explanation": "The key insight is that the host never acts randomly — they always open a door with a goat and always give you the choice to switch. This means your original 1/3 probability doesn't change. The host's action removes one losing option from the other two doors, concentrating their combined 2/3 probability into one door. Without that knowledge, the 50/50 intuition feels right — but it's wrong."
@@ -1004,7 +1004,7 @@
         "question": "If you place 1 token on sum 2, how many rolls do you expect to wait before it gets removed?",
         "a": "36 rolls — sum 2 has probability 1/36",
         "b": "6 rolls — same as any other sum",
-        "c": "2 rolls — there are only 2 ways to roll a 2",
+        "c": "2 rolls — there is only 1 way to roll a 2 (1+1)",
         "explanation": "Sum 2 can only be rolled one way: 1+1. Out of 36 possible outcomes, that's a probability of 1/36. On average, you'd need to roll 36 times to see sum 2 once. Compare that to sum 7: probability 6/36 = 1/6, so you'd expect to wait only 6 rolls. A token on 2 takes 6× longer to remove than a token on 7!"
       }
     },
@@ -1129,7 +1129,7 @@
     "bridgeQuest": {
       "q1": {
         "question": "Path A has two bridges: 80% and 70%. Path B has one bridge: 60%. Which path gives you a better chance of making it through?",
-        "a": "Path B — it has only one bridge to cross, so there is only one chance to fall",
+        "a": "Path B — 60% survival beats Path A's 80% × 70% = 56%",
         "b": "Path A — 80% × 70% = 56%, which is still better than 60%",
         "c": "They are equal — both paths have the same total risk",
         "explanation": "Path A survival: 80% × 70% = 56 in 100. Path B survival: 60 in 100. Even though Path A has two \"decent\" bridges, multiplying them together drops the odds below Path B's single scarier bridge. Every extra bridge multiplies your survival fraction — fewer bridges isn't always safer, but here Path B's single 60% beats Path A's 56%."
